@@ -1,0 +1,20 @@
+        # relationships to/from containers
+        customer -> internetBankingSystem.webApplication "Visits bigbank.com/ib using" "HTTPS"
+        customer -> internetBankingSystem.singlePageApplication "Views account balances, and makes payments using"
+        customer -> internetBankingSystem.mobileApp "Views account balances, and makes payments using"
+        internetBankingSystem.webApplication -> internetBankingSystem.singlePageApplication "Delivers to the customer's web browser"
+
+        # relationships to/from components
+        internetBankingSystem.singlePageApplication -> internetBankingSystem.apiApplication.signinController "Makes API calls to" "JSON/HTTPS"
+        internetBankingSystem.singlePageApplication -> internetBankingSystem.apiApplication.accountsSummaryController "Makes API calls to" "JSON/HTTPS"
+        internetBankingSystem.singlePageApplication -> internetBankingSystem.apiApplication.resetPasswordController "Makes API calls to" "JSON/HTTPS"
+        internetBankingSystem.mobileApp -> internetBankingSystem.apiApplication.signinController "Makes API calls to" "JSON/HTTPS"
+        internetBankingSystem.mobileApp -> internetBankingSystem.apiApplication.accountsSummaryController "Makes API calls to" "JSON/HTTPS"
+        internetBankingSystem.mobileApp -> internetBankingSystem.apiApplication.resetPasswordController "Makes API calls to" "JSON/HTTPS"
+        internetBankingSystem.apiApplication.signinController -> internetBankingSystem.apiApplication.securityComponent "Uses"
+        internetBankingSystem.apiApplication.accountsSummaryController -> internetBankingSystem.apiApplication.mainframeBankingSystemFacade "Uses"
+        internetBankingSystem.apiApplication.resetPasswordController -> internetBankingSystem.apiApplication.securityComponent "Uses"
+        internetBankingSystem.apiApplication.resetPasswordController -> internetBankingSystem.apiApplication.emailComponent "Uses"
+        internetBankingSystem.apiApplication.securityComponent -> internetBankingSystem.database "Reads from and writes to" "SQL/TCP"
+        internetBankingSystem.apiApplication.mainframeBankingSystemFacade -> mainframe "Makes API calls to" "XML/HTTPS"
+        internetBankingSystem.apiApplication.emailComponent -> email "Sends e-mail using"

@@ -6,29 +6,29 @@
  * - "Big Bank plc - System Landscape" (https://structurizr.com/share/28201/)
  * - "Big Bank plc - Internet Banking System" (https://structurizr.com/share/36141/)
 */
-workspace extends /model.dsl {
+workspace extends ../../model.dsl {
     name "Amazon Web Services Example"
     description "An example AWS deployment architecture."
-    # !identifiers hierarchical
 
     model {
 
         springPetClinic = softwaresystem "Spring PetClinic" "Allows employees to view and manage information regarding the veterinarians, the clients, and their pets." {
-            !docs docs/springPetClinic
             webApplication2 = container "Web Application" "Allows employees to view and manage information regarding the veterinarians, the clients, and their pets." "Java and Spring Boot" {
                 tags "Application"
+
+                restApi = component "API" "REST"
             }
             database2 = container "Database" "Stores information regarding the veterinarians, the clients, and their pets." "Relational database schema" {
                 tags "Database"
             }
         }
 
-        webApplication2 -> database2 "Reads from and writes to" "MySQL Protocol/SSL"
-        # webApplication2 -> service3Api "Reads 2from and writes to" "MySQL Protocol/SSL"
-        
-        insuranceSystem.service3Api -> webApplication2 "?Reads 2from and writes to" "MySQL Protocol/SSL"
 
-        webApplication2 -> internetBankingSystem "Initialize payment" "MySQL Protocol/SSL"
+        webApplication2 -> internetBankingSystem.apiApplication "Initialize payment" "REST"
+        internetBankingSystem.apiApplication -> webApplication2 "Initialize payment 2" "REST"
+
+        restApi -> internetBankingSystem.apiApplication.signinController "Initialize payment" "REST"
+        internetBankingSystem.apiApplication.signinController -> restApi "ACK payment" "REST"
 
         live = deploymentEnvironment "Live2" {
 
@@ -82,6 +82,15 @@ workspace extends /model.dsl {
             include ->springPetClinic->
             autoLayout
         }
+        container springPetClinic "springPetClinic_Context"{
+            include *
+            autoLayout
+     
+        }
+        component webApplication2 "springPetClinic_webApplication2"{
+            include *
+            autoLayout
+        }
         deployment springPetClinic "Live" "AmazonWebServicesDeployment" {
             include *
             autolayout lr
@@ -93,7 +102,17 @@ workspace extends /model.dsl {
                 databaseInstance
             }
         }
-
+        component internetBankingSystem.apiApplication "ComponentsOverride" {
+            include *
+            animation {
+                internetBankingSystem.singlePageApplication internetBankingSystem.mobileApp internetBankingSystem.database email mainframe
+                internetBankingSystem.apiApplication.signinController internetBankingSystem.apiApplication.securityComponent
+                internetBankingSystem.apiApplication.accountsSummaryController internetBankingSystem.apiApplication.mainframeBankingSystemFacade
+                internetBankingSystem.apiApplication.resetPasswordController internetBankingSystem.apiApplication.emailComponent
+            }
+            autoLayout
+            description "The component diagram for the API Application (animation)."
+        }
 
 
 

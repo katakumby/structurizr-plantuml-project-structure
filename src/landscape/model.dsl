@@ -1,6 +1,5 @@
 
-workspace "Big Bank plc" "This is an example workspace to illustrate the key features of Structurizr, via the DSL, based around a fictional online banking system." {
-    
+workspace "Theory of everything - Landscape" "Collection of all reusable." {
     !identifiers hierarchical
 
     model {
@@ -10,7 +9,7 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
         !include ../inc/systems
         
         !include ../inc/relations/simple
-
+        
         !include ../inc/relations/detailed
 
         !include ../inc/deployments
@@ -21,6 +20,7 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
     views {
         !include ../inc/views 
         styles {
+        
             !include ../inc/styles
         }
     }

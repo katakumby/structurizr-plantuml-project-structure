@@ -1,11 +1,14 @@
-workspace "Amazon Web Services Example" "An example AWS deployment architecture." {
-
-    model {
+workspace "Domain 1 example" "An example." {
+    
+    !identifiers hierarchical
+    
+    model { 
 
         !include ../inc/person
 
         !include ../inc/systems
-        !include ../inc/relations
+        !include ../inc/relations/simple
+        !include ../inc/relations/detailed
         !include ../inc/deployments
 
     }

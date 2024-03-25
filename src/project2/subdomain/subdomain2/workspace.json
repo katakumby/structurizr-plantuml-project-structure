@@ -3,7 +3,7 @@
   "description" : "An example AWS deployment architecture.",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedDate" : "2024-03-25T23:31:37Z",
+  "lastModifiedDate" : "2024-03-25T23:53:11Z",
   "model" : {
     "deploymentNodes" : [ {
       "children" : [ {
@@ -148,7 +148,7 @@
         "instances" : "1",
         "name" : "bigbank-dev001",
         "properties" : {
-          "structurizr.dsl.identifier" : "deployment_dev_ibs.dc.3423fbbc-f1fb-4cd0-bba5-ee1a33a217bb"
+          "structurizr.dsl.identifier" : "deployment_dev_ibs.dc.3d2ada44-4f22-49bf-8f96-a9f80a6d7967"
         },
         "softwareSystemInstances" : [ {
           "deploymentGroups" : [ "Default" ],
@@ -156,7 +156,7 @@
           "id" : "124",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "deployment_dev_ibs.dc.3423fbbc-f1fb-4cd0-bba5-ee1a33a217bb.d917ce71-51ef-4ac9-8ba7-c24b9f1ccbfc"
+            "structurizr.dsl.identifier" : "deployment_dev_ibs.dc.3d2ada44-4f22-49bf-8f96-a9f80a6d7967.915292d4-2085-4293-bf61-12bc976a742e"
           },
           "softwareSystemId" : "5",
           "tags" : "Software System Instance"
@@ -185,7 +185,7 @@
         "relationships" : [ {
           "description" : "Makes API calls to",
           "destinationId" : "138",
-          "id" : "139",
+          "id" : "140",
           "linkedRelationshipId" : "78",
           "sourceId" : "127",
           "technology" : "JSON/HTTPS"
@@ -215,7 +215,7 @@
           "relationships" : [ {
             "description" : "Makes API calls to",
             "destinationId" : "138",
-            "id" : "140",
+            "id" : "139",
             "linkedRelationshipId" : "74",
             "sourceId" : "130",
             "technology" : "JSON/HTTPS"
@@ -360,7 +360,7 @@
             "destinationId" : "146",
             "id" : "152",
             "properties" : {
-              "structurizr.dsl.identifier" : "7d4e39ab-4f1c-487a-b92a-69496329a325"
+              "structurizr.dsl.identifier" : "2dd22054-7ce8-40cc-b56c-746a7708a262"
             },
             "sourceId" : "142",
             "tags" : "Relationship"
@@ -415,7 +415,7 @@
         "instances" : "1",
         "name" : "bigbank-prod001",
         "properties" : {
-          "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.2836001b-5b96-4079-b239-0ccc8dab1af2"
+          "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.5806bb8f-7179-4d54-b4f9-bf09bede4649"
         },
         "softwareSystemInstances" : [ {
           "deploymentGroups" : [ "Default" ],
@@ -423,7 +423,7 @@
           "id" : "150",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.2836001b-5b96-4079-b239-0ccc8dab1af2.0a6a7e8b-8787-41d3-9350-08e9d9d8e2b1"
+            "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.5806bb8f-7179-4d54-b4f9-bf09bede4649.670446a6-31dd-4b1d-b053-d9d1ff202d32"
           },
           "softwareSystemId" : "5",
           "tags" : "Software System Instance"
@@ -447,45 +447,37 @@
               "containerId" : "154",
               "deploymentGroups" : [ "Default" ],
               "environment" : "Live2",
-              "id" : "169",
+              "id" : "181",
               "instanceId" : 1,
               "properties" : {
                 "structurizr.dsl.identifier" : "webapplicationinstance"
               },
-              "relationships" : [ {
-                "description" : "Reads from and writes to",
-                "destinationId" : "172",
-                "id" : "173",
-                "linkedRelationshipId" : "156",
-                "sourceId" : "169",
-                "technology" : "MySQL Protocol/SSL"
-              } ],
               "tags" : "Container Instance"
             } ],
             "environment" : "Live2",
-            "id" : "168",
+            "id" : "180",
             "instances" : "1",
             "name" : "Amazon EC2",
             "properties" : {
-              "structurizr.dsl.identifier" : "ff4c528c-ef2c-4fe1-8195-58831922edb7"
+              "structurizr.dsl.identifier" : "159e09ed-5729-4072-ba81-264ca16e6448"
             },
             "tags" : "Element,Deployment Node,Amazon Web Services - EC2"
           } ],
           "environment" : "Live2",
-          "id" : "167",
+          "id" : "179",
           "instances" : "1",
           "name" : "Autoscaling group",
           "properties" : {
-            "structurizr.dsl.identifier" : "f66eb290-5e04-4f18-ba63-2467e8c8b76e"
+            "structurizr.dsl.identifier" : "152618ea-39d4-4858-ae9f-49e317771775"
           },
           "tags" : "Element,Deployment Node,Amazon Web Services - Auto Scaling"
         }, {
           "children" : [ {
             "containerInstances" : [ {
-              "containerId" : "155",
+              "containerId" : "156",
               "deploymentGroups" : [ "Default" ],
               "environment" : "Live2",
-              "id" : "172",
+              "id" : "184",
               "instanceId" : 1,
               "properties" : {
                 "structurizr.dsl.identifier" : "databaseinstance"
@@ -493,41 +485,41 @@
               "tags" : "Container Instance"
             } ],
             "environment" : "Live2",
-            "id" : "171",
+            "id" : "183",
             "instances" : "1",
             "name" : "MySQL",
             "properties" : {
-              "structurizr.dsl.identifier" : "a3d3f452-3c81-4bb6-a2b0-ddadc9ca92f1"
+              "structurizr.dsl.identifier" : "3a6373ca-66e7-49de-9c6d-aa99b2270b19"
             },
             "tags" : "Element,Deployment Node,Amazon Web Services - RDS MySQL instance"
           } ],
           "environment" : "Live2",
-          "id" : "170",
+          "id" : "182",
           "instances" : "1",
           "name" : "Amazon RDS",
           "properties" : {
-            "structurizr.dsl.identifier" : "cfa1b9b7-248f-47dd-bc2e-9cfc8ff2d19b"
+            "structurizr.dsl.identifier" : "505f751d-399b-4ccc-bc6d-59f214605a29"
           },
           "tags" : "Element,Deployment Node,Amazon Web Services - RDS"
         } ],
         "environment" : "Live2",
-        "id" : "164",
+        "id" : "176",
         "infrastructureNodes" : [ {
           "description" : "Highly available and scalable cloud DNS service.",
           "environment" : "Live2",
-          "id" : "165",
+          "id" : "177",
           "name" : "Route 53",
           "properties" : {
             "structurizr.dsl.identifier" : "route53"
           },
           "relationships" : [ {
             "description" : "Forwards requests to",
-            "destinationId" : "166",
-            "id" : "174",
+            "destinationId" : "178",
+            "id" : "185",
             "properties" : {
-              "structurizr.dsl.identifier" : "37c4a60d-9119-49c8-aeb2-823fb1b8bf89"
+              "structurizr.dsl.identifier" : "c4f25e78-3bcb-440f-b696-e79aa4a35cb8"
             },
-            "sourceId" : "165",
+            "sourceId" : "177",
             "tags" : "Relationship",
             "technology" : "HTTPS"
           } ],
@@ -535,19 +527,19 @@
         }, {
           "description" : "Automatically distributes incoming application traffic.",
           "environment" : "Live2",
-          "id" : "166",
+          "id" : "178",
           "name" : "Elastic Load Balancer",
           "properties" : {
             "structurizr.dsl.identifier" : "elb"
           },
           "relationships" : [ {
             "description" : "Forwards requests to",
-            "destinationId" : "169",
-            "id" : "175",
+            "destinationId" : "181",
+            "id" : "186",
             "properties" : {
-              "structurizr.dsl.identifier" : "eba7cd0e-3caf-4ce6-8fc7-d4d4412fee2c"
+              "structurizr.dsl.identifier" : "fae8bf71-47d8-44f0-a1ef-0e846147c820"
             },
-            "sourceId" : "166",
+            "sourceId" : "178",
             "tags" : "Relationship",
             "technology" : "HTTPS"
           } ],
@@ -561,11 +553,11 @@
         "tags" : "Element,Deployment Node,Amazon Web Services - Region"
       } ],
       "environment" : "Live2",
-      "id" : "163",
+      "id" : "175",
       "instances" : "1",
       "name" : "Amazon Web Services",
       "properties" : {
-        "structurizr.dsl.identifier" : "66eacad2-a26f-4d6b-9315-3c53c2c90b45"
+        "structurizr.dsl.identifier" : "5c19163c-f7a0-43a2-a2ab-e88e7a80e73f"
       },
       "tags" : "Element,Deployment Node,Amazon Web Services - Cloud"
     } ],
@@ -581,7 +573,7 @@
         "destinationId" : "21",
         "id" : "57",
         "properties" : {
-          "structurizr.dsl.identifier" : "c8569d27-7132-482a-86ed-0766fb756a04"
+          "structurizr.dsl.identifier" : "349a6bea-d9d9-4d18-80b7-4442632013f6"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
@@ -605,7 +597,7 @@
         "destinationId" : "8",
         "id" : "47",
         "properties" : {
-          "structurizr.dsl.identifier" : "cf1d45c7-2f3d-4612-af43-1265c3a0b273"
+          "structurizr.dsl.identifier" : "81c4b6b8-8d10-4469-9356-5d737034d42e"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -614,7 +606,7 @@
         "destinationId" : "3",
         "id" : "51",
         "properties" : {
-          "structurizr.dsl.identifier" : "5f0aef1e-51d1-4084-9df4-0f96e7d13acb"
+          "structurizr.dsl.identifier" : "1d4f0c92-cc8b-462a-94b7-e0eaf34cc852"
         },
         "sourceId" : "2",
         "tags" : "Relationship",
@@ -624,7 +616,7 @@
         "destinationId" : "7",
         "id" : "53",
         "properties" : {
-          "structurizr.dsl.identifier" : "5c5d2d70-2755-48e8-8cfd-a6d8ec8cb823"
+          "structurizr.dsl.identifier" : "a2b8e943-f633-46b0-a7a8-3afed25ccbb1"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -633,7 +625,7 @@
         "destinationId" : "20",
         "id" : "54",
         "properties" : {
-          "structurizr.dsl.identifier" : "1cfbb17f-3e4a-4ed0-9fc4-fb1d168aecbd"
+          "structurizr.dsl.identifier" : "81d149b4-7dc1-4ff4-896b-4f10b5229b62"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -642,7 +634,7 @@
         "destinationId" : "11",
         "id" : "69",
         "properties" : {
-          "structurizr.dsl.identifier" : "ae3c69f7-2d5d-4fde-96e4-3d8b5e009369"
+          "structurizr.dsl.identifier" : "257bf170-626b-4ae2-b1c1-684adf0e98fa"
         },
         "sourceId" : "2",
         "tags" : "Relationship",
@@ -652,7 +644,7 @@
         "destinationId" : "9",
         "id" : "70",
         "properties" : {
-          "structurizr.dsl.identifier" : "1f933647-e032-41c0-9331-d92a73dedb93"
+          "structurizr.dsl.identifier" : "774d4cd3-e365-4e83-a7d8-13d79ed25c4c"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -661,7 +653,7 @@
         "destinationId" : "10",
         "id" : "71",
         "properties" : {
-          "structurizr.dsl.identifier" : "9427c63f-af13-4536-a1d0-95ea3fcd8e06"
+          "structurizr.dsl.identifier" : "4a71da5d-bcac-4a0a-99a9-ed82589d2f03"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -681,7 +673,7 @@
         "destinationId" : "5",
         "id" : "52",
         "properties" : {
-          "structurizr.dsl.identifier" : "1574abce-bbfe-40a9-9138-4bc94ae9d249"
+          "structurizr.dsl.identifier" : "a7f846a8-b8a0-4229-abea-4773c66af432"
         },
         "sourceId" : "3",
         "tags" : "Relationship"
@@ -701,7 +693,7 @@
         "destinationId" : "5",
         "id" : "56",
         "properties" : {
-          "structurizr.dsl.identifier" : "0fa951fa-0a3c-461e-b7c2-86c408419cac"
+          "structurizr.dsl.identifier" : "e985c2a0-651f-49a6-8b5e-512df0f9f60f"
         },
         "sourceId" : "4",
         "tags" : "Relationship"
@@ -734,7 +726,7 @@
         "destinationId" : "2",
         "id" : "50",
         "properties" : {
-          "structurizr.dsl.identifier" : "a00762fe-3c72-4f6c-8f92-4318db38be2f"
+          "structurizr.dsl.identifier" : "198ec072-114d-4cbe-a7ef-c657d4d7ef1f"
         },
         "sourceId" : "6",
         "tags" : "Relationship"
@@ -755,7 +747,7 @@
         "destinationId" : "5",
         "id" : "55",
         "properties" : {
-          "structurizr.dsl.identifier" : "ca18170a-b7cd-40ea-b449-841cbb3894c2"
+          "structurizr.dsl.identifier" : "bb975412-909d-470e-b20e-4c4bb9a172c3"
         },
         "sourceId" : "7",
         "tags" : "Relationship"
@@ -775,7 +767,7 @@
           "destinationId" : "13",
           "id" : "73",
           "properties" : {
-            "structurizr.dsl.identifier" : "c279e849-c2ef-4965-ae73-cd3b1f40e673"
+            "structurizr.dsl.identifier" : "409a72dd-2177-4868-88c7-114e46589bfe"
           },
           "sourceId" : "9",
           "tags" : "Relationship",
@@ -792,7 +784,7 @@
           "destinationId" : "14",
           "id" : "75",
           "properties" : {
-            "structurizr.dsl.identifier" : "8932d51a-1f0f-4b65-bbde-2ea6757f0c2b"
+            "structurizr.dsl.identifier" : "0e1c7c1b-662e-4f94-9c71-e710e0cef380"
           },
           "sourceId" : "9",
           "tags" : "Relationship",
@@ -802,7 +794,7 @@
           "destinationId" : "15",
           "id" : "76",
           "properties" : {
-            "structurizr.dsl.identifier" : "318ea805-296f-4b95-a4f5-f6b13082af38"
+            "structurizr.dsl.identifier" : "72ddc187-5c00-4b52-b27b-d94b654b8c89"
           },
           "sourceId" : "9",
           "tags" : "Relationship",
@@ -823,7 +815,7 @@
           "destinationId" : "13",
           "id" : "77",
           "properties" : {
-            "structurizr.dsl.identifier" : "83140b16-bf0a-424e-a6cd-5ba35328fb45"
+            "structurizr.dsl.identifier" : "fef0ae02-e386-4dcc-baac-c7a164d67abb"
           },
           "sourceId" : "10",
           "tags" : "Relationship",
@@ -840,7 +832,7 @@
           "destinationId" : "14",
           "id" : "79",
           "properties" : {
-            "structurizr.dsl.identifier" : "2e62bf1b-5226-4086-a85d-16fe33ca39b6"
+            "structurizr.dsl.identifier" : "2faf1893-65df-4265-8be4-e1902b53c484"
           },
           "sourceId" : "10",
           "tags" : "Relationship",
@@ -850,7 +842,7 @@
           "destinationId" : "15",
           "id" : "80",
           "properties" : {
-            "structurizr.dsl.identifier" : "c2af6bf6-867a-4365-bc28-6972b744a3b7"
+            "structurizr.dsl.identifier" : "f475266b-5693-421b-9da9-2cc74d489f8d"
           },
           "sourceId" : "10",
           "tags" : "Relationship",
@@ -871,7 +863,7 @@
           "destinationId" : "9",
           "id" : "72",
           "properties" : {
-            "structurizr.dsl.identifier" : "1017fa08-f88d-4a4d-91a2-1ebce7f8345d"
+            "structurizr.dsl.identifier" : "05d827e9-99f1-49bb-8ac9-d4bef28fed18"
           },
           "sourceId" : "11",
           "tags" : "Relationship"
@@ -892,7 +884,7 @@
             "destinationId" : "16",
             "id" : "81",
             "properties" : {
-              "structurizr.dsl.identifier" : "683ce015-5731-48eb-885e-396d59889681"
+              "structurizr.dsl.identifier" : "d3ee4cf8-8488-489e-aa3c-7788157510a8"
             },
             "sourceId" : "13",
             "tags" : "Relationship"
@@ -901,7 +893,7 @@
             "destinationId" : "23",
             "id" : "100",
             "properties" : {
-              "structurizr.dsl.identifier" : "2ebef7d0-1a90-4c3b-a05e-49df95aaf8f8"
+              "structurizr.dsl.identifier" : "1906e492-68e3-4368-a68d-50a2fcc694db"
             },
             "sourceId" : "13",
             "tags" : "Relationship"
@@ -917,6 +909,30 @@
             "id" : "102",
             "linkedRelationshipId" : "100",
             "sourceId" : "13"
+          }, {
+            "description" : "ACK payment",
+            "destinationId" : "155",
+            "id" : "170",
+            "properties" : {
+              "structurizr.dsl.identifier" : "9794738f-5b3f-45ab-bda2-44722b475cfe"
+            },
+            "sourceId" : "13",
+            "tags" : "Relationship",
+            "technology" : "REST"
+          }, {
+            "description" : "ACK payment",
+            "destinationId" : "154",
+            "id" : "171",
+            "linkedRelationshipId" : "170",
+            "sourceId" : "13",
+            "technology" : "REST"
+          }, {
+            "description" : "ACK payment",
+            "destinationId" : "153",
+            "id" : "172",
+            "linkedRelationshipId" : "170",
+            "sourceId" : "13",
+            "technology" : "REST"
           } ],
           "tags" : "Element,Component",
           "technology" : "Spring MVC Rest Controller"
@@ -933,7 +949,7 @@
             "destinationId" : "17",
             "id" : "82",
             "properties" : {
-              "structurizr.dsl.identifier" : "40154692-bb70-4c35-b24e-6db6267db084"
+              "structurizr.dsl.identifier" : "f1be5a74-57db-45bb-b14a-752f32bce9a8"
             },
             "sourceId" : "14",
             "tags" : "Relationship"
@@ -953,7 +969,7 @@
             "destinationId" : "16",
             "id" : "83",
             "properties" : {
-              "structurizr.dsl.identifier" : "138893f5-e9eb-4f32-b331-f52dd21897f4"
+              "structurizr.dsl.identifier" : "dacbcf40-dc72-4eec-a964-dbb25ad307e6"
             },
             "sourceId" : "15",
             "tags" : "Relationship"
@@ -962,7 +978,7 @@
             "destinationId" : "18",
             "id" : "84",
             "properties" : {
-              "structurizr.dsl.identifier" : "79087d9a-2f8f-4dff-a5fd-7056e9d33b75"
+              "structurizr.dsl.identifier" : "4ad12dfc-4d5c-493f-9d2f-eb9728ddcd88"
             },
             "sourceId" : "15",
             "tags" : "Relationship"
@@ -982,7 +998,7 @@
             "destinationId" : "19",
             "id" : "85",
             "properties" : {
-              "structurizr.dsl.identifier" : "6ab1ac01-637a-4c9c-89c3-46652f77c13f"
+              "structurizr.dsl.identifier" : "fe9226bf-12ac-47b5-9bcf-a5e6efe38ebb"
             },
             "sourceId" : "16",
             "tags" : "Relationship",
@@ -1003,7 +1019,7 @@
             "destinationId" : "5",
             "id" : "87",
             "properties" : {
-              "structurizr.dsl.identifier" : "c3291ce4-6f4c-4faf-a3bf-c848941c58cc"
+              "structurizr.dsl.identifier" : "eb56603d-677e-437b-ba3a-f2666df48da1"
             },
             "sourceId" : "17",
             "tags" : "Relationship",
@@ -1024,7 +1040,7 @@
             "destinationId" : "6",
             "id" : "89",
             "properties" : {
-              "structurizr.dsl.identifier" : "6c094e73-4b07-46e6-93ec-7042824c8966"
+              "structurizr.dsl.identifier" : "78782095-d0b5-4797-8a10-ad6fc0436f82"
             },
             "sourceId" : "18",
             "tags" : "Relationship"
@@ -1077,6 +1093,30 @@
           "id" : "105",
           "linkedRelationshipId" : "100",
           "sourceId" : "12"
+        }, {
+          "description" : "Initialize payment 2",
+          "destinationId" : "154",
+          "id" : "161",
+          "properties" : {
+            "structurizr.dsl.identifier" : "9955829d-1836-4252-af46-d623070efef8"
+          },
+          "sourceId" : "12",
+          "tags" : "Relationship",
+          "technology" : "REST"
+        }, {
+          "description" : "Initialize payment 2",
+          "destinationId" : "153",
+          "id" : "162",
+          "linkedRelationshipId" : "161",
+          "sourceId" : "12",
+          "technology" : "REST"
+        }, {
+          "description" : "ACK payment",
+          "destinationId" : "155",
+          "id" : "173",
+          "linkedRelationshipId" : "170",
+          "sourceId" : "12",
+          "technology" : "REST"
         } ],
         "tags" : "Element,Container",
         "technology" : "Java and Spring MVC"
@@ -1105,7 +1145,7 @@
         "destinationId" : "5",
         "id" : "48",
         "properties" : {
-          "structurizr.dsl.identifier" : "09fde2b7-ff09-41d4-884d-003e7d764a8a"
+          "structurizr.dsl.identifier" : "50326925-26b7-4b53-b46a-b1671f73e65f"
         },
         "sourceId" : "8",
         "tags" : "Relationship"
@@ -1114,7 +1154,7 @@
         "destinationId" : "6",
         "id" : "49",
         "properties" : {
-          "structurizr.dsl.identifier" : "1ac7e814-682f-49e1-b5f8-cb8efcaf55e0"
+          "structurizr.dsl.identifier" : "fe8ab2c7-1f6c-4074-bf57-1f07ad58a082"
         },
         "sourceId" : "8",
         "tags" : "Relationship"
@@ -1136,6 +1176,27 @@
         "id" : "108",
         "linkedRelationshipId" : "100",
         "sourceId" : "8"
+      }, {
+        "description" : "Initialize payment 2",
+        "destinationId" : "154",
+        "id" : "163",
+        "linkedRelationshipId" : "161",
+        "sourceId" : "8",
+        "technology" : "REST"
+      }, {
+        "description" : "Initialize payment 2",
+        "destinationId" : "153",
+        "id" : "164",
+        "linkedRelationshipId" : "161",
+        "sourceId" : "8",
+        "technology" : "REST"
+      }, {
+        "description" : "ACK payment",
+        "destinationId" : "155",
+        "id" : "174",
+        "linkedRelationshipId" : "170",
+        "sourceId" : "8",
+        "technology" : "REST"
       } ],
       "tags" : "Element,Software System"
     }, {
@@ -1150,7 +1211,7 @@
           "destinationId" : "22",
           "id" : "59",
           "properties" : {
-            "structurizr.dsl.identifier" : "c416f492-7ce1-4dfd-a400-50035e560114"
+            "structurizr.dsl.identifier" : "8f5f31b8-7941-4ddf-becd-e246365a0441"
           },
           "sourceId" : "21",
           "tags" : "Relationship"
@@ -1158,7 +1219,7 @@
           "destinationId" : "29",
           "id" : "64",
           "properties" : {
-            "structurizr.dsl.identifier" : "ac8ef009-5a3a-4d07-818b-72ba41870ff0"
+            "structurizr.dsl.identifier" : "6d30c7dd-4abe-48dd-bcca-c4b12fc6fea6"
           },
           "sourceId" : "21",
           "tags" : "Relationship"
@@ -1178,7 +1239,7 @@
             "destinationId" : "13",
             "id" : "97",
             "properties" : {
-              "structurizr.dsl.identifier" : "43d4ea40-6b08-4159-864a-0f3358c33fd3"
+              "structurizr.dsl.identifier" : "be8b3eb6-bbfd-47cd-8b8c-142c5cbdebb5"
             },
             "sourceId" : "23",
             "tags" : "Relationship"
@@ -1210,7 +1271,7 @@
           "destinationId" : "24",
           "id" : "25",
           "properties" : {
-            "structurizr.dsl.identifier" : "c0386b2b-6475-40eb-9f02-e586ba616744"
+            "structurizr.dsl.identifier" : "e812b415-978d-4333-8022-f3753f160d1d"
           },
           "sourceId" : "22",
           "tags" : "Relationship"
@@ -1218,7 +1279,7 @@
           "destinationId" : "26",
           "id" : "60",
           "properties" : {
-            "structurizr.dsl.identifier" : "2d3844c9-e669-476a-a787-b95927be4a07"
+            "structurizr.dsl.identifier" : "51897953-6c05-40e9-abfa-bae462d94f87"
           },
           "sourceId" : "22",
           "tags" : "Relationship"
@@ -1226,7 +1287,7 @@
           "destinationId" : "29",
           "id" : "61",
           "properties" : {
-            "structurizr.dsl.identifier" : "c595752c-62ab-4d69-a955-b9dabaceb0c6"
+            "structurizr.dsl.identifier" : "3feab10b-868c-4ba7-8664-bb3623188095"
           },
           "sourceId" : "22",
           "tags" : "Relationship"
@@ -1235,7 +1296,7 @@
           "destinationId" : "13",
           "id" : "92",
           "properties" : {
-            "structurizr.dsl.identifier" : "ec707ee8-fa2c-427d-80f6-a7d13452c2a7"
+            "structurizr.dsl.identifier" : "6b7f5288-49d6-4c87-8057-6e0a9e0bdcbd"
           },
           "sourceId" : "22",
           "tags" : "Relationship"
@@ -1259,7 +1320,7 @@
         "id" : "24",
         "name" : "Service 1 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "insurancesystem.6104d720-0f7a-4fbe-8902-3460d2aa08a8"
+          "structurizr.dsl.identifier" : "insurancesystem.e6f7a55f-0134-4e7a-8c2b-d7dd97bb9012"
         },
         "tags" : "Element,Container,Service 1,Database"
       }, {
@@ -1275,7 +1336,7 @@
           "destinationId" : "27",
           "id" : "28",
           "properties" : {
-            "structurizr.dsl.identifier" : "e0f6682f-74b9-40a1-b81a-5ba26944b15b"
+            "structurizr.dsl.identifier" : "5d2ad0cf-895f-47bc-99fa-6d5088e8d0b5"
           },
           "sourceId" : "26",
           "tags" : "Relationship"
@@ -1283,7 +1344,7 @@
           "destinationId" : "32",
           "id" : "62",
           "properties" : {
-            "structurizr.dsl.identifier" : "cdce1f68-29db-4991-b7ee-c3a622291910"
+            "structurizr.dsl.identifier" : "b11e9cb6-0563-4e17-b2a1-48dfdcf91809"
           },
           "sourceId" : "26",
           "tags" : "Relationship"
@@ -1291,7 +1352,7 @@
           "destinationId" : "35",
           "id" : "63",
           "properties" : {
-            "structurizr.dsl.identifier" : "6560fd3e-ce76-40c1-ad1f-ae20dd74192d"
+            "structurizr.dsl.identifier" : "797ad7f3-fe11-4319-9624-1cf2a72862c6"
           },
           "sourceId" : "26",
           "tags" : "Relationship"
@@ -1303,7 +1364,7 @@
         "id" : "27",
         "name" : "Service 2 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "insurancesystem.5bd19028-4fc6-4f54-b510-f76337d19445"
+          "structurizr.dsl.identifier" : "insurancesystem.de4a79b9-6bc5-4a6f-b86d-ea9d63cb6b4f"
         },
         "tags" : "Element,Container,Service 2,Database"
       }, {
@@ -1319,7 +1380,7 @@
           "destinationId" : "30",
           "id" : "31",
           "properties" : {
-            "structurizr.dsl.identifier" : "feee7706-0f3a-4ed1-a2d7-d79de75fdb52"
+            "structurizr.dsl.identifier" : "c8aa21d2-e3e6-4f64-b401-39cd183b71c4"
           },
           "sourceId" : "29",
           "tags" : "Relationship"
@@ -1327,7 +1388,7 @@
           "destinationId" : "32",
           "id" : "65",
           "properties" : {
-            "structurizr.dsl.identifier" : "e5471418-07d2-45fa-92cb-0148c7edff17"
+            "structurizr.dsl.identifier" : "f86a7579-7ce4-4fa8-b58d-d086c463d926"
           },
           "sourceId" : "29",
           "tags" : "Relationship"
@@ -1335,27 +1396,10 @@
           "destinationId" : "41",
           "id" : "66",
           "properties" : {
-            "structurizr.dsl.identifier" : "5e86dc29-9f0b-463f-a270-cf14efcd6712"
+            "structurizr.dsl.identifier" : "d8db798d-5920-415e-b4d6-2cdd3881773c"
           },
           "sourceId" : "29",
           "tags" : "Relationship"
-        }, {
-          "description" : "?Reads 2from and writes to",
-          "destinationId" : "154",
-          "id" : "157",
-          "properties" : {
-            "structurizr.dsl.identifier" : "d9193fb0-482c-4912-b52b-593ff0541a5d"
-          },
-          "sourceId" : "29",
-          "tags" : "Relationship",
-          "technology" : "MySQL Protocol/SSL"
-        }, {
-          "description" : "?Reads 2from and writes to",
-          "destinationId" : "153",
-          "id" : "158",
-          "linkedRelationshipId" : "157",
-          "sourceId" : "29",
-          "technology" : "MySQL Protocol/SSL"
         } ],
         "tags" : "Element,Container,Service 3,Service API"
       }, {
@@ -1364,7 +1408,7 @@
         "id" : "30",
         "name" : "Service 3 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "insurancesystem.95fe6232-3524-4ac8-90b0-f0171f0f1b86"
+          "structurizr.dsl.identifier" : "insurancesystem.b1a11f17-89da-410c-9077-964d8b67ea87"
         },
         "tags" : "Element,Container,Service 3,Database"
       }, {
@@ -1380,7 +1424,7 @@
           "destinationId" : "33",
           "id" : "34",
           "properties" : {
-            "structurizr.dsl.identifier" : "44da2c92-463b-40bd-a303-e13740eec49a"
+            "structurizr.dsl.identifier" : "61118859-ccd1-4825-b2ae-9a3dc4c944a0"
           },
           "sourceId" : "32",
           "tags" : "Relationship"
@@ -1388,7 +1432,7 @@
           "destinationId" : "38",
           "id" : "67",
           "properties" : {
-            "structurizr.dsl.identifier" : "893a38d0-13f4-4c1c-9340-f40e4ab83fbc"
+            "structurizr.dsl.identifier" : "3cace308-b788-47bf-b345-65496a93ef7c"
           },
           "sourceId" : "32",
           "tags" : "Relationship"
@@ -1400,7 +1444,7 @@
         "id" : "33",
         "name" : "Service 4 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "insurancesystem.90643c65-30cc-49f9-891b-b464d0e8b141"
+          "structurizr.dsl.identifier" : "insurancesystem.82212ae1-fce3-48fd-91a0-8c1eb35c5630"
         },
         "tags" : "Element,Container,Service 4,Database"
       }, {
@@ -1416,7 +1460,7 @@
           "destinationId" : "36",
           "id" : "37",
           "properties" : {
-            "structurizr.dsl.identifier" : "e149c9aa-35f8-439e-bc33-a75e213c5ee0"
+            "structurizr.dsl.identifier" : "b6064bca-d639-4186-ae26-dacd1b50503e"
           },
           "sourceId" : "35",
           "tags" : "Relationship"
@@ -1428,7 +1472,7 @@
         "id" : "36",
         "name" : "Service 5 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "insurancesystem.161bdf87-d79a-4dc0-a432-37d0fd5a0325"
+          "structurizr.dsl.identifier" : "insurancesystem.bbaf0018-6baa-4199-ab76-5334d1845294"
         },
         "tags" : "Element,Container,Service 5,Database"
       }, {
@@ -1444,7 +1488,7 @@
           "destinationId" : "39",
           "id" : "40",
           "properties" : {
-            "structurizr.dsl.identifier" : "d21cf63d-e5fd-4744-95a2-5f0983fa7e6a"
+            "structurizr.dsl.identifier" : "38fb864a-d92b-4754-9317-e934f7d6605f"
           },
           "sourceId" : "38",
           "tags" : "Relationship"
@@ -1456,7 +1500,7 @@
         "id" : "39",
         "name" : "Service 6 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "insurancesystem.a0bb1bf4-2ee2-4c65-88f0-8ffc24e79afa"
+          "structurizr.dsl.identifier" : "insurancesystem.4e2a5216-6aa3-4c9d-acb1-562503790656"
         },
         "tags" : "Element,Container,Service 6,Database"
       }, {
@@ -1472,7 +1516,7 @@
           "destinationId" : "42",
           "id" : "43",
           "properties" : {
-            "structurizr.dsl.identifier" : "c24b6e1a-5d6d-43fe-914c-bb2ee1bf4021"
+            "structurizr.dsl.identifier" : "d4bb95e5-c140-4f6b-aad4-94bcf7fe2be0"
           },
           "sourceId" : "41",
           "tags" : "Relationship"
@@ -1480,7 +1524,7 @@
           "destinationId" : "44",
           "id" : "68",
           "properties" : {
-            "structurizr.dsl.identifier" : "1f199cf8-3c11-4e0b-ac3a-d81896219432"
+            "structurizr.dsl.identifier" : "52fbc516-641f-4de7-a066-53cea839f318"
           },
           "sourceId" : "41",
           "tags" : "Relationship"
@@ -1492,7 +1536,7 @@
         "id" : "42",
         "name" : "Service 7 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "insurancesystem.0e0fc874-2209-446d-9c33-38d79d08f34e"
+          "structurizr.dsl.identifier" : "insurancesystem.096c9399-f117-4437-8cfe-d8e295b87169"
         },
         "tags" : "Element,Container,Service 7,Database"
       }, {
@@ -1508,7 +1552,7 @@
           "destinationId" : "45",
           "id" : "46",
           "properties" : {
-            "structurizr.dsl.identifier" : "5547fd91-01f9-4889-95ab-5aa7dba2e3cf"
+            "structurizr.dsl.identifier" : "84b8cfe7-2f02-489c-8487-64ca3bfd9018"
           },
           "sourceId" : "44",
           "tags" : "Relationship"
@@ -1520,7 +1564,7 @@
         "id" : "45",
         "name" : "Service 8 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "insurancesystem.c49ae579-b565-4dd3-8698-c961e2ed20d0"
+          "structurizr.dsl.identifier" : "insurancesystem.7de50a6d-9874-4e2e-91c3-c77f6f64c558"
         },
         "tags" : "Element,Container,Service 8,Database"
       } ],
@@ -1536,7 +1580,7 @@
         "destinationId" : "8",
         "id" : "91",
         "properties" : {
-          "structurizr.dsl.identifier" : "51a92c50-5739-4aaa-8dff-c7975d11e239"
+          "structurizr.dsl.identifier" : "41092096-f34b-48d8-98cd-38931cb56f32"
         },
         "sourceId" : "20",
         "tags" : "Relationship"
@@ -1552,24 +1596,45 @@
         "id" : "96",
         "linkedRelationshipId" : "92",
         "sourceId" : "20"
-      }, {
-        "description" : "?Reads 2from and writes to",
-        "destinationId" : "154",
-        "id" : "159",
-        "linkedRelationshipId" : "157",
-        "sourceId" : "20",
-        "technology" : "MySQL Protocol/SSL"
-      }, {
-        "description" : "?Reads 2from and writes to",
-        "destinationId" : "153",
-        "id" : "160",
-        "linkedRelationshipId" : "157",
-        "sourceId" : "20",
-        "technology" : "MySQL Protocol/SSL"
       } ],
       "tags" : "Element,Software System"
     }, {
       "containers" : [ {
+        "components" : [ {
+          "description" : "REST",
+          "documentation" : { },
+          "id" : "155",
+          "name" : "API",
+          "properties" : {
+            "structurizr.dsl.identifier" : "restapi"
+          },
+          "relationships" : [ {
+            "description" : "Initialize payment",
+            "destinationId" : "13",
+            "id" : "165",
+            "properties" : {
+              "structurizr.dsl.identifier" : "5114ea37-b5b7-49e7-8dfd-0cfc72731872"
+            },
+            "sourceId" : "155",
+            "tags" : "Relationship",
+            "technology" : "REST"
+          }, {
+            "description" : "Initialize payment",
+            "destinationId" : "12",
+            "id" : "166",
+            "linkedRelationshipId" : "165",
+            "sourceId" : "155",
+            "technology" : "REST"
+          }, {
+            "description" : "Initialize payment",
+            "destinationId" : "8",
+            "id" : "167",
+            "linkedRelationshipId" : "165",
+            "sourceId" : "155",
+            "technology" : "REST"
+          } ],
+          "tags" : "Element,Component"
+        } ],
         "description" : "Allows employees to view and manage information regarding the veterinarians, the clients, and their pets.",
         "documentation" : { },
         "id" : "154",
@@ -1578,32 +1643,36 @@
           "structurizr.dsl.identifier" : "webapplication2"
         },
         "relationships" : [ {
-          "description" : "Reads from and writes to",
-          "destinationId" : "155",
-          "id" : "156",
+          "description" : "Initialize payment",
+          "destinationId" : "12",
+          "id" : "157",
           "properties" : {
-            "structurizr.dsl.identifier" : "1d5bfd0d-7154-44e8-933f-e64fc5e69d39"
+            "structurizr.dsl.identifier" : "8f8cd969-d9b0-4103-b04a-60de40c0cf61"
           },
           "sourceId" : "154",
           "tags" : "Relationship",
-          "technology" : "MySQL Protocol/SSL"
+          "technology" : "REST"
         }, {
           "description" : "Initialize payment",
           "destinationId" : "8",
-          "id" : "161",
-          "properties" : {
-            "structurizr.dsl.identifier" : "30aeae29-142a-44fb-af20-a0fe31f3cab8"
-          },
+          "id" : "158",
+          "linkedRelationshipId" : "157",
           "sourceId" : "154",
-          "tags" : "Relationship",
-          "technology" : "MySQL Protocol/SSL"
+          "technology" : "REST"
+        }, {
+          "description" : "Initialize payment",
+          "destinationId" : "13",
+          "id" : "168",
+          "linkedRelationshipId" : "165",
+          "sourceId" : "154",
+          "technology" : "REST"
         } ],
         "tags" : "Element,Container,Application",
         "technology" : "Java and Spring Boot"
       }, {
         "description" : "Stores information regarding the veterinarians, the clients, and their pets.",
         "documentation" : { },
-        "id" : "155",
+        "id" : "156",
         "name" : "Database",
         "properties" : {
           "structurizr.dsl.identifier" : "database2"
@@ -1612,15 +1681,7 @@
         "technology" : "Relational database schema"
       } ],
       "description" : "Allows employees to view and manage information regarding the veterinarians, the clients, and their pets.",
-      "documentation" : {
-        "sections" : [ {
-          "content" : "#hi to springPetClinic docs",
-          "filename" : "README.md",
-          "format" : "Markdown",
-          "order" : 1,
-          "title" : ""
-        } ]
-      },
+      "documentation" : { },
       "id" : "153",
       "location" : "Unspecified",
       "name" : "Spring PetClinic",
@@ -1629,18 +1690,32 @@
       },
       "relationships" : [ {
         "description" : "Initialize payment",
-        "destinationId" : "8",
-        "id" : "162",
-        "linkedRelationshipId" : "161",
+        "destinationId" : "12",
+        "id" : "159",
+        "linkedRelationshipId" : "157",
         "sourceId" : "153",
-        "technology" : "MySQL Protocol/SSL"
+        "technology" : "REST"
+      }, {
+        "description" : "Initialize payment",
+        "destinationId" : "8",
+        "id" : "160",
+        "linkedRelationshipId" : "157",
+        "sourceId" : "153",
+        "technology" : "REST"
+      }, {
+        "description" : "Initialize payment",
+        "destinationId" : "13",
+        "id" : "169",
+        "linkedRelationshipId" : "165",
+        "sourceId" : "153",
+        "technology" : "REST"
       } ],
       "tags" : "Element,Software System"
     } ]
   },
   "name" : "Amazon Web Services Example",
   "properties" : {
-    "structurizr.dsl" : "CgovKgogKiBUaGlzIGlzIGEgY29tYmluZWQgdmVyc2lvbiBvZiB0aGUgZm9sbG93aW5nIHdvcmtzcGFjZXMsIHdpdGggYXV0b21hdGljIGxheW91dCBlbmFibGVkOgogKgogKiAtICJCaWcgQmFuayBwbGMgLSBTeXN0ZW0gTGFuZHNjYXBlIiAoaHR0cHM6Ly9zdHJ1Y3R1cml6ci5jb20vc2hhcmUvMjgyMDEvKQogKiAtICJCaWcgQmFuayBwbGMgLSBJbnRlcm5ldCBCYW5raW5nIFN5c3RlbSIgKGh0dHBzOi8vc3RydWN0dXJpenIuY29tL3NoYXJlLzM2MTQxLykKKi8Kd29ya3NwYWNlIGV4dGVuZHMgL21vZGVsLmRzbCB7CiAgICBuYW1lICJBbWF6b24gV2ViIFNlcnZpY2VzIEV4YW1wbGUiCiAgICBkZXNjcmlwdGlvbiAiQW4gZXhhbXBsZSBBV1MgZGVwbG95bWVudCBhcmNoaXRlY3R1cmUuIgogICAgIyAhaWRlbnRpZmllcnMgaGllcmFyY2hpY2FsCgogICAgbW9kZWwgewoKICAgICAgICBzcHJpbmdQZXRDbGluaWMgPSBzb2Z0d2FyZXN5c3RlbSAiU3ByaW5nIFBldENsaW5pYyIgIkFsbG93cyBlbXBsb3llZXMgdG8gdmlldyBhbmQgbWFuYWdlIGluZm9ybWF0aW9uIHJlZ2FyZGluZyB0aGUgdmV0ZXJpbmFyaWFucywgdGhlIGNsaWVudHMsIGFuZCB0aGVpciBwZXRzLiIgewogICAgICAgICAgICAhZG9jcyBkb2NzL3NwcmluZ1BldENsaW5pYwogICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbjIgPSBjb250YWluZXIgIldlYiBBcHBsaWNhdGlvbiIgIkFsbG93cyBlbXBsb3llZXMgdG8gdmlldyBhbmQgbWFuYWdlIGluZm9ybWF0aW9uIHJlZ2FyZGluZyB0aGUgdmV0ZXJpbmFyaWFucywgdGhlIGNsaWVudHMsIGFuZCB0aGVpciBwZXRzLiIgIkphdmEgYW5kIFNwcmluZyBCb290IiB7CiAgICAgICAgICAgICAgICB0YWdzICJBcHBsaWNhdGlvbiIKICAgICAgICAgICAgfQogICAgICAgICAgICBkYXRhYmFzZTIgPSBjb250YWluZXIgIkRhdGFiYXNlIiAiU3RvcmVzIGluZm9ybWF0aW9uIHJlZ2FyZGluZyB0aGUgdmV0ZXJpbmFyaWFucywgdGhlIGNsaWVudHMsIGFuZCB0aGVpciBwZXRzLiIgIlJlbGF0aW9uYWwgZGF0YWJhc2Ugc2NoZW1hIiB7CiAgICAgICAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgd2ViQXBwbGljYXRpb24yIC0+IGRhdGFiYXNlMiAiUmVhZHMgZnJvbSBhbmQgd3JpdGVzIHRvIiAiTXlTUUwgUHJvdG9jb2wvU1NMIgogICAgICAgICMgd2ViQXBwbGljYXRpb24yIC0+IHNlcnZpY2UzQXBpICJSZWFkcyAyZnJvbSBhbmQgd3JpdGVzIHRvIiAiTXlTUUwgUHJvdG9jb2wvU1NMIgogICAgICAgIAogICAgICAgIGluc3VyYW5jZVN5c3RlbS5zZXJ2aWNlM0FwaSAtPiB3ZWJBcHBsaWNhdGlvbjIgIj9SZWFkcyAyZnJvbSBhbmQgd3JpdGVzIHRvIiAiTXlTUUwgUHJvdG9jb2wvU1NMIgoKICAgICAgICB3ZWJBcHBsaWNhdGlvbjIgLT4gaW50ZXJuZXRCYW5raW5nU3lzdGVtICJJbml0aWFsaXplIHBheW1lbnQiICJNeVNRTCBQcm90b2NvbC9TU0wiCgogICAgICAgIGxpdmUgPSBkZXBsb3ltZW50RW52aXJvbm1lbnQgIkxpdmUyIiB7CgogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQW1hem9uIFdlYiBTZXJ2aWNlcyIgewogICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIENsb3VkIgoKICAgICAgICAgICAgICAgIHJlZ2lvbiA9IGRlcGxveW1lbnROb2RlICJVUy1FYXN0LTEiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gUmVnaW9uIgoKICAgICAgICAgICAgICAgICAgICByb3V0ZTUzID0gaW5mcmFzdHJ1Y3R1cmVOb2RlICJSb3V0ZSA1MyIgewogICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiSGlnaGx5IGF2YWlsYWJsZSBhbmQgc2NhbGFibGUgY2xvdWQgRE5TIHNlcnZpY2UuIgogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gUm91dGUgNTMiCiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBlbGIgPSBpbmZyYXN0cnVjdHVyZU5vZGUgIkVsYXN0aWMgTG9hZCBCYWxhbmNlciIgewogICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQXV0b21hdGljYWxseSBkaXN0cmlidXRlcyBpbmNvbWluZyBhcHBsaWNhdGlvbiB0cmFmZmljLiIKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIEVsYXN0aWMgTG9hZCBCYWxhbmNpbmciCiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQXV0b3NjYWxpbmcgZ3JvdXAiIHsKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIEF1dG8gU2NhbGluZyIKCiAgICAgICAgICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJBbWF6b24gRUMyIiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gRUMyIgoKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHdlYkFwcGxpY2F0aW9uSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSB3ZWJBcHBsaWNhdGlvbjIKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkFtYXpvbiBSRFMiIHsKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIFJEUyIKCiAgICAgICAgICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJNeVNRTCIgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIFJEUyBNeVNRTCBpbnN0YW5jZSIKCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYXRhYmFzZUluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgZGF0YWJhc2UyCiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CgogICAgICAgICAgICByb3V0ZTUzIC0+IGVsYiAiRm9yd2FyZHMgcmVxdWVzdHMgdG8iICJIVFRQUyIKICAgICAgICAgICAgZWxiIC0+IHdlYkFwcGxpY2F0aW9uSW5zdGFuY2UgIkZvcndhcmRzIHJlcXVlc3RzIHRvIiAiSFRUUFMiCiAgICAgICAgfQogICAKICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtbGFuZHNjYXBlIHNwcmluZ1BldENsaW5pYyAiU3lzdGVtTGFuZHNjYXBlIiB7CiAgICAgICAgICAgIGluY2x1ZGUgLT5zcHJpbmdQZXRDbGluaWMtPgogICAgICAgICAgICBhdXRvTGF5b3V0CiAgICAgICAgfQogICAgICAgIGRlcGxveW1lbnQgc3ByaW5nUGV0Q2xpbmljICJMaXZlIiAiQW1hem9uV2ViU2VydmljZXNEZXBsb3ltZW50IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IGxyCgogICAgICAgICAgICBhbmltYXRpb24gewogICAgICAgICAgICAgICAgcm91dGU1MwogICAgICAgICAgICAgICAgZWxiCiAgICAgICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbkluc3RhbmNlCiAgICAgICAgICAgICAgICBkYXRhYmFzZUluc3RhbmNlCiAgICAgICAgICAgIH0KICAgICAgICB9CgoKCgogICAgfQp9Cg=="
+    "structurizr.dsl" : "CgovKgogKiBUaGlzIGlzIGEgY29tYmluZWQgdmVyc2lvbiBvZiB0aGUgZm9sbG93aW5nIHdvcmtzcGFjZXMsIHdpdGggYXV0b21hdGljIGxheW91dCBlbmFibGVkOgogKgogKiAtICJCaWcgQmFuayBwbGMgLSBTeXN0ZW0gTGFuZHNjYXBlIiAoaHR0cHM6Ly9zdHJ1Y3R1cml6ci5jb20vc2hhcmUvMjgyMDEvKQogKiAtICJCaWcgQmFuayBwbGMgLSBJbnRlcm5ldCBCYW5raW5nIFN5c3RlbSIgKGh0dHBzOi8vc3RydWN0dXJpenIuY29tL3NoYXJlLzM2MTQxLykKKi8Kd29ya3NwYWNlIGV4dGVuZHMgLi4vLi4vbW9kZWwuZHNsIHsKICAgIG5hbWUgIkFtYXpvbiBXZWIgU2VydmljZXMgRXhhbXBsZSIKICAgIGRlc2NyaXB0aW9uICJBbiBleGFtcGxlIEFXUyBkZXBsb3ltZW50IGFyY2hpdGVjdHVyZS4iCgogICAgbW9kZWwgewoKICAgICAgICBzcHJpbmdQZXRDbGluaWMgPSBzb2Z0d2FyZXN5c3RlbSAiU3ByaW5nIFBldENsaW5pYyIgIkFsbG93cyBlbXBsb3llZXMgdG8gdmlldyBhbmQgbWFuYWdlIGluZm9ybWF0aW9uIHJlZ2FyZGluZyB0aGUgdmV0ZXJpbmFyaWFucywgdGhlIGNsaWVudHMsIGFuZCB0aGVpciBwZXRzLiIgewogICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbjIgPSBjb250YWluZXIgIldlYiBBcHBsaWNhdGlvbiIgIkFsbG93cyBlbXBsb3llZXMgdG8gdmlldyBhbmQgbWFuYWdlIGluZm9ybWF0aW9uIHJlZ2FyZGluZyB0aGUgdmV0ZXJpbmFyaWFucywgdGhlIGNsaWVudHMsIGFuZCB0aGVpciBwZXRzLiIgIkphdmEgYW5kIFNwcmluZyBCb290IiB7CiAgICAgICAgICAgICAgICB0YWdzICJBcHBsaWNhdGlvbiIKCiAgICAgICAgICAgICAgICByZXN0QXBpID0gY29tcG9uZW50ICJBUEkiICJSRVNUIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGRhdGFiYXNlMiA9IGNvbnRhaW5lciAiRGF0YWJhc2UiICJTdG9yZXMgaW5mb3JtYXRpb24gcmVnYXJkaW5nIHRoZSB2ZXRlcmluYXJpYW5zLCB0aGUgY2xpZW50cywgYW5kIHRoZWlyIHBldHMuIiAiUmVsYXRpb25hbCBkYXRhYmFzZSBzY2hlbWEiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICB9CiAgICAgICAgfQoKCiAgICAgICAgd2ViQXBwbGljYXRpb24yIC0+IGludGVybmV0QmFua2luZ1N5c3RlbS5hcGlBcHBsaWNhdGlvbiAiSW5pdGlhbGl6ZSBwYXltZW50IiAiUkVTVCIKICAgICAgICBpbnRlcm5ldEJhbmtpbmdTeXN0ZW0uYXBpQXBwbGljYXRpb24gLT4gd2ViQXBwbGljYXRpb24yICJJbml0aWFsaXplIHBheW1lbnQgMiIgIlJFU1QiCgogICAgICAgIHJlc3RBcGkgLT4gaW50ZXJuZXRCYW5raW5nU3lzdGVtLmFwaUFwcGxpY2F0aW9uLnNpZ25pbkNvbnRyb2xsZXIgIkluaXRpYWxpemUgcGF5bWVudCIgIlJFU1QiCiAgICAgICAgaW50ZXJuZXRCYW5raW5nU3lzdGVtLmFwaUFwcGxpY2F0aW9uLnNpZ25pbkNvbnRyb2xsZXIgLT4gcmVzdEFwaSAiQUNLIHBheW1lbnQiICJSRVNUIgoKICAgICAgICBsaXZlID0gZGVwbG95bWVudEVudmlyb25tZW50ICJMaXZlMiIgewoKICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkFtYXpvbiBXZWIgU2VydmljZXMiIHsKICAgICAgICAgICAgICAgIHRhZ3MgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBDbG91ZCIKCiAgICAgICAgICAgICAgICByZWdpb24gPSBkZXBsb3ltZW50Tm9kZSAiVVMtRWFzdC0xIiB7CiAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIFJlZ2lvbiIKCiAgICAgICAgICAgICAgICAgICAgcm91dGU1MyA9IGluZnJhc3RydWN0dXJlTm9kZSAiUm91dGUgNTMiIHsKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkhpZ2hseSBhdmFpbGFibGUgYW5kIHNjYWxhYmxlIGNsb3VkIEROUyBzZXJ2aWNlLiIKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIFJvdXRlIDUzIgogICAgICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICAgICAgZWxiID0gaW5mcmFzdHJ1Y3R1cmVOb2RlICJFbGFzdGljIExvYWQgQmFsYW5jZXIiIHsKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkF1dG9tYXRpY2FsbHkgZGlzdHJpYnV0ZXMgaW5jb21pbmcgYXBwbGljYXRpb24gdHJhZmZpYy4iCiAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBFbGFzdGljIExvYWQgQmFsYW5jaW5nIgogICAgICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkF1dG9zY2FsaW5nIGdyb3VwIiB7CiAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBBdXRvIFNjYWxpbmciCgogICAgICAgICAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQW1hem9uIEVDMiIgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIEVDMiIKCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbkluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2Ugd2ViQXBwbGljYXRpb24yCiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJBbWF6b24gUkRTIiB7CiAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBSRFMiCgogICAgICAgICAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiTXlTUUwiIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBSRFMgTXlTUUwgaW5zdGFuY2UiCgogICAgICAgICAgICAgICAgICAgICAgICAgICAgZGF0YWJhc2VJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGRhdGFiYXNlMgogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQoKICAgICAgICAgICAgcm91dGU1MyAtPiBlbGIgIkZvcndhcmRzIHJlcXVlc3RzIHRvIiAiSFRUUFMiCiAgICAgICAgICAgIGVsYiAtPiB3ZWJBcHBsaWNhdGlvbkluc3RhbmNlICJGb3J3YXJkcyByZXF1ZXN0cyB0byIgIkhUVFBTIgogICAgICAgIH0KICAgCiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbWxhbmRzY2FwZSBzcHJpbmdQZXRDbGluaWMgIlN5c3RlbUxhbmRzY2FwZSIgewogICAgICAgICAgICBpbmNsdWRlIC0+c3ByaW5nUGV0Q2xpbmljLT4KICAgICAgICAgICAgYXV0b0xheW91dAogICAgICAgIH0KICAgICAgICBjb250YWluZXIgc3ByaW5nUGV0Q2xpbmljICJzcHJpbmdQZXRDbGluaWNfQ29udGV4dCJ7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvTGF5b3V0CiAgICAgCiAgICAgICAgfQogICAgICAgIGNvbXBvbmVudCB3ZWJBcHBsaWNhdGlvbjIgInNwcmluZ1BldENsaW5pY193ZWJBcHBsaWNhdGlvbjIiewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b0xheW91dAogICAgICAgIH0KICAgICAgICBkZXBsb3ltZW50IHNwcmluZ1BldENsaW5pYyAiTGl2ZSIgIkFtYXpvbldlYlNlcnZpY2VzRGVwbG95bWVudCIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b2xheW91dCBscgoKICAgICAgICAgICAgYW5pbWF0aW9uIHsKICAgICAgICAgICAgICAgIHJvdXRlNTMKICAgICAgICAgICAgICAgIGVsYgogICAgICAgICAgICAgICAgd2ViQXBwbGljYXRpb25JbnN0YW5jZQogICAgICAgICAgICAgICAgZGF0YWJhc2VJbnN0YW5jZQogICAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIGNvbXBvbmVudCBpbnRlcm5ldEJhbmtpbmdTeXN0ZW0uYXBpQXBwbGljYXRpb24gIkNvbXBvbmVudHNPdmVycmlkZSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYW5pbWF0aW9uIHsKICAgICAgICAgICAgICAgIGludGVybmV0QmFua2luZ1N5c3RlbS5zaW5nbGVQYWdlQXBwbGljYXRpb24gaW50ZXJuZXRCYW5raW5nU3lzdGVtLm1vYmlsZUFwcCBpbnRlcm5ldEJhbmtpbmdTeXN0ZW0uZGF0YWJhc2UgZW1haWwgbWFpbmZyYW1lCiAgICAgICAgICAgICAgICBpbnRlcm5ldEJhbmtpbmdTeXN0ZW0uYXBpQXBwbGljYXRpb24uc2lnbmluQ29udHJvbGxlciBpbnRlcm5ldEJhbmtpbmdTeXN0ZW0uYXBpQXBwbGljYXRpb24uc2VjdXJpdHlDb21wb25lbnQKICAgICAgICAgICAgICAgIGludGVybmV0QmFua2luZ1N5c3RlbS5hcGlBcHBsaWNhdGlvbi5hY2NvdW50c1N1bW1hcnlDb250cm9sbGVyIGludGVybmV0QmFua2luZ1N5c3RlbS5hcGlBcHBsaWNhdGlvbi5tYWluZnJhbWVCYW5raW5nU3lzdGVtRmFjYWRlCiAgICAgICAgICAgICAgICBpbnRlcm5ldEJhbmtpbmdTeXN0ZW0uYXBpQXBwbGljYXRpb24ucmVzZXRQYXNzd29yZENvbnRyb2xsZXIgaW50ZXJuZXRCYW5raW5nU3lzdGVtLmFwaUFwcGxpY2F0aW9uLmVtYWlsQ29tcG9uZW50CiAgICAgICAgICAgIH0KICAgICAgICAgICAgYXV0b0xheW91dAogICAgICAgICAgICBkZXNjcmlwdGlvbiAiVGhlIGNvbXBvbmVudCBkaWFncmFtIGZvciB0aGUgQVBJIEFwcGxpY2F0aW9uIChhbmltYXRpb24pLiIKICAgICAgICB9CgoKCiAgICB9Cn0K"
   },
   "views" : {
     "componentViews" : [ {
@@ -1782,10 +1857,156 @@
       }, {
         "id" : "99"
       } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "154",
+      "elements" : [ {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "155",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "springPetClinic_webApplication2",
+      "order" : 14,
+      "relationships" : [ {
+        "id" : "167"
+      }, {
+        "id" : "174"
+      } ]
+    }, {
+      "animations" : [ {
+        "elements" : [ "10", "19", "5", "6", "9" ],
+        "order" : 1
+      }, {
+        "elements" : [ "13", "16" ],
+        "order" : 2,
+        "relationships" : [ "73", "77", "81", "85" ]
+      }, {
+        "elements" : [ "14", "17" ],
+        "order" : 3,
+        "relationships" : [ "75", "79", "82", "87" ]
+      }, {
+        "elements" : [ "15", "18" ],
+        "order" : 4,
+        "relationships" : [ "76", "80", "83", "84", "89" ]
+      } ],
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "12",
+      "description" : "The component diagram for the API Application (animation).",
+      "elements" : [ {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "10",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "153",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "ComponentsOverride",
+      "order" : 16,
+      "relationships" : [ {
+        "id" : "102"
+      }, {
+        "id" : "169"
+      }, {
+        "id" : "172"
+      }, {
+        "id" : "73"
+      }, {
+        "id" : "75"
+      }, {
+        "id" : "76"
+      }, {
+        "id" : "77"
+      }, {
+        "id" : "79"
+      }, {
+        "id" : "80"
+      }, {
+        "id" : "81"
+      }, {
+        "id" : "82"
+      }, {
+        "id" : "83"
+      }, {
+        "id" : "84"
+      }, {
+        "id" : "85"
+      }, {
+        "id" : "87"
+      }, {
+        "id" : "89"
+      }, {
+        "id" : "95"
+      } ]
     } ],
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "springPetClinic",
       "styles" : {
         "elements" : [ {
           "color" : "#ffffff",
@@ -2245,6 +2466,38 @@
         "id" : "66"
       } ],
       "softwareSystemId" : "20"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "154",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "156",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "springPetClinic_Context",
+      "order" : 13,
+      "relationships" : [ {
+        "id" : "158"
+      }, {
+        "id" : "163"
+      } ],
+      "softwareSystemId" : "153"
     } ],
     "deploymentViews" : [ {
       "animations" : [ {
@@ -2467,20 +2720,19 @@
       "softwareSystemId" : "8"
     }, {
       "animations" : [ {
-        "elements" : [ "163", "164", "165" ],
+        "elements" : [ "175", "176", "177" ],
         "order" : 1
       }, {
-        "elements" : [ "166" ],
+        "elements" : [ "178" ],
         "order" : 2,
-        "relationships" : [ "174" ]
+        "relationships" : [ "185" ]
       }, {
-        "elements" : [ "167", "168", "169" ],
+        "elements" : [ "179", "180", "181" ],
         "order" : 3,
-        "relationships" : [ "175" ]
+        "relationships" : [ "186" ]
       }, {
-        "elements" : [ "170", "171", "172" ],
-        "order" : 4,
-        "relationships" : [ "173" ]
+        "elements" : [ "182", "183", "184" ],
+        "order" : 4
       } ],
       "automaticLayout" : {
         "applied" : false,
@@ -2492,55 +2744,53 @@
         "vertices" : false
       },
       "elements" : [ {
-        "id" : "163",
+        "id" : "175",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "164",
+        "id" : "176",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "165",
+        "id" : "177",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "166",
+        "id" : "178",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "167",
+        "id" : "179",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "168",
+        "id" : "180",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "169",
+        "id" : "181",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "170",
+        "id" : "182",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "171",
+        "id" : "183",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "172",
+        "id" : "184",
         "x" : 0,
         "y" : 0
       } ],
       "environment" : "Live2",
       "key" : "AmazonWebServicesDeployment",
-      "order" : 13,
+      "order" : 15,
       "relationships" : [ {
-        "id" : "173"
+        "id" : "185"
       }, {
-        "id" : "174"
-      }, {
-        "id" : "175"
+        "id" : "186"
       } ],
       "softwareSystemId" : "153"
     } ],
@@ -2632,10 +2882,6 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "20",
-        "x" : 0,
-        "y" : 0
-      }, {
         "id" : "153",
         "x" : 0,
         "y" : 0
@@ -2644,13 +2890,9 @@
       "key" : "springPetClinic",
       "order" : 12,
       "relationships" : [ {
-        "id" : "108"
-      }, {
         "id" : "160"
       }, {
-        "id" : "162"
-      }, {
-        "id" : "91"
+        "id" : "164"
       } ]
     } ]
   }
