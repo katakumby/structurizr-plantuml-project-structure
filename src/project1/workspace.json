@@ -1,0 +1,2539 @@
+{
+  "configuration" : { },
+  "description" : "An example AWS deployment architecture.",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedDate" : "2024-03-24T20:29:34Z",
+  "model" : {
+    "deploymentNodes" : [ {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "9",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Development",
+          "id" : "99",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "developersinglepageapplicationinstance"
+          },
+          "relationships" : [ {
+            "description" : "Makes API calls to",
+            "destinationId" : "104",
+            "id" : "105",
+            "linkedRelationshipId" : "62",
+            "sourceId" : "99",
+            "technology" : "JSON/HTTPS"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Development",
+        "id" : "98",
+        "instances" : "1",
+        "name" : "Web Browser",
+        "properties" : {
+          "structurizr.dsl.identifier" : "f139a081-f352-46c5-998c-71856bb5045d"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Chrome, Firefox, Safari, or Edge"
+      }, {
+        "children" : [ {
+          "containerInstances" : [ {
+            "containerId" : "11",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Development",
+            "id" : "102",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "developerwebapplicationinstance"
+            },
+            "relationships" : [ {
+              "description" : "Delivers to the customer's web browser",
+              "destinationId" : "99",
+              "id" : "103",
+              "linkedRelationshipId" : "60",
+              "sourceId" : "102"
+            } ],
+            "tags" : "Container Instance"
+          }, {
+            "containerId" : "12",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Development",
+            "id" : "104",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "developerapiapplicationinstance"
+            },
+            "relationships" : [ {
+              "description" : "Reads from and writes to",
+              "destinationId" : "108",
+              "id" : "109",
+              "linkedRelationshipId" : "74",
+              "sourceId" : "104",
+              "technology" : "SQL/TCP"
+            }, {
+              "description" : "Makes API calls to",
+              "destinationId" : "112",
+              "id" : "113",
+              "linkedRelationshipId" : "76",
+              "sourceId" : "104",
+              "technology" : "XML/HTTPS"
+            } ],
+            "tags" : "Container Instance"
+          } ],
+          "environment" : "Development",
+          "id" : "101",
+          "instances" : "1",
+          "name" : "Apache Tomcat",
+          "properties" : {
+            "structurizr.dsl.identifier" : "87748e11-3e34-44a5-b206-0f0b06c9960c"
+          },
+          "tags" : "Element,Deployment Node",
+          "technology" : "Apache Tomcat 8.x"
+        } ],
+        "environment" : "Development",
+        "id" : "100",
+        "instances" : "1",
+        "name" : "Docker Container - Web Server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "f8dec492-15c8-43cd-bf8c-9d6f1c81f824"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Docker"
+      }, {
+        "children" : [ {
+          "containerInstances" : [ {
+            "containerId" : "19",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Development",
+            "id" : "108",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "developerdatabaseinstance"
+            },
+            "tags" : "Container Instance"
+          } ],
+          "environment" : "Development",
+          "id" : "107",
+          "instances" : "1",
+          "name" : "Database Server",
+          "properties" : {
+            "structurizr.dsl.identifier" : "4f0f91ab-eadb-4fc3-a091-a5242b0206ba"
+          },
+          "tags" : "Element,Deployment Node",
+          "technology" : "Oracle 12c"
+        } ],
+        "environment" : "Development",
+        "id" : "106",
+        "instances" : "1",
+        "name" : "Docker Container - Database Server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "bc999f6b-ce19-451c-9ef8-7badce1dca93"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Docker"
+      } ],
+      "environment" : "Development",
+      "id" : "97",
+      "instances" : "1",
+      "name" : "Developer Laptop",
+      "properties" : {
+        "structurizr.dsl.identifier" : "99a1f4da-3eb3-40e5-8114-644677cb11e7"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Microsoft Windows 10 or Apple macOS"
+    }, {
+      "children" : [ {
+        "environment" : "Development",
+        "id" : "111",
+        "instances" : "1",
+        "name" : "bigbank-dev001",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ca7d26e6-b198-4a10-a742-5ad0fc4152d6"
+        },
+        "softwareSystemInstances" : [ {
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Development",
+          "id" : "112",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "f8718cc8-0a4b-49d4-be91-3d4db4463d3c"
+          },
+          "softwareSystemId" : "5",
+          "tags" : "Software System Instance"
+        } ],
+        "tags" : "Element,Deployment Node,"
+      } ],
+      "environment" : "Development",
+      "id" : "110",
+      "instances" : "1",
+      "name" : "Big Bank plc",
+      "properties" : {
+        "structurizr.dsl.identifier" : "3225640f-87f1-490e-8912-d595acdd2b16"
+      },
+      "tags" : "Element,Deployment Node,",
+      "technology" : "Big Bank plc data center"
+    }, {
+      "containerInstances" : [ {
+        "containerId" : "10",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "Live",
+        "id" : "115",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "livemobileappinstance"
+        },
+        "relationships" : [ {
+          "description" : "Makes API calls to",
+          "destinationId" : "126",
+          "id" : "127",
+          "linkedRelationshipId" : "66",
+          "sourceId" : "115",
+          "technology" : "JSON/HTTPS"
+        } ],
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "Live",
+      "id" : "114",
+      "instances" : "1",
+      "name" : "Customer's mobile device",
+      "properties" : {
+        "structurizr.dsl.identifier" : "b1134f9b-8472-4b91-92e2-081a22ec1a10"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Apple iOS or Android"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "9",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "118",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "livesinglepageapplicationinstance"
+          },
+          "relationships" : [ {
+            "description" : "Makes API calls to",
+            "destinationId" : "126",
+            "id" : "128",
+            "linkedRelationshipId" : "62",
+            "sourceId" : "118",
+            "technology" : "JSON/HTTPS"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "117",
+        "instances" : "1",
+        "name" : "Web Browser",
+        "properties" : {
+          "structurizr.dsl.identifier" : "5f24e2d5-56fa-4abe-8f77-8e7248e28f34"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Chrome, Firefox, Safari, or Edge"
+      } ],
+      "environment" : "Live",
+      "id" : "116",
+      "instances" : "1",
+      "name" : "Customer's computer",
+      "properties" : {
+        "structurizr.dsl.identifier" : "d3ed3fee-88bb-4b8c-8a4e-ec078125ab9d"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Microsoft Windows or Apple macOS"
+    }, {
+      "children" : [ {
+        "children" : [ {
+          "containerInstances" : [ {
+            "containerId" : "11",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Live",
+            "id" : "122",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "livewebapplicationinstance"
+            },
+            "relationships" : [ {
+              "description" : "Delivers to the customer's web browser",
+              "destinationId" : "118",
+              "id" : "123",
+              "linkedRelationshipId" : "60",
+              "sourceId" : "122"
+            } ],
+            "tags" : "Container Instance"
+          } ],
+          "environment" : "Live",
+          "id" : "121",
+          "instances" : "1",
+          "name" : "Apache Tomcat",
+          "properties" : {
+            "structurizr.dsl.identifier" : "b6c9aa79-dd5e-46ff-81ce-fec2a18cd39e"
+          },
+          "tags" : "Element,Deployment Node",
+          "technology" : "Apache Tomcat 8.x"
+        } ],
+        "environment" : "Live",
+        "id" : "120",
+        "instances" : "4",
+        "name" : "bigbank-web***",
+        "properties" : {
+          "structurizr.dsl.identifier" : "bdf6a575-4a92-4bcb-bd7c-44721ca9e9fb"
+        },
+        "tags" : "Element,Deployment Node,",
+        "technology" : "Ubuntu 16.04 LTS"
+      }, {
+        "children" : [ {
+          "containerInstances" : [ {
+            "containerId" : "12",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Live",
+            "id" : "126",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "liveapiapplicationinstance"
+            },
+            "relationships" : [ {
+              "description" : "Reads from and writes to",
+              "destinationId" : "131",
+              "id" : "132",
+              "linkedRelationshipId" : "74",
+              "sourceId" : "126",
+              "technology" : "SQL/TCP"
+            }, {
+              "description" : "Reads from and writes to",
+              "destinationId" : "135",
+              "id" : "136",
+              "linkedRelationshipId" : "74",
+              "sourceId" : "126",
+              "technology" : "SQL/TCP"
+            }, {
+              "description" : "Makes API calls to",
+              "destinationId" : "138",
+              "id" : "139",
+              "linkedRelationshipId" : "76",
+              "sourceId" : "126",
+              "technology" : "XML/HTTPS"
+            } ],
+            "tags" : "Container Instance"
+          } ],
+          "environment" : "Live",
+          "id" : "125",
+          "instances" : "1",
+          "name" : "Apache Tomcat",
+          "properties" : {
+            "structurizr.dsl.identifier" : "02160553-551f-41ee-9975-99358eacde2b"
+          },
+          "tags" : "Element,Deployment Node",
+          "technology" : "Apache Tomcat 8.x"
+        } ],
+        "environment" : "Live",
+        "id" : "124",
+        "instances" : "8",
+        "name" : "bigbank-api***",
+        "properties" : {
+          "structurizr.dsl.identifier" : "97d1862f-0b9c-4969-9431-26570c1cae94"
+        },
+        "tags" : "Element,Deployment Node,",
+        "technology" : "Ubuntu 16.04 LTS"
+      }, {
+        "children" : [ {
+          "containerInstances" : [ {
+            "containerId" : "19",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Live",
+            "id" : "131",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "liveprimarydatabaseinstance"
+            },
+            "tags" : "Container Instance"
+          } ],
+          "environment" : "Live",
+          "id" : "130",
+          "instances" : "1",
+          "name" : "Oracle - Primary",
+          "properties" : {
+            "structurizr.dsl.identifier" : "primarydatabaseserver"
+          },
+          "relationships" : [ {
+            "description" : "Replicates data to",
+            "destinationId" : "134",
+            "id" : "140",
+            "properties" : {
+              "structurizr.dsl.identifier" : "3bcc557c-e910-42d7-8b5d-cb368c7c737d"
+            },
+            "sourceId" : "130",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Deployment Node",
+          "technology" : "Oracle 12c"
+        } ],
+        "environment" : "Live",
+        "id" : "129",
+        "instances" : "1",
+        "name" : "bigbank-db01",
+        "properties" : {
+          "structurizr.dsl.identifier" : "916b8f87-c480-4d35-abb1-61c00d132b33"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Ubuntu 16.04 LTS"
+      }, {
+        "children" : [ {
+          "containerInstances" : [ {
+            "containerId" : "19",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Live",
+            "id" : "135",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "livesecondarydatabaseinstance"
+            },
+            "tags" : "Container Instance"
+          } ],
+          "environment" : "Live",
+          "id" : "134",
+          "instances" : "1",
+          "name" : "Oracle - Secondary",
+          "properties" : {
+            "structurizr.dsl.identifier" : "secondarydatabaseserver"
+          },
+          "tags" : "Element,Deployment Node,Failover",
+          "technology" : "Oracle 12c"
+        } ],
+        "environment" : "Live",
+        "id" : "133",
+        "instances" : "1",
+        "name" : "bigbank-db02",
+        "properties" : {
+          "structurizr.dsl.identifier" : "43bef87e-a926-4d9a-a36f-59c851ba48ce"
+        },
+        "tags" : "Element,Deployment Node,Failover",
+        "technology" : "Ubuntu 16.04 LTS"
+      }, {
+        "environment" : "Live",
+        "id" : "137",
+        "instances" : "1",
+        "name" : "bigbank-prod001",
+        "properties" : {
+          "structurizr.dsl.identifier" : "a9d59204-8033-4319-90c8-14ecc9403ff2"
+        },
+        "softwareSystemInstances" : [ {
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "138",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "4b5961f6-91c8-4d73-830f-17edbbd33c10"
+          },
+          "softwareSystemId" : "5",
+          "tags" : "Software System Instance"
+        } ],
+        "tags" : "Element,Deployment Node,"
+      } ],
+      "environment" : "Live",
+      "id" : "119",
+      "instances" : "1",
+      "name" : "Big Bank plc",
+      "properties" : {
+        "structurizr.dsl.identifier" : "4b31022c-4253-4059-a132-44ae556c254b"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Big Bank plc data center"
+    }, {
+      "children" : [ {
+        "children" : [ {
+          "children" : [ {
+            "containerInstances" : [ {
+              "containerId" : "142",
+              "deploymentGroups" : [ "Default" ],
+              "environment" : "Live2",
+              "id" : "157",
+              "instanceId" : 1,
+              "properties" : {
+                "structurizr.dsl.identifier" : "webapplicationinstance"
+              },
+              "relationships" : [ {
+                "description" : "Reads from and writes to",
+                "destinationId" : "160",
+                "id" : "161",
+                "linkedRelationshipId" : "144",
+                "sourceId" : "157",
+                "technology" : "MySQL Protocol/SSL"
+              } ],
+              "tags" : "Container Instance"
+            } ],
+            "environment" : "Live2",
+            "id" : "156",
+            "instances" : "1",
+            "name" : "Amazon EC2",
+            "properties" : {
+              "structurizr.dsl.identifier" : "5fcd136d-9884-4de4-88fa-bf3f0c9e528b"
+            },
+            "tags" : "Element,Deployment Node,Amazon Web Services - EC2"
+          } ],
+          "environment" : "Live2",
+          "id" : "155",
+          "instances" : "1",
+          "name" : "Autoscaling group",
+          "properties" : {
+            "structurizr.dsl.identifier" : "aee719e9-59d3-4fd8-9334-9ac09e8898f6"
+          },
+          "tags" : "Element,Deployment Node,Amazon Web Services - Auto Scaling"
+        }, {
+          "children" : [ {
+            "containerInstances" : [ {
+              "containerId" : "143",
+              "deploymentGroups" : [ "Default" ],
+              "environment" : "Live2",
+              "id" : "160",
+              "instanceId" : 1,
+              "properties" : {
+                "structurizr.dsl.identifier" : "databaseinstance"
+              },
+              "tags" : "Container Instance"
+            } ],
+            "environment" : "Live2",
+            "id" : "159",
+            "instances" : "1",
+            "name" : "MySQL",
+            "properties" : {
+              "structurizr.dsl.identifier" : "013e417a-098a-4dcf-8dfc-66e963515ad4"
+            },
+            "tags" : "Element,Deployment Node,Amazon Web Services - RDS MySQL instance"
+          } ],
+          "environment" : "Live2",
+          "id" : "158",
+          "instances" : "1",
+          "name" : "Amazon RDS",
+          "properties" : {
+            "structurizr.dsl.identifier" : "379f2440-326a-4305-bf6e-1f7130da5210"
+          },
+          "tags" : "Element,Deployment Node,Amazon Web Services - RDS"
+        } ],
+        "environment" : "Live2",
+        "id" : "152",
+        "infrastructureNodes" : [ {
+          "description" : "Highly available and scalable cloud DNS service.",
+          "environment" : "Live2",
+          "id" : "153",
+          "name" : "Route 53",
+          "properties" : {
+            "structurizr.dsl.identifier" : "route53"
+          },
+          "relationships" : [ {
+            "description" : "Forwards requests to",
+            "destinationId" : "154",
+            "id" : "162",
+            "properties" : {
+              "structurizr.dsl.identifier" : "1aa6c417-9728-4b7a-90c9-830803eb49fa"
+            },
+            "sourceId" : "153",
+            "tags" : "Relationship",
+            "technology" : "HTTPS"
+          } ],
+          "tags" : "Element,Infrastructure Node,Amazon Web Services - Route 53"
+        }, {
+          "description" : "Automatically distributes incoming application traffic.",
+          "environment" : "Live2",
+          "id" : "154",
+          "name" : "Elastic Load Balancer",
+          "properties" : {
+            "structurizr.dsl.identifier" : "elb"
+          },
+          "relationships" : [ {
+            "description" : "Forwards requests to",
+            "destinationId" : "157",
+            "id" : "163",
+            "properties" : {
+              "structurizr.dsl.identifier" : "dcac0b53-802b-422b-b81a-cd24c715dff9"
+            },
+            "sourceId" : "154",
+            "tags" : "Relationship",
+            "technology" : "HTTPS"
+          } ],
+          "tags" : "Element,Infrastructure Node,Amazon Web Services - Elastic Load Balancing"
+        } ],
+        "instances" : "1",
+        "name" : "US-East-1",
+        "properties" : {
+          "structurizr.dsl.identifier" : "region"
+        },
+        "tags" : "Element,Deployment Node,Amazon Web Services - Region"
+      } ],
+      "environment" : "Live2",
+      "id" : "151",
+      "instances" : "1",
+      "name" : "Amazon Web Services",
+      "properties" : {
+        "structurizr.dsl.identifier" : "e67b9e63-d610-405b-b859-722794d4d8db"
+      },
+      "tags" : "Element,Deployment Node,Amazon Web Services - Cloud"
+    } ],
+    "people" : [ {
+      "description" : "Some user of the bank, with personal bank accounts.",
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "Some user",
+      "properties" : {
+        "structurizr.dsl.identifier" : "user"
+      },
+      "relationships" : [ {
+        "destinationId" : "21",
+        "id" : "79",
+        "properties" : {
+          "structurizr.dsl.identifier" : "95970289-a013-45d4-9181-a9aa94830696"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "20",
+        "id" : "80",
+        "linkedRelationshipId" : "79",
+        "sourceId" : "1"
+      } ],
+      "tags" : "Element,Person,Customer"
+    }, {
+      "description" : "A customer of the bank, with personal bank accounts.",
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "Personal Banking Customer",
+      "properties" : {
+        "structurizr.dsl.identifier" : "customer"
+      },
+      "relationships" : [ {
+        "description" : "Views account balances, and makes payments using",
+        "destinationId" : "8",
+        "id" : "46",
+        "properties" : {
+          "structurizr.dsl.identifier" : "b6ad4734-3397-4ae4-ab02-b7f8687a89d8"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Asks questions to",
+        "destinationId" : "3",
+        "id" : "50",
+        "properties" : {
+          "structurizr.dsl.identifier" : "7bed54ad-7395-4b9c-9297-5d35e8acaed5"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship",
+        "technology" : "Telephone"
+      }, {
+        "description" : "Withdraws cash using",
+        "destinationId" : "7",
+        "id" : "52",
+        "properties" : {
+          "structurizr.dsl.identifier" : "2f56056a-c425-4342-84e7-a7c502deb33a"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Withdraws cash using",
+        "destinationId" : "20",
+        "id" : "53",
+        "properties" : {
+          "structurizr.dsl.identifier" : "2456131c-fbaa-4afd-b47e-a4dee0a6764d"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Visits bigbank.com/ib using",
+        "destinationId" : "11",
+        "id" : "57",
+        "properties" : {
+          "structurizr.dsl.identifier" : "e7a65e3b-6a04-438f-b194-79bb5008f290"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
+      }, {
+        "description" : "Views account balances, and makes payments using",
+        "destinationId" : "9",
+        "id" : "58",
+        "properties" : {
+          "structurizr.dsl.identifier" : "75533168-719e-436c-a2a8-33fb20a7f5ee"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Views account balances, and makes payments using",
+        "destinationId" : "10",
+        "id" : "59",
+        "properties" : {
+          "structurizr.dsl.identifier" : "cf8cbbe5-597d-4f1f-855a-2e761547b0b8"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person,Customer"
+    }, {
+      "description" : "Customer service staff within the bank.",
+      "group" : "Big Bank plc",
+      "id" : "3",
+      "location" : "Unspecified",
+      "name" : "Customer Service Staff",
+      "properties" : {
+        "structurizr.dsl.identifier" : "supportstaff"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "5",
+        "id" : "51",
+        "properties" : {
+          "structurizr.dsl.identifier" : "720fd911-3129-4a1d-819b-df149a26058e"
+        },
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person,Bank Staff"
+    }, {
+      "description" : "Administration and support staff within the bank.",
+      "group" : "Big Bank plc",
+      "id" : "4",
+      "location" : "Unspecified",
+      "name" : "Back Office Staff",
+      "properties" : {
+        "structurizr.dsl.identifier" : "backoffice"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "5",
+        "id" : "56",
+        "properties" : {
+          "structurizr.dsl.identifier" : "d96124c1-2216-43f7-b094-d6f962df4d75"
+        },
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person,Bank Staff"
+    } ],
+    "softwareSystems" : [ {
+      "description" : "Stores all of the core banking information about customers, accounts, transactions, etc.",
+      "documentation" : { },
+      "group" : "Big Bank plc",
+      "id" : "5",
+      "location" : "Unspecified",
+      "name" : "Mainframe Banking System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "mainframe"
+      },
+      "tags" : "Element,Software System,Existing System"
+    }, {
+      "description" : "The internal Microsoft Exchange e-mail system.",
+      "documentation" : { },
+      "group" : "Big Bank plc",
+      "id" : "6",
+      "location" : "Unspecified",
+      "name" : "E-mail System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "email"
+      },
+      "relationships" : [ {
+        "description" : "Sends e-mails to",
+        "destinationId" : "2",
+        "id" : "49",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dbfe87ae-59a9-4ac5-b783-618354e026d5"
+        },
+        "sourceId" : "6",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Existing System"
+    }, {
+      "description" : "Allows customers to withdraw cash.",
+      "documentation" : { },
+      "group" : "Big Bank plc",
+      "id" : "7",
+      "location" : "Unspecified",
+      "name" : "ATM",
+      "properties" : {
+        "structurizr.dsl.identifier" : "atm"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "5",
+        "id" : "54",
+        "properties" : {
+          "structurizr.dsl.identifier" : "92b637bb-5ec2-49c9-a19b-66b89bc39b4d"
+        },
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Existing System"
+    }, {
+      "containers" : [ {
+        "description" : "Provides all of the Internet banking functionality to customers via their web browser.",
+        "documentation" : { },
+        "id" : "9",
+        "name" : "Single-Page Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "singlepageapplication"
+        },
+        "relationships" : [ {
+          "description" : "Makes API calls to",
+          "destinationId" : "13",
+          "id" : "61",
+          "properties" : {
+            "structurizr.dsl.identifier" : "c69e440c-e032-4b8a-94a7-cfd7da462157"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "description" : "Makes API calls to",
+          "destinationId" : "12",
+          "id" : "62",
+          "linkedRelationshipId" : "61",
+          "sourceId" : "9",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "description" : "Makes API calls to",
+          "destinationId" : "14",
+          "id" : "63",
+          "properties" : {
+            "structurizr.dsl.identifier" : "99d6e8d8-bffa-4e13-8cb1-d2c552bc380d"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "description" : "Makes API calls to",
+          "destinationId" : "15",
+          "id" : "64",
+          "properties" : {
+            "structurizr.dsl.identifier" : "f78e4925-acc6-4ea2-bce0-8e04a8b24563"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship",
+          "technology" : "JSON/HTTPS"
+        } ],
+        "tags" : "Element,Container,Web Browser",
+        "technology" : "JavaScript and Angular"
+      }, {
+        "description" : "Provides a limited subset of the Internet banking functionality to customers via their mobile device.",
+        "documentation" : { },
+        "id" : "10",
+        "name" : "Mobile App",
+        "properties" : {
+          "structurizr.dsl.identifier" : "mobileapp"
+        },
+        "relationships" : [ {
+          "description" : "Makes API calls to",
+          "destinationId" : "13",
+          "id" : "65",
+          "properties" : {
+            "structurizr.dsl.identifier" : "e06b64ef-d138-48e9-9d43-ad8eaca353a3"
+          },
+          "sourceId" : "10",
+          "tags" : "Relationship",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "description" : "Makes API calls to",
+          "destinationId" : "12",
+          "id" : "66",
+          "linkedRelationshipId" : "65",
+          "sourceId" : "10",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "description" : "Makes API calls to",
+          "destinationId" : "14",
+          "id" : "67",
+          "properties" : {
+            "structurizr.dsl.identifier" : "cc2183d0-e5b7-4e7d-95ad-676c65386c01"
+          },
+          "sourceId" : "10",
+          "tags" : "Relationship",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "description" : "Makes API calls to",
+          "destinationId" : "15",
+          "id" : "68",
+          "properties" : {
+            "structurizr.dsl.identifier" : "41908053-bab0-43e1-8d19-7707958d072e"
+          },
+          "sourceId" : "10",
+          "tags" : "Relationship",
+          "technology" : "JSON/HTTPS"
+        } ],
+        "tags" : "Element,Container,Mobile App",
+        "technology" : "Xamarin"
+      }, {
+        "description" : "Delivers the static content and the Internet banking single page application.",
+        "documentation" : { },
+        "id" : "11",
+        "name" : "Web Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "webapplication"
+        },
+        "relationships" : [ {
+          "description" : "Delivers to the customer's web browser",
+          "destinationId" : "9",
+          "id" : "60",
+          "properties" : {
+            "structurizr.dsl.identifier" : "0ec9ca2e-3801-4b29-b1c5-27e0e7b7185f"
+          },
+          "sourceId" : "11",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Java and Spring MVC"
+      }, {
+        "components" : [ {
+          "description" : "Allows users to sign in to the Internet Banking System.",
+          "documentation" : { },
+          "id" : "13",
+          "name" : "Sign In Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "signincontroller"
+          },
+          "relationships" : [ {
+            "description" : "Uses",
+            "destinationId" : "16",
+            "id" : "69",
+            "properties" : {
+              "structurizr.dsl.identifier" : "3a16d6de-0907-490b-9050-7e463b0fe290"
+            },
+            "sourceId" : "13",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Spring MVC Rest Controller"
+        }, {
+          "description" : "Provides customers with a summary of their bank accounts.",
+          "documentation" : { },
+          "id" : "14",
+          "name" : "Accounts Summary Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "accountssummarycontroller"
+          },
+          "relationships" : [ {
+            "description" : "Uses",
+            "destinationId" : "17",
+            "id" : "70",
+            "properties" : {
+              "structurizr.dsl.identifier" : "a986f99b-f69a-4f2e-aed5-52ec98f702e1"
+            },
+            "sourceId" : "14",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Spring MVC Rest Controller"
+        }, {
+          "description" : "Allows users to reset their passwords with a single use URL.",
+          "documentation" : { },
+          "id" : "15",
+          "name" : "Reset Password Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "resetpasswordcontroller"
+          },
+          "relationships" : [ {
+            "description" : "Uses",
+            "destinationId" : "16",
+            "id" : "71",
+            "properties" : {
+              "structurizr.dsl.identifier" : "1167bb1e-48e6-4ea5-89fe-6185961b1ff9"
+            },
+            "sourceId" : "15",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Uses",
+            "destinationId" : "18",
+            "id" : "72",
+            "properties" : {
+              "structurizr.dsl.identifier" : "3ff50c96-e086-4ad0-86df-d5b6033de0fe"
+            },
+            "sourceId" : "15",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Spring MVC Rest Controller"
+        }, {
+          "description" : "Provides functionality related to signing in, changing passwords, etc.",
+          "documentation" : { },
+          "id" : "16",
+          "name" : "Security Component",
+          "properties" : {
+            "structurizr.dsl.identifier" : "securitycomponent"
+          },
+          "relationships" : [ {
+            "description" : "Reads from and writes to",
+            "destinationId" : "19",
+            "id" : "73",
+            "properties" : {
+              "structurizr.dsl.identifier" : "503074bb-fe36-44e1-9811-3dde4067b8b3"
+            },
+            "sourceId" : "16",
+            "tags" : "Relationship",
+            "technology" : "SQL/TCP"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Spring Bean"
+        }, {
+          "description" : "A facade onto the mainframe banking system.",
+          "documentation" : { },
+          "id" : "17",
+          "name" : "Mainframe Banking System Facade",
+          "properties" : {
+            "structurizr.dsl.identifier" : "mainframebankingsystemfacade"
+          },
+          "relationships" : [ {
+            "description" : "Makes API calls to",
+            "destinationId" : "5",
+            "id" : "75",
+            "properties" : {
+              "structurizr.dsl.identifier" : "92d964c3-b1b3-45b8-a478-413586588d5e"
+            },
+            "sourceId" : "17",
+            "tags" : "Relationship",
+            "technology" : "XML/HTTPS"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Spring Bean"
+        }, {
+          "description" : "Sends e-mails to users.",
+          "documentation" : { },
+          "id" : "18",
+          "name" : "E-mail Component",
+          "properties" : {
+            "structurizr.dsl.identifier" : "emailcomponent"
+          },
+          "relationships" : [ {
+            "description" : "Sends e-mail using",
+            "destinationId" : "6",
+            "id" : "77",
+            "properties" : {
+              "structurizr.dsl.identifier" : "ff4ee2be-df4c-40cf-9f28-de4b6a9f81cf"
+            },
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Spring Bean"
+        } ],
+        "description" : "Provides Internet banking functionality via a JSON/HTTPS API.",
+        "documentation" : { },
+        "id" : "12",
+        "name" : "API Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "apiapplication"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "19",
+          "id" : "74",
+          "linkedRelationshipId" : "73",
+          "sourceId" : "12",
+          "technology" : "SQL/TCP"
+        }, {
+          "description" : "Makes API calls to",
+          "destinationId" : "5",
+          "id" : "76",
+          "linkedRelationshipId" : "75",
+          "sourceId" : "12",
+          "technology" : "XML/HTTPS"
+        }, {
+          "description" : "Sends e-mail using",
+          "destinationId" : "6",
+          "id" : "78",
+          "linkedRelationshipId" : "77",
+          "sourceId" : "12"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Java and Spring MVC"
+      }, {
+        "description" : "Stores user registration information, hashed authentication credentials, access logs, etc.",
+        "documentation" : { },
+        "id" : "19",
+        "name" : "Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "database"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "Oracle Database Schema"
+      } ],
+      "description" : "Allows customers to view information about their bank accounts, and make payments.",
+      "documentation" : { },
+      "group" : "Big Bank plc",
+      "id" : "8",
+      "location" : "Unspecified",
+      "name" : "Internet Banking System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "internetbankingsystem"
+      },
+      "relationships" : [ {
+        "description" : "Gets account information from, and makes payments using",
+        "destinationId" : "5",
+        "id" : "47",
+        "properties" : {
+          "structurizr.dsl.identifier" : "849b56a0-7b45-4b58-8899-03a911e2a018"
+        },
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Sends e-mail using",
+        "destinationId" : "6",
+        "id" : "48",
+        "properties" : {
+          "structurizr.dsl.identifier" : "0f2ae477-7f90-43f7-a161-60b4c0c1bff4"
+        },
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "containers" : [ {
+        "documentation" : { },
+        "id" : "21",
+        "name" : "Web Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "webapp"
+        },
+        "relationships" : [ {
+          "destinationId" : "22",
+          "id" : "81",
+          "properties" : {
+            "structurizr.dsl.identifier" : "651efc0b-bcfa-4744-a863-e4b00a68490d"
+          },
+          "sourceId" : "21",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "28",
+          "id" : "86",
+          "properties" : {
+            "structurizr.dsl.identifier" : "5db6cabb-392a-48b5-a55c-57432af6f49d"
+          },
+          "sourceId" : "21",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "group" : "Service 1",
+        "id" : "22",
+        "name" : "Service 1 API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "service1api"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "23",
+          "id" : "24",
+          "properties" : {
+            "structurizr.dsl.identifier" : "3deee395-4aa7-4ee7-9281-a2d30854f7bd"
+          },
+          "sourceId" : "22",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "25",
+          "id" : "82",
+          "properties" : {
+            "structurizr.dsl.identifier" : "1439b2ff-4060-44dc-b464-0423f4c0283f"
+          },
+          "sourceId" : "22",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "28",
+          "id" : "83",
+          "properties" : {
+            "structurizr.dsl.identifier" : "0845eb7f-2bc2-4170-bf2b-b7ca2e1cb65f"
+          },
+          "sourceId" : "22",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Service 1,Service API"
+      }, {
+        "documentation" : { },
+        "group" : "Service 1",
+        "id" : "23",
+        "name" : "Service 1 Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "c80f8cc5-837f-49b2-8989-18067f134f71"
+        },
+        "tags" : "Element,Container,Service 1,Database"
+      }, {
+        "documentation" : { },
+        "group" : "Service 2",
+        "id" : "25",
+        "name" : "Service 2 API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "service2api"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "26",
+          "id" : "27",
+          "properties" : {
+            "structurizr.dsl.identifier" : "b68fd095-3073-4734-9abb-409a13f91f00"
+          },
+          "sourceId" : "25",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "31",
+          "id" : "84",
+          "properties" : {
+            "structurizr.dsl.identifier" : "6601813c-4630-4e95-80fd-4067ff216ad0"
+          },
+          "sourceId" : "25",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "34",
+          "id" : "85",
+          "properties" : {
+            "structurizr.dsl.identifier" : "b9523076-30de-4156-b1c8-2e1992c2aadc"
+          },
+          "sourceId" : "25",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Some component to component",
+          "destinationId" : "13",
+          "id" : "91",
+          "properties" : {
+            "structurizr.dsl.identifier" : "98ad1f9e-8f5c-4672-877f-d7cff57c92aa"
+          },
+          "sourceId" : "25",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Some component to component",
+          "destinationId" : "12",
+          "id" : "92",
+          "linkedRelationshipId" : "91",
+          "sourceId" : "25"
+        }, {
+          "description" : "Some component to component",
+          "destinationId" : "8",
+          "id" : "93",
+          "linkedRelationshipId" : "91",
+          "sourceId" : "25"
+        } ],
+        "tags" : "Element,Container,Service 2,Service API"
+      }, {
+        "documentation" : { },
+        "group" : "Service 2",
+        "id" : "26",
+        "name" : "Service 2 Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "fb14717b-4e58-4f23-8061-8d4b0d735028"
+        },
+        "tags" : "Element,Container,Service 2,Database"
+      }, {
+        "documentation" : { },
+        "group" : "Service 3",
+        "id" : "28",
+        "name" : "Service 3 API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "service3api"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "29",
+          "id" : "30",
+          "properties" : {
+            "structurizr.dsl.identifier" : "05cc675e-d25f-4162-913b-088a570b9bf1"
+          },
+          "sourceId" : "28",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "31",
+          "id" : "87",
+          "properties" : {
+            "structurizr.dsl.identifier" : "4185fb27-fe8b-49ec-83ac-7835d64b1c6f"
+          },
+          "sourceId" : "28",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "40",
+          "id" : "88",
+          "properties" : {
+            "structurizr.dsl.identifier" : "5978ebac-7260-49c8-a60c-b67446dde113"
+          },
+          "sourceId" : "28",
+          "tags" : "Relationship"
+        }, {
+          "description" : "?Reads 2from and writes to",
+          "destinationId" : "142",
+          "id" : "145",
+          "properties" : {
+            "structurizr.dsl.identifier" : "9e7335d4-1530-4572-87ea-19acc36784ce"
+          },
+          "sourceId" : "28",
+          "tags" : "Relationship",
+          "technology" : "MySQL Protocol/SSL"
+        }, {
+          "description" : "?Reads 2from and writes to",
+          "destinationId" : "141",
+          "id" : "146",
+          "linkedRelationshipId" : "145",
+          "sourceId" : "28",
+          "technology" : "MySQL Protocol/SSL"
+        } ],
+        "tags" : "Element,Container,Service 3,Service API"
+      }, {
+        "documentation" : { },
+        "group" : "Service 3",
+        "id" : "29",
+        "name" : "Service 3 Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "d06e8b67-d198-4cca-8350-f5be4bf00049"
+        },
+        "tags" : "Element,Container,Service 3,Database"
+      }, {
+        "documentation" : { },
+        "group" : "Service 4",
+        "id" : "31",
+        "name" : "Service 4 API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "service4api"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "32",
+          "id" : "33",
+          "properties" : {
+            "structurizr.dsl.identifier" : "725ec81f-3040-4a0a-bfdf-d863aa3940f0"
+          },
+          "sourceId" : "31",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "37",
+          "id" : "89",
+          "properties" : {
+            "structurizr.dsl.identifier" : "0865fb52-a29e-4c31-b01e-1c0cb25e0f93"
+          },
+          "sourceId" : "31",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Service 4,Service API"
+      }, {
+        "documentation" : { },
+        "group" : "Service 4",
+        "id" : "32",
+        "name" : "Service 4 Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "1963be35-c381-444f-888b-3f409b265739"
+        },
+        "tags" : "Element,Container,Service 4,Database"
+      }, {
+        "documentation" : { },
+        "group" : "Service 5",
+        "id" : "34",
+        "name" : "Service 5 API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "service5api"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "35",
+          "id" : "36",
+          "properties" : {
+            "structurizr.dsl.identifier" : "07ec5d54-6ec1-4ad6-95a7-8c54057e76b9"
+          },
+          "sourceId" : "34",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Service 5,Service API"
+      }, {
+        "documentation" : { },
+        "group" : "Service 5",
+        "id" : "35",
+        "name" : "Service 5 Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "b42e8659-8f8a-4314-8b12-caa6be683df9"
+        },
+        "tags" : "Element,Container,Service 5,Database"
+      }, {
+        "documentation" : { },
+        "group" : "Service 6",
+        "id" : "37",
+        "name" : "Service 6 API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "service6api"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "38",
+          "id" : "39",
+          "properties" : {
+            "structurizr.dsl.identifier" : "1426b5d9-9f2f-41a6-b006-1d516a26177e"
+          },
+          "sourceId" : "37",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Service 6,Service API"
+      }, {
+        "documentation" : { },
+        "group" : "Service 6",
+        "id" : "38",
+        "name" : "Service 6 Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "1a50978e-92c9-4d2b-b683-59405c202c02"
+        },
+        "tags" : "Element,Container,Service 6,Database"
+      }, {
+        "documentation" : { },
+        "group" : "Service 7",
+        "id" : "40",
+        "name" : "Service 7 API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "service7api"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "41",
+          "id" : "42",
+          "properties" : {
+            "structurizr.dsl.identifier" : "aa0ed188-67e8-4504-9468-8e1f86c42b40"
+          },
+          "sourceId" : "40",
+          "tags" : "Relationship"
+        }, {
+          "destinationId" : "43",
+          "id" : "90",
+          "properties" : {
+            "structurizr.dsl.identifier" : "8f337857-6d92-4502-8324-5ab239f1b6f8"
+          },
+          "sourceId" : "40",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Service 7,Service API"
+      }, {
+        "documentation" : { },
+        "group" : "Service 7",
+        "id" : "41",
+        "name" : "Service 7 Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "57e998a4-4241-491c-8773-36de0b91e833"
+        },
+        "tags" : "Element,Container,Service 7,Database"
+      }, {
+        "documentation" : { },
+        "group" : "Service 8",
+        "id" : "43",
+        "name" : "Service 8 API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "service8api"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "44",
+          "id" : "45",
+          "properties" : {
+            "structurizr.dsl.identifier" : "f7e62490-283c-4969-bedb-2b9ae80a118c"
+          },
+          "sourceId" : "43",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Service 8,Service API"
+      }, {
+        "documentation" : { },
+        "group" : "Service 8",
+        "id" : "44",
+        "name" : "Service 8 Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "a772ab34-e582-4ec4-9c89-4c181d1c7d78"
+        },
+        "tags" : "Element,Container,Service 8,Database"
+      } ],
+      "documentation" : { },
+      "id" : "20",
+      "location" : "Unspecified",
+      "name" : "Insurance system",
+      "properties" : {
+        "structurizr.dsl.identifier" : "insurancesystem"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "5",
+        "id" : "55",
+        "properties" : {
+          "structurizr.dsl.identifier" : "73495187-f274-40ef-bbf7-da0a41252f18"
+        },
+        "sourceId" : "20",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Some component to component",
+        "destinationId" : "13",
+        "id" : "94",
+        "linkedRelationshipId" : "91",
+        "sourceId" : "20"
+      }, {
+        "description" : "Some component to component",
+        "destinationId" : "12",
+        "id" : "95",
+        "linkedRelationshipId" : "91",
+        "sourceId" : "20"
+      }, {
+        "description" : "Some component to component",
+        "destinationId" : "8",
+        "id" : "96",
+        "linkedRelationshipId" : "91",
+        "sourceId" : "20"
+      }, {
+        "description" : "?Reads 2from and writes to",
+        "destinationId" : "142",
+        "id" : "147",
+        "linkedRelationshipId" : "145",
+        "sourceId" : "20",
+        "technology" : "MySQL Protocol/SSL"
+      }, {
+        "description" : "?Reads 2from and writes to",
+        "destinationId" : "141",
+        "id" : "148",
+        "linkedRelationshipId" : "145",
+        "sourceId" : "20",
+        "technology" : "MySQL Protocol/SSL"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "containers" : [ {
+        "description" : "Allows employees to view and manage information regarding the veterinarians, the clients, and their pets.",
+        "documentation" : { },
+        "id" : "142",
+        "name" : "Web Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "webapplication2"
+        },
+        "relationships" : [ {
+          "description" : "Reads from and writes to",
+          "destinationId" : "143",
+          "id" : "144",
+          "properties" : {
+            "structurizr.dsl.identifier" : "eabaffb5-6832-4a74-b2a7-55d1492aa67b"
+          },
+          "sourceId" : "142",
+          "tags" : "Relationship",
+          "technology" : "MySQL Protocol/SSL"
+        }, {
+          "description" : "Initialize payment",
+          "destinationId" : "8",
+          "id" : "149",
+          "properties" : {
+            "structurizr.dsl.identifier" : "12fa51e6-34fc-4273-9563-52eddd305e5a"
+          },
+          "sourceId" : "142",
+          "tags" : "Relationship",
+          "technology" : "MySQL Protocol/SSL"
+        } ],
+        "tags" : "Element,Container,Application",
+        "technology" : "Java and Spring Boot"
+      }, {
+        "description" : "Stores information regarding the veterinarians, the clients, and their pets.",
+        "documentation" : { },
+        "id" : "143",
+        "name" : "Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "database2"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "Relational database schema"
+      } ],
+      "description" : "Allows employees to view and manage information regarding the veterinarians, the clients, and their pets.",
+      "documentation" : {
+        "sections" : [ {
+          "content" : "#hi to springPetClinic docs",
+          "filename" : "README.md",
+          "format" : "Markdown",
+          "order" : 1,
+          "title" : ""
+        } ]
+      },
+      "id" : "141",
+      "location" : "Unspecified",
+      "name" : "Spring PetClinic",
+      "properties" : {
+        "structurizr.dsl.identifier" : "springpetclinic"
+      },
+      "relationships" : [ {
+        "description" : "Initialize payment",
+        "destinationId" : "8",
+        "id" : "150",
+        "linkedRelationshipId" : "149",
+        "sourceId" : "141",
+        "technology" : "MySQL Protocol/SSL"
+      } ],
+      "tags" : "Element,Software System"
+    } ]
+  },
+  "name" : "Amazon Web Services Example",
+  "properties" : {
+    "structurizr.dsl" : "CgovKgogKiBUaGlzIGlzIGEgY29tYmluZWQgdmVyc2lvbiBvZiB0aGUgZm9sbG93aW5nIHdvcmtzcGFjZXMsIHdpdGggYXV0b21hdGljIGxheW91dCBlbmFibGVkOgogKgogKiAtICJCaWcgQmFuayBwbGMgLSBTeXN0ZW0gTGFuZHNjYXBlIiAoaHR0cHM6Ly9zdHJ1Y3R1cml6ci5jb20vc2hhcmUvMjgyMDEvKQogKiAtICJCaWcgQmFuayBwbGMgLSBJbnRlcm5ldCBCYW5raW5nIFN5c3RlbSIgKGh0dHBzOi8vc3RydWN0dXJpenIuY29tL3NoYXJlLzM2MTQxLykKKi8Kd29ya3NwYWNlIGV4dGVuZHMgL21vZGVsLmRzbCB7CiAgICBuYW1lICJBbWF6b24gV2ViIFNlcnZpY2VzIEV4YW1wbGUiCiAgICBkZXNjcmlwdGlvbiAiQW4gZXhhbXBsZSBBV1MgZGVwbG95bWVudCBhcmNoaXRlY3R1cmUuIgoKICAgIG1vZGVsIHsKCiAgICAgICAgc3ByaW5nUGV0Q2xpbmljID0gc29mdHdhcmVzeXN0ZW0gIlNwcmluZyBQZXRDbGluaWMiICJBbGxvd3MgZW1wbG95ZWVzIHRvIHZpZXcgYW5kIG1hbmFnZSBpbmZvcm1hdGlvbiByZWdhcmRpbmcgdGhlIHZldGVyaW5hcmlhbnMsIHRoZSBjbGllbnRzLCBhbmQgdGhlaXIgcGV0cy4iIHsKICAgICAgICAgICAgIWRvY3MgZG9jcy9zcHJpbmdQZXRDbGluaWMKICAgICAgICAgICAgd2ViQXBwbGljYXRpb24yID0gY29udGFpbmVyICJXZWIgQXBwbGljYXRpb24iICJBbGxvd3MgZW1wbG95ZWVzIHRvIHZpZXcgYW5kIG1hbmFnZSBpbmZvcm1hdGlvbiByZWdhcmRpbmcgdGhlIHZldGVyaW5hcmlhbnMsIHRoZSBjbGllbnRzLCBhbmQgdGhlaXIgcGV0cy4iICJKYXZhIGFuZCBTcHJpbmcgQm9vdCIgewogICAgICAgICAgICAgICAgdGFncyAiQXBwbGljYXRpb24iCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZGF0YWJhc2UyID0gY29udGFpbmVyICJEYXRhYmFzZSIgIlN0b3JlcyBpbmZvcm1hdGlvbiByZWdhcmRpbmcgdGhlIHZldGVyaW5hcmlhbnMsIHRoZSBjbGllbnRzLCBhbmQgdGhlaXIgcGV0cy4iICJSZWxhdGlvbmFsIGRhdGFiYXNlIHNjaGVtYSIgewogICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIHdlYkFwcGxpY2F0aW9uMiAtPiBkYXRhYmFzZTIgIlJlYWRzIGZyb20gYW5kIHdyaXRlcyB0byIgIk15U1FMIFByb3RvY29sL1NTTCIKICAgICAgICAjIHdlYkFwcGxpY2F0aW9uMiAtPiBzZXJ2aWNlM0FwaSAiUmVhZHMgMmZyb20gYW5kIHdyaXRlcyB0byIgIk15U1FMIFByb3RvY29sL1NTTCIKICAgICAgICAKICAgICAgICBzZXJ2aWNlM0FwaSAtPiB3ZWJBcHBsaWNhdGlvbjIgIj9SZWFkcyAyZnJvbSBhbmQgd3JpdGVzIHRvIiAiTXlTUUwgUHJvdG9jb2wvU1NMIgoKICAgICAgICB3ZWJBcHBsaWNhdGlvbjIgLT4gaW50ZXJuZXRCYW5raW5nU3lzdGVtICJJbml0aWFsaXplIHBheW1lbnQiICJNeVNRTCBQcm90b2NvbC9TU0wiCgogICAgICAgIGxpdmUgPSBkZXBsb3ltZW50RW52aXJvbm1lbnQgIkxpdmUyIiB7CgogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQW1hem9uIFdlYiBTZXJ2aWNlcyIgewogICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIENsb3VkIgoKICAgICAgICAgICAgICAgIHJlZ2lvbiA9IGRlcGxveW1lbnROb2RlICJVUy1FYXN0LTEiIHsKICAgICAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gUmVnaW9uIgoKICAgICAgICAgICAgICAgICAgICByb3V0ZTUzID0gaW5mcmFzdHJ1Y3R1cmVOb2RlICJSb3V0ZSA1MyIgewogICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiSGlnaGx5IGF2YWlsYWJsZSBhbmQgc2NhbGFibGUgY2xvdWQgRE5TIHNlcnZpY2UuIgogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gUm91dGUgNTMiCiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBlbGIgPSBpbmZyYXN0cnVjdHVyZU5vZGUgIkVsYXN0aWMgTG9hZCBCYWxhbmNlciIgewogICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQXV0b21hdGljYWxseSBkaXN0cmlidXRlcyBpbmNvbWluZyBhcHBsaWNhdGlvbiB0cmFmZmljLiIKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIEVsYXN0aWMgTG9hZCBCYWxhbmNpbmciCiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQXV0b3NjYWxpbmcgZ3JvdXAiIHsKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIEF1dG8gU2NhbGluZyIKCiAgICAgICAgICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJBbWF6b24gRUMyIiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gRUMyIgoKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHdlYkFwcGxpY2F0aW9uSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSB3ZWJBcHBsaWNhdGlvbjIKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkFtYXpvbiBSRFMiIHsKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIFJEUyIKCiAgICAgICAgICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJNeVNRTCIgewogICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiQW1hem9uIFdlYiBTZXJ2aWNlcyAtIFJEUyBNeVNRTCBpbnN0YW5jZSIKCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYXRhYmFzZUluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2UgZGF0YWJhc2UyCiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CgogICAgICAgICAgICByb3V0ZTUzIC0+IGVsYiAiRm9yd2FyZHMgcmVxdWVzdHMgdG8iICJIVFRQUyIKICAgICAgICAgICAgZWxiIC0+IHdlYkFwcGxpY2F0aW9uSW5zdGFuY2UgIkZvcndhcmRzIHJlcXVlc3RzIHRvIiAiSFRUUFMiCiAgICAgICAgfQogICAKICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtbGFuZHNjYXBlIHNwcmluZ1BldENsaW5pYyAiU3lzdGVtTGFuZHNjYXBlIiB7CiAgICAgICAgICAgIGluY2x1ZGUgLT5zcHJpbmdQZXRDbGluaWMtPgogICAgICAgICAgICBhdXRvTGF5b3V0CiAgICAgICAgfQogICAgICAgIGRlcGxveW1lbnQgc3ByaW5nUGV0Q2xpbmljICJMaXZlIiAiQW1hem9uV2ViU2VydmljZXNEZXBsb3ltZW50IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IGxyCgogICAgICAgICAgICBhbmltYXRpb24gewogICAgICAgICAgICAgICAgcm91dGU1MwogICAgICAgICAgICAgICAgZWxiCiAgICAgICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbkluc3RhbmNlCiAgICAgICAgICAgICAgICBkYXRhYmFzZUluc3RhbmNlCiAgICAgICAgICAgIH0KICAgICAgICB9CgoKCgogICAgfQp9Cg=="
+  },
+  "views" : {
+    "componentViews" : [ {
+      "animations" : [ {
+        "elements" : [ "10", "19", "5", "6", "9" ],
+        "order" : 1
+      }, {
+        "elements" : [ "13", "16" ],
+        "order" : 2,
+        "relationships" : [ "61", "65", "69", "73" ]
+      }, {
+        "elements" : [ "14", "17" ],
+        "order" : 3,
+        "relationships" : [ "63", "67", "70", "75" ]
+      }, {
+        "elements" : [ "15", "18" ],
+        "order" : 4,
+        "relationships" : [ "64", "68", "71", "72", "77" ]
+      } ],
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "12",
+      "description" : "The component diagram for the API Application.",
+      "elements" : [ {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "10",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "Components",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "55"
+      }, {
+        "id" : "61"
+      }, {
+        "id" : "63"
+      }, {
+        "id" : "64"
+      }, {
+        "id" : "65"
+      }, {
+        "id" : "67"
+      }, {
+        "id" : "68"
+      }, {
+        "id" : "69"
+      }, {
+        "id" : "70"
+      }, {
+        "id" : "71"
+      }, {
+        "id" : "72"
+      }, {
+        "id" : "73"
+      }, {
+        "id" : "75"
+      }, {
+        "id" : "77"
+      }, {
+        "id" : "94"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "springPetClinic",
+      "styles" : {
+        "elements" : [ {
+          "color" : "#ffffff",
+          "fontSize" : 22,
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "background" : "#08427b",
+          "tag" : "Customer"
+        }, {
+          "background" : "#999999",
+          "tag" : "Bank Staff"
+        }, {
+          "background" : "#1168bd",
+          "color" : "#ffffff",
+          "tag" : "Software System"
+        }, {
+          "background" : "#999999",
+          "color" : "#ffffff",
+          "tag" : "Existing System"
+        }, {
+          "background" : "#438dd5",
+          "color" : "#ffffff",
+          "tag" : "Container"
+        }, {
+          "shape" : "WebBrowser",
+          "tag" : "Web Browser"
+        }, {
+          "shape" : "MobileDeviceLandscape",
+          "tag" : "Mobile App"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        }, {
+          "background" : "#85bbf0",
+          "color" : "#000000",
+          "tag" : "Component"
+        }, {
+          "opacity" : 25,
+          "tag" : "Failover"
+        }, {
+          "shape" : "Hexagon",
+          "tag" : "Service API"
+        }, {
+          "background" : "#91f0ae",
+          "tag" : "Service 1"
+        }, {
+          "background" : "#edf08c",
+          "tag" : "Service 2"
+        }, {
+          "background" : "#8cd0f0",
+          "tag" : "Service 3"
+        }, {
+          "background" : "#f08ca4",
+          "tag" : "Service 4"
+        }, {
+          "background" : "#ffac33",
+          "tag" : "Service 5"
+        }, {
+          "background" : "#dd8bfe",
+          "tag" : "Service 6"
+        }, {
+          "background" : "#89acff",
+          "tag" : "Service 7"
+        }, {
+          "background" : "#fda9f4",
+          "tag" : "Service 8"
+        } ]
+      },
+      "terminology" : { }
+    },
+    "containerViews" : [ {
+      "animations" : [ {
+        "elements" : [ "2", "5", "6" ],
+        "order" : 1,
+        "relationships" : [ "49" ]
+      }, {
+        "elements" : [ "11" ],
+        "order" : 2,
+        "relationships" : [ "57" ]
+      }, {
+        "elements" : [ "9" ],
+        "order" : 3,
+        "relationships" : [ "58", "60" ]
+      }, {
+        "elements" : [ "10" ],
+        "order" : 4,
+        "relationships" : [ "59" ]
+      }, {
+        "elements" : [ "12" ],
+        "order" : 5,
+        "relationships" : [ "62", "66", "76", "78" ]
+      }, {
+        "elements" : [ "19" ],
+        "order" : 6,
+        "relationships" : [ "74" ]
+      } ],
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "The container diagram for the Internet Banking System.",
+      "elements" : [ {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "10",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Containers",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "49"
+      }, {
+        "id" : "53"
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "57"
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "59"
+      }, {
+        "id" : "60"
+      }, {
+        "id" : "62"
+      }, {
+        "id" : "66"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "76"
+      }, {
+        "id" : "78"
+      }, {
+        "id" : "95"
+      } ],
+      "softwareSystemId" : "8"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "23",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "26",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "31",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "32",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "34",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "35",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "37",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "38",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "40",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "41",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "43",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "44",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "insuranceSystem_All",
+      "order" : 7,
+      "relationships" : [ {
+        "id" : "24"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "30"
+      }, {
+        "id" : "33"
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "39"
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "79"
+      }, {
+        "id" : "81"
+      }, {
+        "id" : "82"
+      }, {
+        "id" : "83"
+      }, {
+        "id" : "84"
+      }, {
+        "id" : "85"
+      }, {
+        "id" : "86"
+      }, {
+        "id" : "87"
+      }, {
+        "id" : "88"
+      }, {
+        "id" : "89"
+      }, {
+        "id" : "90"
+      }, {
+        "id" : "93"
+      } ],
+      "softwareSystemId" : "20"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "23",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Containers_Service1",
+      "order" : 8,
+      "relationships" : [ {
+        "id" : "24"
+      }, {
+        "id" : "81"
+      }, {
+        "id" : "82"
+      }, {
+        "id" : "83"
+      }, {
+        "id" : "86"
+      } ],
+      "softwareSystemId" : "20"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "26",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "31",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "34",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Containers_Service2",
+      "order" : 9,
+      "relationships" : [ {
+        "id" : "27"
+      }, {
+        "id" : "82"
+      }, {
+        "id" : "84"
+      }, {
+        "id" : "85"
+      }, {
+        "id" : "93"
+      } ],
+      "softwareSystemId" : "20"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "31",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "40",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Containers_Service3",
+      "order" : 10,
+      "relationships" : [ {
+        "id" : "30"
+      }, {
+        "id" : "81"
+      }, {
+        "id" : "83"
+      }, {
+        "id" : "86"
+      }, {
+        "id" : "87"
+      }, {
+        "id" : "88"
+      } ],
+      "softwareSystemId" : "20"
+    } ],
+    "deploymentViews" : [ {
+      "animations" : [ {
+        "elements" : [ "97", "98", "99" ],
+        "order" : 1
+      }, {
+        "elements" : [ "100", "101", "102", "104" ],
+        "order" : 2,
+        "relationships" : [ "103", "105" ]
+      }, {
+        "elements" : [ "106", "107", "108" ],
+        "order" : 3,
+        "relationships" : [ "109" ]
+      } ],
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "An example development deployment scenario for the Internet Banking System.",
+      "elements" : [ {
+        "id" : "97",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "98",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "99",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "100",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "101",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "102",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "104",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "106",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "107",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "108",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "110",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "111",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "112",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "environment" : "Development",
+      "key" : "DevelopmentDeployment",
+      "order" : 5,
+      "relationships" : [ {
+        "id" : "103"
+      }, {
+        "id" : "105"
+      }, {
+        "id" : "109"
+      }, {
+        "id" : "113"
+      } ],
+      "softwareSystemId" : "8"
+    }, {
+      "animations" : [ {
+        "elements" : [ "116", "117", "118" ],
+        "order" : 1
+      }, {
+        "elements" : [ "114", "115" ],
+        "order" : 2
+      }, {
+        "elements" : [ "119", "120", "121", "122", "124", "125", "126" ],
+        "order" : 3,
+        "relationships" : [ "123", "127", "128" ]
+      }, {
+        "elements" : [ "129", "130", "131" ],
+        "order" : 4,
+        "relationships" : [ "132" ]
+      }, {
+        "elements" : [ "133", "134", "135" ],
+        "order" : 5,
+        "relationships" : [ "136", "140" ]
+      } ],
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "An example live deployment scenario for the Internet Banking System.",
+      "elements" : [ {
+        "id" : "114",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "115",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "116",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "117",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "118",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "119",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "120",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "121",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "122",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "124",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "125",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "126",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "129",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "130",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "131",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "133",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "134",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "135",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "137",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "138",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "environment" : "Live",
+      "key" : "LiveDeployment",
+      "order" : 6,
+      "relationships" : [ {
+        "id" : "123"
+      }, {
+        "id" : "127"
+      }, {
+        "id" : "128"
+      }, {
+        "id" : "132"
+      }, {
+        "id" : "136"
+      }, {
+        "id" : "139"
+      }, {
+        "id" : "140"
+      } ],
+      "softwareSystemId" : "8"
+    }, {
+      "animations" : [ {
+        "elements" : [ "151", "152", "153" ],
+        "order" : 1
+      }, {
+        "elements" : [ "154" ],
+        "order" : 2,
+        "relationships" : [ "162" ]
+      }, {
+        "elements" : [ "155", "156", "157" ],
+        "order" : 3,
+        "relationships" : [ "163" ]
+      }, {
+        "elements" : [ "158", "159", "160" ],
+        "order" : 4,
+        "relationships" : [ "161" ]
+      } ],
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "151",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "152",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "153",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "154",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "155",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "156",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "157",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "158",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "159",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "160",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "environment" : "Live2",
+      "key" : "AmazonWebServicesDeployment",
+      "order" : 12,
+      "relationships" : [ {
+        "id" : "161"
+      }, {
+        "id" : "162"
+      }, {
+        "id" : "163"
+      } ],
+      "softwareSystemId" : "141"
+    } ],
+    "dynamicViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "Summarises how the sign in feature works in the single-page application.",
+      "elementId" : "12",
+      "elements" : [ {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalBoundariesVisible" : false,
+      "key" : "SignIn",
+      "order" : 4,
+      "relationships" : [ {
+        "description" : "Submits credentials to",
+        "id" : "61",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "Validates credentials using",
+        "id" : "69",
+        "order" : "2",
+        "response" : false
+      }, {
+        "description" : "select * from users where username = ?",
+        "id" : "73",
+        "order" : "3",
+        "response" : false
+      }, {
+        "description" : "Returns user data to",
+        "id" : "73",
+        "order" : "4",
+        "response" : true
+      }, {
+        "description" : "Returns true if the hashed password matches",
+        "id" : "69",
+        "order" : "5",
+        "response" : true
+      }, {
+        "description" : "Sends back an authentication token to",
+        "id" : "61",
+        "order" : "6",
+        "response" : true
+      } ]
+    } ],
+    "imageViews" : [ {
+      "content" : "https://raw.githubusercontent.com/structurizr/examples/main/dsl/big-bank-plc/internet-banking-system/mainframe-banking-system-facade.png",
+      "contentType" : "image/png",
+      "elementId" : "17",
+      "key" : "MainframeBankingSystemFacade",
+      "order" : 3,
+      "title" : "[Code] Mainframe Banking System Facade"
+    } ],
+    "systemLandscapeViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "SystemLandscape",
+      "elements" : [ {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "141",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "springPetClinic",
+      "order" : 11,
+      "relationships" : [ {
+        "id" : "148"
+      }, {
+        "id" : "150"
+      }, {
+        "id" : "96"
+      } ]
+    } ]
+  }
+}

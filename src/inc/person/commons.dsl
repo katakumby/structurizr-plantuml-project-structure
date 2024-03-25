@@ -1,0 +1,2 @@
+user = person "Some user" "Some user of the bank, with personal bank accounts." "Customer"
+customer = person "Personal Banking Customer" "A customer of the bank, with personal bank accounts." "Customer"
