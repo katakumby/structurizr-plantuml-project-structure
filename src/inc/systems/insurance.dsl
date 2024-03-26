@@ -5,6 +5,8 @@
             service1 = group "Service 1" {
                 service1Api = container "Service 1 API" {
                     tags "Service 1" "Service API"
+
+                    rest = component "REST API?" "REST" "Service 1" "Service API"
                 }
                 container "Service 1 Database" {
                     tags "Service 1" "Database"

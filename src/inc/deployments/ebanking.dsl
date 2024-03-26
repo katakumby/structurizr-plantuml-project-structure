@@ -1,22 +1,22 @@
 
-        deploymentEnvironment "Development" {
-            deploymentNode "Developer Laptop" "" "Microsoft Windows 10 or Apple macOS" {
-                deploymentNode "Web Browser" "" "Chrome, Firefox, Safari, or Edge" {
-                    developerSinglePageApplicationInstance = containerInstance singlePageApplication
+        deployment_dev_ibs = deploymentEnvironment "Development" {
+            devPc = deploymentNode "Developer Laptop" "" "Microsoft Windows 10 or Apple macOS" {
+                browser = deploymentNode "Web Browser" "" "Chrome, Firefox, Safari, or Edge" {
+                    developerSinglePageApplicationInstance = containerInstance internetBankingSystem.singlePageApplication
                 }
-                deploymentNode "Docker Container - Web Server" "" "Docker" {
-                    deploymentNode "Apache Tomcat" "" "Apache Tomcat 8.x" {
-                        developerWebApplicationInstance = containerInstance webApplication
-                        developerApiApplicationInstance = containerInstance apiApplication
+                webServer = deploymentNode "Docker Container - Web Server" "" "Docker" {
+                   tomcat = deploymentNode "Apache Tomcat" "" "Apache Tomcat 8.x" {
+                        developerWebApplicationInstance = containerInstance internetBankingSystem.webApplication
+                        developerApiApplicationInstance = containerInstance internetBankingSystem.apiApplication
                     }
                 }
-                deploymentNode "Docker Container - Database Server" "" "Docker" {
-                    deploymentNode "Database Server" "" "Oracle 12c" {
-                        developerDatabaseInstance = containerInstance database
+                dbServer = deploymentNode "Docker Container - Database Server" "" "Docker" {
+                    oracle = deploymentNode "Database Server" "" "Oracle 12c" {
+                        developerDatabaseInstance = containerInstance internetBankingSystem.database
                     }
                 }
             }
-            deploymentNode "Big Bank plc" "" "Big Bank plc data center" "" {
+            dc = deploymentNode "Big Bank plc" "" "Big Bank plc data center" "" {
                 deploymentNode "bigbank-dev001" "" "" "" {
                     softwareSystemInstance mainframe
                 }
@@ -24,36 +24,36 @@
 
         }
 
-        deploymentEnvironment "Live" {
-            deploymentNode "Customer's mobile device" "" "Apple iOS or Android" {
-                liveMobileAppInstance = containerInstance mobileApp
+        deployment_prod_ibs = deploymentEnvironment "Live" {
+            customerMobile =  deploymentNode "Customer's mobile device" "" "Apple iOS or Android" {
+                liveMobileAppInstance = containerInstance internetBankingSystem.mobileApp
             }
-            deploymentNode "Customer's computer" "" "Microsoft Windows or Apple macOS" {
-                deploymentNode "Web Browser" "" "Chrome, Firefox, Safari, or Edge" {
-                    liveSinglePageApplicationInstance = containerInstance singlePageApplication
+            customerPc = deploymentNode "Customer's computer" "" "Microsoft Windows or Apple macOS" {
+                browser = deploymentNode "Web Browser" "" "Chrome, Firefox, Safari, or Edge" {
+                    liveSinglePageApplicationInstance = containerInstance internetBankingSystem.singlePageApplication
                 }
             }
 
-            deploymentNode "Big Bank plc" "" "Big Bank plc data center" {
-                deploymentNode "bigbank-web***" "" "Ubuntu 16.04 LTS" "" 4 {
-                    deploymentNode "Apache Tomcat" "" "Apache Tomcat 8.x" {
-                        liveWebApplicationInstance = containerInstance webApplication
+            dc = deploymentNode "Big Bank plc" "" "Big Bank plc data center" {
+                 web = deploymentNode "bigbank-web***" "" "Ubuntu 16.04 LTS" "" 4 {
+                    instance = deploymentNode "Apache Tomcat" "" "Apache Tomcat 8.x" {
+                        liveWebApplicationInstance = containerInstance internetBankingSystem.webApplication
                     }
                 }
-                deploymentNode "bigbank-api***" "" "Ubuntu 16.04 LTS" "" 8 {
-                    deploymentNode "Apache Tomcat" "" "Apache Tomcat 8.x" {
-                        liveApiApplicationInstance = containerInstance apiApplication
+                api = deploymentNode "bigbank-api***" "" "Ubuntu 16.04 LTS" "" 8 {
+                   instance = deploymentNode "Apache Tomcat" "" "Apache Tomcat 8.x" {
+                        liveApiApplicationInstance = containerInstance internetBankingSystem.apiApplication
                     }
                 }
 
-                deploymentNode "bigbank-db01" "" "Ubuntu 16.04 LTS" {
+                db01 = deploymentNode "bigbank-db01" "" "Ubuntu 16.04 LTS" {
                     primaryDatabaseServer = deploymentNode "Oracle - Primary" "" "Oracle 12c" {
-                        livePrimaryDatabaseInstance = containerInstance database
+                        livePrimaryDatabaseInstance = containerInstance internetBankingSystem.database
                     }
                 }
-                deploymentNode "bigbank-db02" "" "Ubuntu 16.04 LTS" "Failover" {
+                db02 = deploymentNode "bigbank-db02" "" "Ubuntu 16.04 LTS" "Failover" {
                     secondaryDatabaseServer = deploymentNode "Oracle - Secondary" "" "Oracle 12c" "Failover" {
-                        liveSecondaryDatabaseInstance = containerInstance database "Failover"
+                        liveSecondaryDatabaseInstance = containerInstance internetBankingSystem.database "Failover"
                     }
                 }
                 deploymentNode "bigbank-prod001" "" "" "" {
@@ -61,6 +61,6 @@
                 }
             }
 
-            primaryDatabaseServer -> secondaryDatabaseServer "Replicates data to"
+            dc.db01.primaryDatabaseServer -> dc.db02.secondaryDatabaseServer "Replicates data to"
         }
         
