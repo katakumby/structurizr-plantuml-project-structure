@@ -2,3 +2,5 @@
 .structurizr
 build/*
 build-raw/*
+node_modules
+package-lock.json
