@@ -1,0 +1,4 @@
+site_name: 'DoCs'
+docs_dir: 'build'
+theme:
+  name: 'material'
