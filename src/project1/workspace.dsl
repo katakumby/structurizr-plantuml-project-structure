@@ -11,14 +11,19 @@ workspace extends /model.dsl {
     description "An example AWS deployment architecture."
     # !identifiers hierarchical
 
-    model {
+    !docs docs/another1/subdir/
 
+
+    model {
+        
         springPetClinic = softwaresystem "Spring PetClinic" "Allows employees to view and manage information regarding the veterinarians, the clients, and their pets." {
             !docs docs/springPetClinic
             webApplication2 = container "Web Application" "Allows employees to view and manage information regarding the veterinarians, the clients, and their pets." "Java and Spring Boot" {
+                !docs docs/springPetClinic/subdir1/
                 tags "Application"
             }
             database2 = container "Database" "Stores information regarding the veterinarians, the clients, and their pets." "Relational database schema" {
+                !docs docs/springPetClinic/subdir2/
                 tags "Database"
             }
         }
@@ -78,11 +83,11 @@ workspace extends /model.dsl {
     }
 
     views {
-        systemlandscape springPetClinic "SystemLandscape" {
+        systemlandscape springPetClinic "TEST3_SystemLandscape" {
             include ->springPetClinic->
             autoLayout
         }
-        deployment springPetClinic "Live" "AmazonWebServicesDeployment" {
+        deployment springPetClinic "Live" "TEST_X_AmazonWebServicesDeployment" {
             include *
             autolayout lr
 
