@@ -1,18 +1,10 @@
 {
   "configuration" : { },
   "description" : "An example AWS deployment architecture.",
-  "documentation" : {
-    "sections" : [ {
-      "content" : "#hi to springPetClinic docs\r\n\r\n```plantuml\r\nBob -> Alice : hello\r\nAlice -> Bob : hi\r\n```",
-      "filename" : "README.md",
-      "format" : "Markdown",
-      "order" : 1,
-      "title" : ""
-    } ]
-  },
+  "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-javascript",
-  "lastModifiedDate" : "2024-05-05T20:57:47Z",
+  "lastModifiedDate" : "2024-03-25T23:52:35Z",
   "model" : {
     "deploymentNodes" : [ {
       "children" : [ {
@@ -40,7 +32,7 @@
         "instances" : "1",
         "name" : "Web Browser",
         "properties" : {
-          "structurizr.dsl.identifier" : "2408acdf-54a8-46de-a197-e1c040a291e5"
+          "structurizr.dsl.identifier" : "deployment_dev_ibs.devpc.browser"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Chrome, Firefox, Safari, or Edge"
@@ -94,7 +86,7 @@
           "instances" : "1",
           "name" : "Apache Tomcat",
           "properties" : {
-            "structurizr.dsl.identifier" : "ed1d718d-4442-4964-95c5-0ea2b9593291"
+            "structurizr.dsl.identifier" : "deployment_dev_ibs.devpc.webserver.tomcat"
           },
           "tags" : "Element,Deployment Node",
           "technology" : "Apache Tomcat 8.x"
@@ -104,7 +96,7 @@
         "instances" : "1",
         "name" : "Docker Container - Web Server",
         "properties" : {
-          "structurizr.dsl.identifier" : "53bf4012-2071-410f-8e19-c6e4300f1ce5"
+          "structurizr.dsl.identifier" : "deployment_dev_ibs.devpc.webserver"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -126,7 +118,7 @@
           "instances" : "1",
           "name" : "Database Server",
           "properties" : {
-            "structurizr.dsl.identifier" : "fd6e48f9-b1e0-4afe-8943-080d0360f75a"
+            "structurizr.dsl.identifier" : "deployment_dev_ibs.devpc.dbserver.oracle"
           },
           "tags" : "Element,Deployment Node",
           "technology" : "Oracle 12c"
@@ -136,7 +128,7 @@
         "instances" : "1",
         "name" : "Docker Container - Database Server",
         "properties" : {
-          "structurizr.dsl.identifier" : "f8111e6d-e9be-46b0-9bf5-802a0ae7cbc0"
+          "structurizr.dsl.identifier" : "deployment_dev_ibs.devpc.dbserver"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Docker"
@@ -146,7 +138,7 @@
       "instances" : "1",
       "name" : "Developer Laptop",
       "properties" : {
-        "structurizr.dsl.identifier" : "fb46d630-cd63-4911-9603-30b63edee72a"
+        "structurizr.dsl.identifier" : "deployment_dev_ibs.devpc"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Microsoft Windows 10 or Apple macOS"
@@ -157,7 +149,7 @@
         "instances" : "1",
         "name" : "bigbank-dev001",
         "properties" : {
-          "structurizr.dsl.identifier" : "a32a3545-19a0-4ac6-bdea-4b0e54bd6b8d"
+          "structurizr.dsl.identifier" : "deployment_dev_ibs.dc.205696d2-dbf4-445b-b8d4-567cb4507702"
         },
         "softwareSystemInstances" : [ {
           "deploymentGroups" : [ "Default" ],
@@ -165,21 +157,21 @@
           "id" : "124",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "df04909b-0f18-44ea-bb3b-5ca0af3045c3"
+            "structurizr.dsl.identifier" : "deployment_dev_ibs.dc.205696d2-dbf4-445b-b8d4-567cb4507702.175f15af-a7e7-4094-87b8-633e7ae9e122"
           },
           "softwareSystemId" : "5",
           "tags" : "Software System Instance"
         } ],
-        "tags" : "Element,Deployment Node,"
+        "tags" : "Element,Deployment Node"
       } ],
       "environment" : "Development",
       "id" : "122",
       "instances" : "1",
       "name" : "Big Bank plc",
       "properties" : {
-        "structurizr.dsl.identifier" : "7096ce97-12af-4b60-a043-36b12bfaa8d9"
+        "structurizr.dsl.identifier" : "deployment_dev_ibs.dc"
       },
-      "tags" : "Element,Deployment Node,",
+      "tags" : "Element,Deployment Node",
       "technology" : "Big Bank plc data center"
     }, {
       "containerInstances" : [ {
@@ -193,10 +185,10 @@
         },
         "relationships" : [ {
           "description" : "Makes API calls to",
-          "destinationId" : "126",
-          "id" : "128",
-          "linkedRelationshipId" : "66",
-          "sourceId" : "115",
+          "destinationId" : "138",
+          "id" : "139",
+          "linkedRelationshipId" : "78",
+          "sourceId" : "127",
           "technology" : "JSON/HTTPS"
         } ],
         "tags" : "Container Instance"
@@ -206,7 +198,7 @@
       "instances" : "1",
       "name" : "Customer's mobile device",
       "properties" : {
-        "structurizr.dsl.identifier" : "a41eb042-58aa-4d5e-a69c-59c3dc6eb862"
+        "structurizr.dsl.identifier" : "deployment_prod_ibs.customermobile"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Apple iOS or Android"
@@ -223,10 +215,10 @@
           },
           "relationships" : [ {
             "description" : "Makes API calls to",
-            "destinationId" : "126",
-            "id" : "127",
-            "linkedRelationshipId" : "62",
-            "sourceId" : "118",
+            "destinationId" : "138",
+            "id" : "140",
+            "linkedRelationshipId" : "74",
+            "sourceId" : "130",
             "technology" : "JSON/HTTPS"
           } ],
           "tags" : "Container Instance"
@@ -236,7 +228,7 @@
         "instances" : "1",
         "name" : "Web Browser",
         "properties" : {
-          "structurizr.dsl.identifier" : "dc8c2139-a852-42ad-9512-940a0ad77504"
+          "structurizr.dsl.identifier" : "deployment_prod_ibs.customerpc.browser"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Chrome, Firefox, Safari, or Edge"
@@ -246,7 +238,7 @@
       "instances" : "1",
       "name" : "Customer's computer",
       "properties" : {
-        "structurizr.dsl.identifier" : "b71afd55-2222-437f-b42e-1e23716f386e"
+        "structurizr.dsl.identifier" : "deployment_prod_ibs.customerpc"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Microsoft Windows or Apple macOS"
@@ -276,7 +268,7 @@
           "instances" : "1",
           "name" : "Apache Tomcat",
           "properties" : {
-            "structurizr.dsl.identifier" : "22723a7b-9015-45bd-8b61-f185dda2d442"
+            "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.web.instance"
           },
           "tags" : "Element,Deployment Node",
           "technology" : "Apache Tomcat 8.x"
@@ -286,9 +278,9 @@
         "instances" : "4",
         "name" : "bigbank-web***",
         "properties" : {
-          "structurizr.dsl.identifier" : "7e775448-ba7c-41cf-a4fa-416b694a37b0"
+          "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.web"
         },
-        "tags" : "Element,Deployment Node,",
+        "tags" : "Element,Deployment Node",
         "technology" : "Ubuntu 16.04 LTS"
       }, {
         "children" : [ {
@@ -330,7 +322,7 @@
           "instances" : "1",
           "name" : "Apache Tomcat",
           "properties" : {
-            "structurizr.dsl.identifier" : "1e6f0df9-d69e-4c27-a87b-c205629079b5"
+            "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.api.instance"
           },
           "tags" : "Element,Deployment Node",
           "technology" : "Apache Tomcat 8.x"
@@ -340,9 +332,9 @@
         "instances" : "8",
         "name" : "bigbank-api***",
         "properties" : {
-          "structurizr.dsl.identifier" : "8e493282-355b-4a2d-b08c-5c3ac3575ef2"
+          "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.api"
         },
-        "tags" : "Element,Deployment Node,",
+        "tags" : "Element,Deployment Node",
         "technology" : "Ubuntu 16.04 LTS"
       }, {
         "children" : [ {
@@ -369,7 +361,7 @@
             "destinationId" : "146",
             "id" : "152",
             "properties" : {
-              "structurizr.dsl.identifier" : "4d57ac86-b990-486d-b744-69e7be446af0"
+              "structurizr.dsl.identifier" : "12718a6f-2c07-477d-8d61-c3a6ddacc335"
             },
             "sourceId" : "142",
             "tags" : "Relationship"
@@ -382,7 +374,7 @@
         "instances" : "1",
         "name" : "bigbank-db01",
         "properties" : {
-          "structurizr.dsl.identifier" : "c09e902c-1f6e-4151-89b2-5940cfb1c5e1"
+          "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.db01"
         },
         "tags" : "Element,Deployment Node",
         "technology" : "Ubuntu 16.04 LTS"
@@ -414,7 +406,7 @@
         "instances" : "1",
         "name" : "bigbank-db02",
         "properties" : {
-          "structurizr.dsl.identifier" : "347847f4-0ce5-4958-aab8-0195d2595f90"
+          "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.db02"
         },
         "tags" : "Element,Deployment Node,Failover",
         "technology" : "Ubuntu 16.04 LTS"
@@ -424,7 +416,7 @@
         "instances" : "1",
         "name" : "bigbank-prod001",
         "properties" : {
-          "structurizr.dsl.identifier" : "7ab8c884-6d13-49de-ab73-c9c7e54b654c"
+          "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.71751213-1cc4-4081-b7a9-26f5645f0e7d"
         },
         "softwareSystemInstances" : [ {
           "deploymentGroups" : [ "Default" ],
@@ -432,151 +424,22 @@
           "id" : "150",
           "instanceId" : 1,
           "properties" : {
-            "structurizr.dsl.identifier" : "8fa7d650-3173-4153-ac9e-e785dfafdf31"
+            "structurizr.dsl.identifier" : "deployment_prod_ibs.dc.71751213-1cc4-4081-b7a9-26f5645f0e7d.95621666-af89-4337-a7b4-47bfc72b1e65"
           },
           "softwareSystemId" : "5",
           "tags" : "Software System Instance"
         } ],
-        "tags" : "Element,Deployment Node,"
+        "tags" : "Element,Deployment Node"
       } ],
       "environment" : "Live",
       "id" : "131",
       "instances" : "1",
       "name" : "Big Bank plc",
       "properties" : {
-        "structurizr.dsl.identifier" : "b8a60a07-3dcb-4622-bd42-5c40cd2958c7"
+        "structurizr.dsl.identifier" : "deployment_prod_ibs.dc"
       },
       "tags" : "Element,Deployment Node",
       "technology" : "Big Bank plc data center"
-    }, {
-      "children" : [ {
-        "children" : [ {
-          "children" : [ {
-            "containerInstances" : [ {
-              "containerId" : "154",
-              "deploymentGroups" : [ "Default" ],
-              "environment" : "Live2",
-              "id" : "169",
-              "instanceId" : 1,
-              "properties" : {
-                "structurizr.dsl.identifier" : "webapplicationinstance"
-              },
-              "relationships" : [ {
-                "description" : "Reads from and writes to",
-                "destinationId" : "172",
-                "id" : "173",
-                "linkedRelationshipId" : "156",
-                "sourceId" : "169",
-                "technology" : "MySQL Protocol/SSL"
-              } ],
-              "tags" : "Container Instance"
-            } ],
-            "environment" : "Live2",
-            "id" : "168",
-            "instances" : "1",
-            "name" : "Amazon EC2",
-            "properties" : {
-              "structurizr.dsl.identifier" : "8e641f5a-5b41-40bd-91af-b3718016cf5c"
-            },
-            "tags" : "Element,Deployment Node,Amazon Web Services - EC2"
-          } ],
-          "environment" : "Live2",
-          "id" : "167",
-          "instances" : "1",
-          "name" : "Autoscaling group",
-          "properties" : {
-            "structurizr.dsl.identifier" : "745729e8-c417-40b2-9cf2-c9eb3f8d08d0"
-          },
-          "tags" : "Element,Deployment Node,Amazon Web Services - Auto Scaling"
-        }, {
-          "children" : [ {
-            "containerInstances" : [ {
-              "containerId" : "155",
-              "deploymentGroups" : [ "Default" ],
-              "environment" : "Live2",
-              "id" : "172",
-              "instanceId" : 1,
-              "properties" : {
-                "structurizr.dsl.identifier" : "databaseinstance"
-              },
-              "tags" : "Container Instance"
-            } ],
-            "environment" : "Live2",
-            "id" : "171",
-            "instances" : "1",
-            "name" : "MySQL",
-            "properties" : {
-              "structurizr.dsl.identifier" : "b547757c-ed14-4ef0-90e0-e65950b8ec00"
-            },
-            "tags" : "Element,Deployment Node,Amazon Web Services - RDS MySQL instance"
-          } ],
-          "environment" : "Live2",
-          "id" : "170",
-          "instances" : "1",
-          "name" : "Amazon RDS",
-          "properties" : {
-            "structurizr.dsl.identifier" : "5a8edb82-c9a8-427e-ae07-2de89d4dc5e8"
-          },
-          "tags" : "Element,Deployment Node,Amazon Web Services - RDS"
-        } ],
-        "environment" : "Live2",
-        "id" : "164",
-        "infrastructureNodes" : [ {
-          "description" : "Highly available and scalable cloud DNS service.",
-          "environment" : "Live2",
-          "id" : "165",
-          "name" : "Route 53",
-          "properties" : {
-            "structurizr.dsl.identifier" : "route53"
-          },
-          "relationships" : [ {
-            "description" : "Forwards requests to",
-            "destinationId" : "166",
-            "id" : "174",
-            "properties" : {
-              "structurizr.dsl.identifier" : "eb0a861b-f45b-43bd-ac87-2cb018c9d562"
-            },
-            "sourceId" : "165",
-            "tags" : "Relationship",
-            "technology" : "HTTPS"
-          } ],
-          "tags" : "Element,Infrastructure Node,Amazon Web Services - Route 53"
-        }, {
-          "description" : "Automatically distributes incoming application traffic.",
-          "environment" : "Live2",
-          "id" : "166",
-          "name" : "Elastic Load Balancer",
-          "properties" : {
-            "structurizr.dsl.identifier" : "elb"
-          },
-          "relationships" : [ {
-            "description" : "Forwards requests to",
-            "destinationId" : "169",
-            "id" : "175",
-            "properties" : {
-              "structurizr.dsl.identifier" : "416c673f-058f-42f9-ac73-1c8bfeb5da04"
-            },
-            "sourceId" : "166",
-            "tags" : "Relationship",
-            "technology" : "HTTPS"
-          } ],
-          "tags" : "Element,Infrastructure Node,Amazon Web Services - Elastic Load Balancing"
-        } ],
-        "instances" : "1",
-        "name" : "US-East-1",
-        "properties" : {
-          "structurizr.dsl.identifier" : "region"
-        },
-        "tags" : "Element,Deployment Node,Amazon Web Services - Region"
-      } ],
-      "environment" : "Live2",
-      "id" : "163",
-      "instances" : "1",
-      "name" : "Amazon Web Services",
-      "properties" : {
-        "structurizr.dsl.identifier" : "be1afcfe-1a95-433a-9a64-79f96c69ed22"
-      },
-      "tags" : "Element,Deployment Node,Amazon Web Services - Cloud"
     } ],
     "people" : [ {
       "description" : "Some user of the bank, with personal bank accounts.",
@@ -590,7 +453,7 @@
         "destinationId" : "21",
         "id" : "57",
         "properties" : {
-          "structurizr.dsl.identifier" : "a02cee38-740c-44d2-889c-85a694b264be"
+          "structurizr.dsl.identifier" : "6c8cf4b0-4e85-4e12-a456-1b938ba540b4"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
@@ -614,7 +477,7 @@
         "destinationId" : "8",
         "id" : "47",
         "properties" : {
-          "structurizr.dsl.identifier" : "f9a6eb7c-7f8d-41e4-804e-bf4d70c002d4"
+          "structurizr.dsl.identifier" : "6313f100-2917-4f30-a89c-f8c8be5c0a40"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -623,7 +486,7 @@
         "destinationId" : "3",
         "id" : "51",
         "properties" : {
-          "structurizr.dsl.identifier" : "0bae1bbd-8f1b-4bc4-9fbf-2f53b2d71954"
+          "structurizr.dsl.identifier" : "7f7a2ebe-e837-4aaf-a49c-9baeef94334c"
         },
         "sourceId" : "2",
         "tags" : "Relationship",
@@ -633,7 +496,7 @@
         "destinationId" : "7",
         "id" : "53",
         "properties" : {
-          "structurizr.dsl.identifier" : "de864718-8410-4dcd-a0af-75ef95f1c85d"
+          "structurizr.dsl.identifier" : "20bc4f07-3cb9-4e6a-8f94-ea3813cb6bba"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -642,7 +505,7 @@
         "destinationId" : "20",
         "id" : "54",
         "properties" : {
-          "structurizr.dsl.identifier" : "4af63c8e-18e8-423b-bd4e-8d78b3141254"
+          "structurizr.dsl.identifier" : "20630ea4-fed7-4d29-a2dd-dfd87afb58f1"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -651,7 +514,7 @@
         "destinationId" : "11",
         "id" : "69",
         "properties" : {
-          "structurizr.dsl.identifier" : "85f90901-f6b1-4b18-bda4-260365232266"
+          "structurizr.dsl.identifier" : "ac90fa92-3ad4-4a21-9141-e7d6542efe60"
         },
         "sourceId" : "2",
         "tags" : "Relationship",
@@ -661,7 +524,7 @@
         "destinationId" : "9",
         "id" : "70",
         "properties" : {
-          "structurizr.dsl.identifier" : "00979240-1cbc-40cf-bdec-e13b719b057c"
+          "structurizr.dsl.identifier" : "828a6173-424a-4a2b-b1c4-75697381a76e"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -670,7 +533,7 @@
         "destinationId" : "10",
         "id" : "71",
         "properties" : {
-          "structurizr.dsl.identifier" : "cd8bc43a-8e97-4628-9f20-949ef075a825"
+          "structurizr.dsl.identifier" : "8b7d41b4-6524-4129-bde9-fedb928a70f5"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -690,7 +553,7 @@
         "destinationId" : "5",
         "id" : "52",
         "properties" : {
-          "structurizr.dsl.identifier" : "4fc2c5b6-8273-4647-bf56-8d72a330bce4"
+          "structurizr.dsl.identifier" : "e5cd4aae-99d8-4800-95cf-2c4fa9e9c3a1"
         },
         "sourceId" : "3",
         "tags" : "Relationship"
@@ -710,7 +573,7 @@
         "destinationId" : "5",
         "id" : "56",
         "properties" : {
-          "structurizr.dsl.identifier" : "4b12689c-8b9c-4b22-aa0a-165d28361ec4"
+          "structurizr.dsl.identifier" : "5ba581c7-8e9e-4a00-b92b-ec8fb665c5ca"
         },
         "sourceId" : "4",
         "tags" : "Relationship"
@@ -743,7 +606,7 @@
         "destinationId" : "2",
         "id" : "50",
         "properties" : {
-          "structurizr.dsl.identifier" : "18e61df1-fe7b-4f74-96b1-8982eac546f1"
+          "structurizr.dsl.identifier" : "9ec8828f-86a5-4859-8277-4ab522615a6e"
         },
         "sourceId" : "6",
         "tags" : "Relationship"
@@ -764,7 +627,7 @@
         "destinationId" : "5",
         "id" : "55",
         "properties" : {
-          "structurizr.dsl.identifier" : "2bd024eb-be0c-4e12-9660-bc9ed4eb2ac4"
+          "structurizr.dsl.identifier" : "9bf2459e-3b86-4bce-93f5-8c2586128463"
         },
         "sourceId" : "7",
         "tags" : "Relationship"
@@ -784,7 +647,7 @@
           "destinationId" : "13",
           "id" : "73",
           "properties" : {
-            "structurizr.dsl.identifier" : "d9810de7-af74-4009-b790-255e3cf067f8"
+            "structurizr.dsl.identifier" : "47490e4c-c0b9-4148-ae1f-bc6bd5e94a05"
           },
           "sourceId" : "9",
           "tags" : "Relationship",
@@ -801,7 +664,7 @@
           "destinationId" : "14",
           "id" : "75",
           "properties" : {
-            "structurizr.dsl.identifier" : "ae4703fe-ab67-4e3a-93dd-d17f7919d9d4"
+            "structurizr.dsl.identifier" : "db0cf6d1-bd1c-49ee-9be7-a90373abe7a8"
           },
           "sourceId" : "9",
           "tags" : "Relationship",
@@ -811,7 +674,7 @@
           "destinationId" : "15",
           "id" : "76",
           "properties" : {
-            "structurizr.dsl.identifier" : "77b9e4fe-abdf-4c07-a547-6b98ace48a50"
+            "structurizr.dsl.identifier" : "92dea2bc-4f18-449c-9fe4-80edf7c0a9d5"
           },
           "sourceId" : "9",
           "tags" : "Relationship",
@@ -832,7 +695,7 @@
           "destinationId" : "13",
           "id" : "77",
           "properties" : {
-            "structurizr.dsl.identifier" : "127230b6-b619-4217-b543-19737184fe92"
+            "structurizr.dsl.identifier" : "57a21baf-0ad6-4c95-b5af-d974868b0fc1"
           },
           "sourceId" : "10",
           "tags" : "Relationship",
@@ -849,7 +712,7 @@
           "destinationId" : "14",
           "id" : "79",
           "properties" : {
-            "structurizr.dsl.identifier" : "d697ef48-7cbf-430b-ab16-82806162f73f"
+            "structurizr.dsl.identifier" : "82bdb936-60a8-41be-a186-4065ad95ae2e"
           },
           "sourceId" : "10",
           "tags" : "Relationship",
@@ -859,7 +722,7 @@
           "destinationId" : "15",
           "id" : "80",
           "properties" : {
-            "structurizr.dsl.identifier" : "88e0904e-cfd5-4731-9e6e-483233bc19f3"
+            "structurizr.dsl.identifier" : "75761702-3b62-4acc-9788-ab2cfbec2030"
           },
           "sourceId" : "10",
           "tags" : "Relationship",
@@ -880,7 +743,7 @@
           "destinationId" : "9",
           "id" : "72",
           "properties" : {
-            "structurizr.dsl.identifier" : "f462d5d1-ca26-47a3-a37e-6b2c64e0dc0e"
+            "structurizr.dsl.identifier" : "3e8bd6e4-0035-4882-aa6e-95f54a2d8f8b"
           },
           "sourceId" : "11",
           "tags" : "Relationship"
@@ -901,7 +764,7 @@
             "destinationId" : "16",
             "id" : "81",
             "properties" : {
-              "structurizr.dsl.identifier" : "357d7700-ee12-4de8-807a-9f1483413a23"
+              "structurizr.dsl.identifier" : "002e8a1c-a87b-4c47-a668-f1d437bf3426"
             },
             "sourceId" : "13",
             "tags" : "Relationship"
@@ -910,7 +773,7 @@
             "destinationId" : "23",
             "id" : "100",
             "properties" : {
-              "structurizr.dsl.identifier" : "2ebef7d0-1a90-4c3b-a05e-49df95aaf8f8"
+              "structurizr.dsl.identifier" : "16324225-0dda-493b-b285-53b8583510c7"
             },
             "sourceId" : "13",
             "tags" : "Relationship"
@@ -942,7 +805,7 @@
             "destinationId" : "17",
             "id" : "82",
             "properties" : {
-              "structurizr.dsl.identifier" : "a4d6fd0e-276b-43c7-a0a6-022e9c93c6ca"
+              "structurizr.dsl.identifier" : "5d77f8c9-2f6e-43f1-8e7e-907d548e270d"
             },
             "sourceId" : "14",
             "tags" : "Relationship"
@@ -962,7 +825,7 @@
             "destinationId" : "16",
             "id" : "83",
             "properties" : {
-              "structurizr.dsl.identifier" : "ea57db9c-fbd5-482e-b9db-dbf586b4f10f"
+              "structurizr.dsl.identifier" : "4d437e14-a9d8-4250-a4d4-2aa920416ef1"
             },
             "sourceId" : "15",
             "tags" : "Relationship"
@@ -971,7 +834,7 @@
             "destinationId" : "18",
             "id" : "84",
             "properties" : {
-              "structurizr.dsl.identifier" : "4303f23a-1797-486c-b38f-d4e15352e961"
+              "structurizr.dsl.identifier" : "290699e6-2580-4e91-9c0b-5db344184af9"
             },
             "sourceId" : "15",
             "tags" : "Relationship"
@@ -991,7 +854,7 @@
             "destinationId" : "19",
             "id" : "85",
             "properties" : {
-              "structurizr.dsl.identifier" : "174bc6c1-3d10-4bda-94be-c55d359170bc"
+              "structurizr.dsl.identifier" : "fe719813-0daf-44f0-86e4-ded08832b253"
             },
             "sourceId" : "16",
             "tags" : "Relationship",
@@ -1012,7 +875,7 @@
             "destinationId" : "5",
             "id" : "87",
             "properties" : {
-              "structurizr.dsl.identifier" : "5599c27a-c5e7-4441-bc45-6c42c345f7d5"
+              "structurizr.dsl.identifier" : "f9ea49ef-5a49-49e4-b3eb-4a8d36a3aa02"
             },
             "sourceId" : "17",
             "tags" : "Relationship",
@@ -1033,7 +896,7 @@
             "destinationId" : "6",
             "id" : "89",
             "properties" : {
-              "structurizr.dsl.identifier" : "742470c0-a715-41f7-8970-0c19227ee976"
+              "structurizr.dsl.identifier" : "4a90b4b0-bfe8-4875-9e6e-d383fa4dc2a6"
             },
             "sourceId" : "18",
             "tags" : "Relationship"
@@ -1114,7 +977,7 @@
         "destinationId" : "5",
         "id" : "48",
         "properties" : {
-          "structurizr.dsl.identifier" : "aa5a4f77-0335-4b03-8417-62cffce9c948"
+          "structurizr.dsl.identifier" : "36417bf3-c9ad-4b96-8314-bf6659d44174"
         },
         "sourceId" : "8",
         "tags" : "Relationship"
@@ -1123,7 +986,7 @@
         "destinationId" : "6",
         "id" : "49",
         "properties" : {
-          "structurizr.dsl.identifier" : "cc964591-863d-4950-8650-f47df6bfd3db"
+          "structurizr.dsl.identifier" : "2e19cbd8-2853-463c-a6d1-2f49a7925592"
         },
         "sourceId" : "8",
         "tags" : "Relationship"
@@ -1159,7 +1022,7 @@
           "destinationId" : "22",
           "id" : "59",
           "properties" : {
-            "structurizr.dsl.identifier" : "c1e3c539-2b27-4c39-8038-6e64fb6f12a8"
+            "structurizr.dsl.identifier" : "bd6f4628-0a12-44aa-9717-7e8b0520e35a"
           },
           "sourceId" : "21",
           "tags" : "Relationship"
@@ -1167,7 +1030,7 @@
           "destinationId" : "29",
           "id" : "64",
           "properties" : {
-            "structurizr.dsl.identifier" : "6d03c9f1-afae-45ae-bbbd-e538645f4407"
+            "structurizr.dsl.identifier" : "836534a2-9595-40cd-873a-280e4c20c00d"
           },
           "sourceId" : "21",
           "tags" : "Relationship"
@@ -1187,7 +1050,7 @@
             "destinationId" : "13",
             "id" : "97",
             "properties" : {
-              "structurizr.dsl.identifier" : "43d4ea40-6b08-4159-864a-0f3358c33fd3"
+              "structurizr.dsl.identifier" : "b9e872c9-c5c2-46e0-836e-6975fd977521"
             },
             "sourceId" : "23",
             "tags" : "Relationship"
@@ -1219,7 +1082,7 @@
           "destinationId" : "24",
           "id" : "25",
           "properties" : {
-            "structurizr.dsl.identifier" : "91607f7a-709e-4665-a0ca-2158b49e3845"
+            "structurizr.dsl.identifier" : "dfa730e9-8933-42b8-ab89-10416a43ad62"
           },
           "sourceId" : "22",
           "tags" : "Relationship"
@@ -1227,7 +1090,7 @@
           "destinationId" : "26",
           "id" : "60",
           "properties" : {
-            "structurizr.dsl.identifier" : "a9204e33-bf5d-44d0-8af0-8e25c7822ed4"
+            "structurizr.dsl.identifier" : "2e102fbf-2a10-4e06-a020-aebd8a3229c4"
           },
           "sourceId" : "22",
           "tags" : "Relationship"
@@ -1235,7 +1098,7 @@
           "destinationId" : "29",
           "id" : "61",
           "properties" : {
-            "structurizr.dsl.identifier" : "77a2ccc6-0d10-49cb-b4c8-b158eab90603"
+            "structurizr.dsl.identifier" : "c7a13c9c-1c9f-43c9-bf97-192444440230"
           },
           "sourceId" : "22",
           "tags" : "Relationship"
@@ -1244,7 +1107,7 @@
           "destinationId" : "13",
           "id" : "92",
           "properties" : {
-            "structurizr.dsl.identifier" : "ec707ee8-fa2c-427d-80f6-a7d13452c2a7"
+            "structurizr.dsl.identifier" : "62f0822d-926a-469a-a94c-25176c8c040d"
           },
           "sourceId" : "22",
           "tags" : "Relationship"
@@ -1268,7 +1131,7 @@
         "id" : "24",
         "name" : "Service 1 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "5693c5af-3e83-4cd9-9115-2ca5c53182b8"
+          "structurizr.dsl.identifier" : "insurancesystem.06bd1eaf-129f-45d9-86c5-adcd9085e764"
         },
         "tags" : "Element,Container,Service 1,Database"
       }, {
@@ -1284,7 +1147,7 @@
           "destinationId" : "27",
           "id" : "28",
           "properties" : {
-            "structurizr.dsl.identifier" : "bb5b1439-6954-48a6-bfc7-e0d1470e9360"
+            "structurizr.dsl.identifier" : "94e64b72-74dc-4a47-b9da-d2d0bb67ed88"
           },
           "sourceId" : "26",
           "tags" : "Relationship"
@@ -1292,7 +1155,7 @@
           "destinationId" : "32",
           "id" : "62",
           "properties" : {
-            "structurizr.dsl.identifier" : "2f96091e-f8b9-4522-98a2-c8a40e063165"
+            "structurizr.dsl.identifier" : "3df2f1af-4a7b-42b9-ac11-5c5656a01283"
           },
           "sourceId" : "26",
           "tags" : "Relationship"
@@ -1300,31 +1163,10 @@
           "destinationId" : "35",
           "id" : "63",
           "properties" : {
-            "structurizr.dsl.identifier" : "04ada4a6-d81f-4a9a-89f3-831c3291665e"
+            "structurizr.dsl.identifier" : "fc94de2a-df11-4433-8a3a-9345d7b0cd58"
           },
           "sourceId" : "26",
           "tags" : "Relationship"
-        }, {
-          "description" : "Some component to component",
-          "destinationId" : "13",
-          "id" : "91",
-          "properties" : {
-            "structurizr.dsl.identifier" : "b3836ffc-a8fb-4ff9-9385-852a325c8415"
-          },
-          "sourceId" : "25",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Some component to component",
-          "destinationId" : "12",
-          "id" : "92",
-          "linkedRelationshipId" : "91",
-          "sourceId" : "25"
-        }, {
-          "description" : "Some component to component",
-          "destinationId" : "8",
-          "id" : "93",
-          "linkedRelationshipId" : "91",
-          "sourceId" : "25"
         } ],
         "tags" : "Element,Container,Service 2,Service API"
       }, {
@@ -1333,7 +1175,7 @@
         "id" : "27",
         "name" : "Service 2 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "50014310-a089-46c6-9d11-e60670395120"
+          "structurizr.dsl.identifier" : "insurancesystem.406ac779-12f9-4d2a-b960-93279fb10369"
         },
         "tags" : "Element,Container,Service 2,Database"
       }, {
@@ -1349,7 +1191,7 @@
           "destinationId" : "30",
           "id" : "31",
           "properties" : {
-            "structurizr.dsl.identifier" : "de08edbb-bcf9-4c3d-8249-06e907b0641e"
+            "structurizr.dsl.identifier" : "38511d6c-3752-48a8-84de-3dad3845ddf8"
           },
           "sourceId" : "29",
           "tags" : "Relationship"
@@ -1357,7 +1199,7 @@
           "destinationId" : "32",
           "id" : "65",
           "properties" : {
-            "structurizr.dsl.identifier" : "0679755b-d818-40a9-8396-60bb2e0f5c17"
+            "structurizr.dsl.identifier" : "60e70211-c1b4-484e-9158-b6fe3384b680"
           },
           "sourceId" : "29",
           "tags" : "Relationship"
@@ -1365,16 +1207,16 @@
           "destinationId" : "41",
           "id" : "66",
           "properties" : {
-            "structurizr.dsl.identifier" : "cbd78bce-c0cb-458b-928e-0cbcd230e34a"
+            "structurizr.dsl.identifier" : "fb908b8f-2510-450e-aac5-2534200676cc"
           },
           "sourceId" : "29",
           "tags" : "Relationship"
         }, {
           "description" : "?Reads 2from and writes to",
           "destinationId" : "154",
-          "id" : "157",
+          "id" : "156",
           "properties" : {
-            "structurizr.dsl.identifier" : "3bc247d6-2780-4a85-b91f-96f8fbf448ac"
+            "structurizr.dsl.identifier" : "da76e727-cb62-4a03-b9e5-7db00e4670c8"
           },
           "sourceId" : "29",
           "tags" : "Relationship",
@@ -1382,8 +1224,8 @@
         }, {
           "description" : "?Reads 2from and writes to",
           "destinationId" : "153",
-          "id" : "158",
-          "linkedRelationshipId" : "157",
+          "id" : "157",
+          "linkedRelationshipId" : "156",
           "sourceId" : "29",
           "technology" : "MySQL Protocol/SSL"
         } ],
@@ -1394,7 +1236,7 @@
         "id" : "30",
         "name" : "Service 3 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "4dc65cf0-e1ce-4091-837f-a516aecb4249"
+          "structurizr.dsl.identifier" : "insurancesystem.ed501670-0bd6-469f-b6f9-23987327496e"
         },
         "tags" : "Element,Container,Service 3,Database"
       }, {
@@ -1410,7 +1252,7 @@
           "destinationId" : "33",
           "id" : "34",
           "properties" : {
-            "structurizr.dsl.identifier" : "a9e2da6d-4d52-408d-ad65-9ed6b8b0833e"
+            "structurizr.dsl.identifier" : "d822e4a7-b0ae-427a-8e92-7d70263b9484"
           },
           "sourceId" : "32",
           "tags" : "Relationship"
@@ -1418,7 +1260,7 @@
           "destinationId" : "38",
           "id" : "67",
           "properties" : {
-            "structurizr.dsl.identifier" : "5a92fe83-e0e4-44d8-b171-0dcc28890a60"
+            "structurizr.dsl.identifier" : "1e363086-30c0-49b5-9d34-5ff786642216"
           },
           "sourceId" : "32",
           "tags" : "Relationship"
@@ -1430,7 +1272,7 @@
         "id" : "33",
         "name" : "Service 4 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "669bb48f-0e8a-4202-a763-be2f98ccbd2f"
+          "structurizr.dsl.identifier" : "insurancesystem.2b4ab86a-061a-4118-99fd-d19f3cdab1bc"
         },
         "tags" : "Element,Container,Service 4,Database"
       }, {
@@ -1446,7 +1288,7 @@
           "destinationId" : "36",
           "id" : "37",
           "properties" : {
-            "structurizr.dsl.identifier" : "ccea854e-2804-47fb-8168-b07154a1765c"
+            "structurizr.dsl.identifier" : "efaedb30-a78f-4dd2-b268-6c66c602633f"
           },
           "sourceId" : "35",
           "tags" : "Relationship"
@@ -1458,7 +1300,7 @@
         "id" : "36",
         "name" : "Service 5 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "9ff2536f-0e3f-4c77-b45b-4bbe428bf0b6"
+          "structurizr.dsl.identifier" : "insurancesystem.22232e60-a250-473f-95d4-a472af00d954"
         },
         "tags" : "Element,Container,Service 5,Database"
       }, {
@@ -1474,7 +1316,7 @@
           "destinationId" : "39",
           "id" : "40",
           "properties" : {
-            "structurizr.dsl.identifier" : "fc297d1c-54b7-4c2b-9202-4662f0664159"
+            "structurizr.dsl.identifier" : "6871b77f-5354-45ef-9c6a-cf0aec62688a"
           },
           "sourceId" : "38",
           "tags" : "Relationship"
@@ -1486,7 +1328,7 @@
         "id" : "39",
         "name" : "Service 6 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "5f576624-5f1c-49f8-9a33-0357ec265276"
+          "structurizr.dsl.identifier" : "insurancesystem.2d807480-e4dc-4918-baf6-b2f0fe9c27ac"
         },
         "tags" : "Element,Container,Service 6,Database"
       }, {
@@ -1502,7 +1344,7 @@
           "destinationId" : "42",
           "id" : "43",
           "properties" : {
-            "structurizr.dsl.identifier" : "7cba16ed-7169-45f1-9167-80649833cb3b"
+            "structurizr.dsl.identifier" : "bb271611-6863-4be9-b6c9-9c2dc372fd8e"
           },
           "sourceId" : "41",
           "tags" : "Relationship"
@@ -1510,7 +1352,7 @@
           "destinationId" : "44",
           "id" : "68",
           "properties" : {
-            "structurizr.dsl.identifier" : "edec208d-ff54-424d-9e6c-5a951be3fd56"
+            "structurizr.dsl.identifier" : "39845f00-d067-4b33-b0fd-5322f4bbd438"
           },
           "sourceId" : "41",
           "tags" : "Relationship"
@@ -1522,7 +1364,7 @@
         "id" : "42",
         "name" : "Service 7 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "dc2a1b88-36dc-439d-b2c5-833c62ec417f"
+          "structurizr.dsl.identifier" : "insurancesystem.da8e5c3b-5348-4522-8157-4d11e4a44d8d"
         },
         "tags" : "Element,Container,Service 7,Database"
       }, {
@@ -1538,7 +1380,7 @@
           "destinationId" : "45",
           "id" : "46",
           "properties" : {
-            "structurizr.dsl.identifier" : "9e3fdec9-57c5-49e1-82a2-1ec00f22630a"
+            "structurizr.dsl.identifier" : "f29b5c06-5f33-4aae-bc9c-5bc2ab3b4586"
           },
           "sourceId" : "44",
           "tags" : "Relationship"
@@ -1550,7 +1392,7 @@
         "id" : "45",
         "name" : "Service 8 Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "ccac198d-e874-406d-a4a7-c8c505f5b42e"
+          "structurizr.dsl.identifier" : "insurancesystem.4d290fe1-3e29-4ce2-b137-b2fba306f579"
         },
         "tags" : "Element,Container,Service 8,Database"
       } ],
@@ -1566,7 +1408,7 @@
         "destinationId" : "8",
         "id" : "91",
         "properties" : {
-          "structurizr.dsl.identifier" : "eb40f421-896b-40c6-b0c4-92c2cf7f5ee8"
+          "structurizr.dsl.identifier" : "240f5e7a-ec5d-4039-bba0-e2fc5d25a0a5"
         },
         "sourceId" : "20",
         "tags" : "Relationship"
@@ -1585,15 +1427,15 @@
       }, {
         "description" : "?Reads 2from and writes to",
         "destinationId" : "154",
-        "id" : "159",
-        "linkedRelationshipId" : "157",
+        "id" : "158",
+        "linkedRelationshipId" : "156",
         "sourceId" : "20",
         "technology" : "MySQL Protocol/SSL"
       }, {
         "description" : "?Reads 2from and writes to",
         "destinationId" : "153",
-        "id" : "160",
-        "linkedRelationshipId" : "157",
+        "id" : "159",
+        "linkedRelationshipId" : "156",
         "sourceId" : "20",
         "technology" : "MySQL Protocol/SSL"
       } ],
@@ -1601,61 +1443,18 @@
     }, {
       "containers" : [ {
         "description" : "Allows employees to view and manage information regarding the veterinarians, the clients, and their pets.",
-        "documentation" : {
-          "sections" : [ {
-            "content" : "yo1",
-            "filename" : "Another page.md",
-            "format" : "Markdown",
-            "order" : 1,
-            "title" : ""
-          }, {
-            "content" : "yoyo2",
-            "filename" : "README.md",
-            "format" : "Markdown",
-            "order" : 2,
-            "title" : ""
-          } ]
-        },
-        "id" : "142",
+        "documentation" : { },
+        "id" : "154",
         "name" : "Web Application",
         "properties" : {
           "structurizr.dsl.identifier" : "webapplication2"
         },
-        "relationships" : [ {
-          "description" : "Reads from and writes to",
-          "destinationId" : "155",
-          "id" : "156",
-          "properties" : {
-            "structurizr.dsl.identifier" : "c02af97f-3580-42ae-8021-081d6c9c1296"
-          },
-          "sourceId" : "154",
-          "tags" : "Relationship",
-          "technology" : "MySQL Protocol/SSL"
-        }, {
-          "description" : "Initialize payment",
-          "destinationId" : "8",
-          "id" : "161",
-          "properties" : {
-            "structurizr.dsl.identifier" : "87fe8269-4476-4d4c-98d2-e50dbce1f7e4"
-          },
-          "sourceId" : "154",
-          "tags" : "Relationship",
-          "technology" : "MySQL Protocol/SSL"
-        } ],
         "tags" : "Element,Container,Application",
         "technology" : "Java and Spring Boot"
       }, {
         "description" : "Stores information regarding the veterinarians, the clients, and their pets.",
-        "documentation" : {
-          "sections" : [ {
-            "content" : "#hi to springPetClinic docs",
-            "filename" : "README.md",
-            "format" : "Markdown",
-            "order" : 1,
-            "title" : ""
-          } ]
-        },
-        "id" : "143",
+        "documentation" : { },
+        "id" : "155",
         "name" : "Database",
         "properties" : {
           "structurizr.dsl.identifier" : "database2"
@@ -1664,35 +1463,19 @@
         "technology" : "Relational database schema"
       } ],
       "description" : "Allows employees to view and manage information regarding the veterinarians, the clients, and their pets.",
-      "documentation" : {
-        "sections" : [ {
-          "content" : "#hi to springPetClinic docs",
-          "filename" : "README.md",
-          "format" : "Markdown",
-          "order" : 1,
-          "title" : ""
-        } ]
-      },
+      "documentation" : { },
       "id" : "153",
       "location" : "Unspecified",
       "name" : "Spring PetClinic",
       "properties" : {
         "structurizr.dsl.identifier" : "springpetclinic"
       },
-      "relationships" : [ {
-        "description" : "Initialize payment",
-        "destinationId" : "8",
-        "id" : "162",
-        "linkedRelationshipId" : "161",
-        "sourceId" : "153",
-        "technology" : "MySQL Protocol/SSL"
-      } ],
       "tags" : "Element,Software System"
     } ]
   },
   "name" : "Amazon Web Services Example",
   "properties" : {
-    "structurizr.dsl" : "CgovKgogKiBUaGlzIGlzIGEgY29tYmluZWQgdmVyc2lvbiBvZiB0aGUgZm9sbG93aW5nIHdvcmtzcGFjZXMsIHdpdGggYXV0b21hdGljIGxheW91dCBlbmFibGVkOgogKgogKiAtICJCaWcgQmFuayBwbGMgLSBTeXN0ZW0gTGFuZHNjYXBlIiAoaHR0cHM6Ly9zdHJ1Y3R1cml6ci5jb20vc2hhcmUvMjgyMDEvKQogKiAtICJCaWcgQmFuayBwbGMgLSBJbnRlcm5ldCBCYW5raW5nIFN5c3RlbSIgKGh0dHBzOi8vc3RydWN0dXJpenIuY29tL3NoYXJlLzM2MTQxLykKKi8Kd29ya3NwYWNlIGV4dGVuZHMgL21vZGVsLmRzbCB7CiAgICBuYW1lICJBbWF6b24gV2ViIFNlcnZpY2VzIEV4YW1wbGUiCiAgICBkZXNjcmlwdGlvbiAiQW4gZXhhbXBsZSBBV1MgZGVwbG95bWVudCBhcmNoaXRlY3R1cmUuIgoKICAgICFkb2NzIGRvY3MvYW5vdGhlcjEvc3ViZGlyLwoKCiAgICBtb2RlbCB7CiAgICAgICAgCiAgICAgICAgc3ByaW5nUGV0Q2xpbmljID0gc29mdHdhcmVzeXN0ZW0gIlNwcmluZyBQZXRDbGluaWMiICJBbGxvd3MgZW1wbG95ZWVzIHRvIHZpZXcgYW5kIG1hbmFnZSBpbmZvcm1hdGlvbiByZWdhcmRpbmcgdGhlIHZldGVyaW5hcmlhbnMsIHRoZSBjbGllbnRzLCBhbmQgdGhlaXIgcGV0cy4iIHsKICAgICAgICAgICAgIWRvY3MgZG9jcy9zcHJpbmdQZXRDbGluaWMKICAgICAgICAgICAgd2ViQXBwbGljYXRpb24yID0gY29udGFpbmVyICJXZWIgQXBwbGljYXRpb24iICJBbGxvd3MgZW1wbG95ZWVzIHRvIHZpZXcgYW5kIG1hbmFnZSBpbmZvcm1hdGlvbiByZWdhcmRpbmcgdGhlIHZldGVyaW5hcmlhbnMsIHRoZSBjbGllbnRzLCBhbmQgdGhlaXIgcGV0cy4iICJKYXZhIGFuZCBTcHJpbmcgQm9vdCIgewogICAgICAgICAgICAgICAgIWRvY3MgZG9jcy9zcHJpbmdQZXRDbGluaWMvc3ViZGlyMS8KICAgICAgICAgICAgICAgIHRhZ3MgIkFwcGxpY2F0aW9uIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGRhdGFiYXNlMiA9IGNvbnRhaW5lciAiRGF0YWJhc2UiICJTdG9yZXMgaW5mb3JtYXRpb24gcmVnYXJkaW5nIHRoZSB2ZXRlcmluYXJpYW5zLCB0aGUgY2xpZW50cywgYW5kIHRoZWlyIHBldHMuIiAiUmVsYXRpb25hbCBkYXRhYmFzZSBzY2hlbWEiIHsKICAgICAgICAgICAgICAgICFkb2NzIGRvY3Mvc3ByaW5nUGV0Q2xpbmljL3N1YmRpcjIvCiAgICAgICAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgd2ViQXBwbGljYXRpb24yIC0+IGRhdGFiYXNlMiAiUmVhZHMgZnJvbSBhbmQgd3JpdGVzIHRvIiAiTXlTUUwgUHJvdG9jb2wvU1NMIgogICAgICAgICMgd2ViQXBwbGljYXRpb24yIC0+IHNlcnZpY2UzQXBpICJSZWFkcyAyZnJvbSBhbmQgd3JpdGVzIHRvIiAiTXlTUUwgUHJvdG9jb2wvU1NMIgogICAgICAgIAogICAgICAgIHNlcnZpY2UzQXBpIC0+IHdlYkFwcGxpY2F0aW9uMiAiP1JlYWRzIDJmcm9tIGFuZCB3cml0ZXMgdG8iICJNeVNRTCBQcm90b2NvbC9TU0wiCgogICAgICAgIHdlYkFwcGxpY2F0aW9uMiAtPiBpbnRlcm5ldEJhbmtpbmdTeXN0ZW0gIkluaXRpYWxpemUgcGF5bWVudCIgIk15U1FMIFByb3RvY29sL1NTTCIKCiAgICAgICAgbGl2ZSA9IGRlcGxveW1lbnRFbnZpcm9ubWVudCAiTGl2ZTIiIHsKCiAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJBbWF6b24gV2ViIFNlcnZpY2VzIiB7CiAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gQ2xvdWQiCgogICAgICAgICAgICAgICAgcmVnaW9uID0gZGVwbG95bWVudE5vZGUgIlVTLUVhc3QtMSIgewogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBSZWdpb24iCgogICAgICAgICAgICAgICAgICAgIHJvdXRlNTMgPSBpbmZyYXN0cnVjdHVyZU5vZGUgIlJvdXRlIDUzIiB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJIaWdobHkgYXZhaWxhYmxlIGFuZCBzY2FsYWJsZSBjbG91ZCBETlMgc2VydmljZS4iCiAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBSb3V0ZSA1MyIKICAgICAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgICAgIGVsYiA9IGluZnJhc3RydWN0dXJlTm9kZSAiRWxhc3RpYyBMb2FkIEJhbGFuY2VyIiB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJBdXRvbWF0aWNhbGx5IGRpc3RyaWJ1dGVzIGluY29taW5nIGFwcGxpY2F0aW9uIHRyYWZmaWMuIgogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gRWxhc3RpYyBMb2FkIEJhbGFuY2luZyIKICAgICAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJBdXRvc2NhbGluZyBncm91cCIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gQXV0byBTY2FsaW5nIgoKICAgICAgICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkFtYXpvbiBFQzIiIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIkFtYXpvbiBXZWIgU2VydmljZXMgLSBFQzIiCgogICAgICAgICAgICAgICAgICAgICAgICAgICAgd2ViQXBwbGljYXRpb25JbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIHdlYkFwcGxpY2F0aW9uMgogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQW1hem9uIFJEUyIgewogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gUkRTIgoKICAgICAgICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIk15U1FMIiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJBbWF6b24gV2ViIFNlcnZpY2VzIC0gUkRTIE15U1FMIGluc3RhbmNlIgoKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRhdGFiYXNlSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBkYXRhYmFzZTIKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIHJvdXRlNTMgLT4gZWxiICJGb3J3YXJkcyByZXF1ZXN0cyB0byIgIkhUVFBTIgogICAgICAgICAgICBlbGIgLT4gd2ViQXBwbGljYXRpb25JbnN0YW5jZSAiRm9yd2FyZHMgcmVxdWVzdHMgdG8iICJIVFRQUyIKICAgICAgICB9CiAgIAogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1sYW5kc2NhcGUgc3ByaW5nUGV0Q2xpbmljICJURVNUM19TeXN0ZW1MYW5kc2NhcGUiIHsKICAgICAgICAgICAgaW5jbHVkZSAtPnNwcmluZ1BldENsaW5pYy0+CiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CiAgICAgICAgZGVwbG95bWVudCBzcHJpbmdQZXRDbGluaWMgIkxpdmUiICJURVNUX1hfQW1hem9uV2ViU2VydmljZXNEZXBsb3ltZW50IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvbGF5b3V0IGxyCgogICAgICAgICAgICBhbmltYXRpb24gewogICAgICAgICAgICAgICAgcm91dGU1MwogICAgICAgICAgICAgICAgZWxiCiAgICAgICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbkluc3RhbmNlCiAgICAgICAgICAgICAgICBkYXRhYmFzZUluc3RhbmNlCiAgICAgICAgICAgIH0KICAgICAgICB9CgoKCgogICAgfQp9Cg=="
+    "structurizr.dsl" : "CgovKgogKiBUaGlzIGlzIGEgY29tYmluZWQgdmVyc2lvbiBvZiB0aGUgZm9sbG93aW5nIHdvcmtzcGFjZXMsIHdpdGggYXV0b21hdGljIGxheW91dCBlbmFibGVkOgogKgogKiAtICJCaWcgQmFuayBwbGMgLSBTeXN0ZW0gTGFuZHNjYXBlIiAoaHR0cHM6Ly9zdHJ1Y3R1cml6ci5jb20vc2hhcmUvMjgyMDEvKQogKiAtICJCaWcgQmFuayBwbGMgLSBJbnRlcm5ldCBCYW5raW5nIFN5c3RlbSIgKGh0dHBzOi8vc3RydWN0dXJpenIuY29tL3NoYXJlLzM2MTQxLykKKi8Kd29ya3NwYWNlIGV4dGVuZHMgLi4vLi4vbW9kZWwuZHNsIHsKICAgIG5hbWUgIkFtYXpvbiBXZWIgU2VydmljZXMgRXhhbXBsZSIKICAgIGRlc2NyaXB0aW9uICJBbiBleGFtcGxlIEFXUyBkZXBsb3ltZW50IGFyY2hpdGVjdHVyZS4iCgogICAgbW9kZWwgewoKICAgICAgICBzcHJpbmdQZXRDbGluaWMgPSBzb2Z0d2FyZXN5c3RlbSAiU3ByaW5nIFBldENsaW5pYyIgIkFsbG93cyBlbXBsb3llZXMgdG8gdmlldyBhbmQgbWFuYWdlIGluZm9ybWF0aW9uIHJlZ2FyZGluZyB0aGUgdmV0ZXJpbmFyaWFucywgdGhlIGNsaWVudHMsIGFuZCB0aGVpciBwZXRzLiIgewogICAgICAgICAgICB3ZWJBcHBsaWNhdGlvbjIgPSBjb250YWluZXIgIldlYiBBcHBsaWNhdGlvbiIgIkFsbG93cyBlbXBsb3llZXMgdG8gdmlldyBhbmQgbWFuYWdlIGluZm9ybWF0aW9uIHJlZ2FyZGluZyB0aGUgdmV0ZXJpbmFyaWFucywgdGhlIGNsaWVudHMsIGFuZCB0aGVpciBwZXRzLiIgIkphdmEgYW5kIFNwcmluZyBCb290IiB7CiAgICAgICAgICAgICAgICB0YWdzICJBcHBsaWNhdGlvbiIKICAgICAgICAgICAgfQogICAgICAgICAgICBkYXRhYmFzZTIgPSBjb250YWluZXIgIkRhdGFiYXNlIiAiU3RvcmVzIGluZm9ybWF0aW9uIHJlZ2FyZGluZyB0aGUgdmV0ZXJpbmFyaWFucywgdGhlIGNsaWVudHMsIGFuZCB0aGVpciBwZXRzLiIgIlJlbGF0aW9uYWwgZGF0YWJhc2Ugc2NoZW1hIiB7CiAgICAgICAgICAgICAgICB0YWdzICJEYXRhYmFzZSIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICAKICAgICAgICBpbnN1cmFuY2VTeXN0ZW0uc2VydmljZTNBcGkgLT4gd2ViQXBwbGljYXRpb24yICI/UmVhZHMgMmZyb20gYW5kIHdyaXRlcyB0byIgIk15U1FMIFByb3RvY29sL1NTTCIKICAgCiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbWxhbmRzY2FwZSBzcHJpbmdQZXRDbGluaWMgIlN5c3RlbUxhbmRzY2FwZSIgewogICAgICAgICAgICBpbmNsdWRlIC0+c3ByaW5nUGV0Q2xpbmljLT4KICAgICAgICAgICAgYXV0b0xheW91dAogICAgICAgIH0KCgogICAgfQp9Cg=="
   },
   "views" : {
     "componentViews" : [ {
@@ -1713,7 +1496,7 @@
         "relationships" : [ "76", "80", "83", "84", "89" ]
       } ],
       "automaticLayout" : {
-        "applied" : true,
+        "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -1722,78 +1505,63 @@
         "vertices" : false
       },
       "containerId" : "12",
-      "description" : "The component diagram for the API Application.",
-      "dimensions" : {
-        "height" : 2500,
-        "width" : 2707
-      },
+      "description" : "The component diagram for the API Application (animation).",
       "elements" : [ {
         "id" : "5",
-        "x" : 2057,
-        "y" : 1999
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "6",
-        "x" : 220,
-        "y" : 1999
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "9",
-        "x" : 557,
-        "y" : 199
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "10",
-        "x" : 1307,
-        "y" : 199
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "13",
-        "x" : 1720,
-        "y" : 799
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "14",
-        "x" : 970,
-        "y" : 799
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "15",
-        "x" : 220,
-        "y" : 799
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "16",
-        "x" : 970,
-        "y" : 1399
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "17",
-        "x" : 1720,
-        "y" : 1399
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "18",
-        "x" : 220,
-        "y" : 1399
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "19",
-        "x" : 970,
-        "y" : 1999
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "20",
-        "x" : 2057,
-        "y" : 199
+        "x" : 0,
+        "y" : 0
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "Components",
       "order" : 2,
       "relationships" : [ {
-        "id" : "55",
-        "vertices" : [ {
-          "x" : 2349,
-          "y" : 695
-        }, {
-          "x" : 2349,
-          "y" : 1803
-        } ]
+        "id" : "102"
       }, {
-        "id" : "61",
-        "vertices" : [ {
-          "x" : 1570,
-          "y" : 695
-        } ]
+        "id" : "73"
       }, {
         "id" : "75"
       }, {
@@ -1803,11 +1571,7 @@
       }, {
         "id" : "79"
       }, {
-        "id" : "68",
-        "vertices" : [ {
-          "x" : 820,
-          "y" : 695
-        } ]
+        "id" : "80"
       }, {
         "id" : "81"
       }, {
@@ -1856,7 +1620,7 @@
     } ],
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "SignIn",
+      "lastSavedView" : "springPetClinic",
       "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
@@ -1956,7 +1720,7 @@
         "relationships" : [ "86" ]
       } ],
       "automaticLayout" : {
-        "applied" : true,
+        "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -1964,79 +1728,57 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
-      "description" : "The container diagram for the Internet Banking System.",
-      "dimensions" : {
-        "height" : 3291,
-        "width" : 2571
-      },
+      "description" : "The container diagram for the Internet Banking System (animation).",
       "elements" : [ {
         "id" : "2",
-        "x" : 1829,
-        "y" : 800
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "5",
-        "x" : 1920,
-        "y" : 2700
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "6",
-        "x" : 770,
-        "y" : 200
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "9",
-        "x" : 420,
-        "y" : 1500
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "10",
-        "x" : 1170,
-        "y" : 1500
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "11",
-        "x" : 749,
-        "y" : 850
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "12",
-        "x" : 1170,
-        "y" : 2100
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "19",
-        "x" : 1170,
-        "y" : 2700
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "20",
-        "x" : 1920,
-        "y" : 1500
+        "x" : 0,
+        "y" : 0
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "Containers",
       "order" : 1,
       "relationships" : [ {
-        "id" : "49",
-        "vertices" : [ {
-          "x" : 1799,
-          "y" : 746
-        } ]
+        "id" : "105"
       }, {
         "id" : "50"
       }, {
         "id" : "54"
       }, {
-        "id" : "57",
-        "vertices" : [ {
-          "x" : 1677,
-          "y" : 1000
-        }, {
-          "x" : 1326,
-          "y" : 1000
-        } ]
+        "id" : "69"
       }, {
-        "id" : "58",
-        "vertices" : [ {
-          "x" : 1799,
-          "y" : 1200
-        }, {
-          "x" : 1020,
-          "y" : 1500
-        } ]
+        "id" : "70"
       }, {
         "id" : "71"
       }, {
@@ -2050,24 +1792,14 @@
       }, {
         "id" : "88"
       }, {
-        "id" : "78",
-        "vertices" : [ {
-          "x" : 270,
-          "y" : 1800
-        }, {
-          "x" : 270,
-          "y" : 1500
-        }, {
-          "x" : 599,
-          "y" : 746
-        } ]
+        "id" : "90"
       }, {
         "id" : "96"
       } ],
       "softwareSystemId" : "8"
     }, {
       "automaticLayout" : {
-        "applied" : true,
+        "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -2075,86 +1807,82 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
-      "dimensions" : {
-        "height" : 4565,
-        "width" : 6227
-      },
       "elements" : [ {
         "id" : "1",
-        "x" : 4398,
-        "y" : 199
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "8",
-        "x" : 5577,
-        "y" : 2699
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "21",
-        "x" : 4373,
-        "y" : 899
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "22",
-        "x" : 4052,
-        "y" : 1499
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "23",
-        "x" : 4052,
-        "y" : 2099
-      }, {
-        "id" : "25",
-        "x" : 1002,
-        "y" : 2099
+        "id" : "24",
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "26",
-        "x" : 1002,
-        "y" : 2699
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "28",
-        "x" : 4815,
-        "y" : 2099
+        "id" : "27",
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "29",
-        "x" : 4815,
-        "y" : 2699
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "31",
-        "x" : 1765,
-        "y" : 2699
+        "id" : "30",
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "32",
-        "x" : 1765,
-        "y" : 3299
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "34",
-        "x" : 240,
-        "y" : 2699
+        "id" : "33",
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "35",
-        "x" : 240,
-        "y" : 3299
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "37",
-        "x" : 2527,
-        "y" : 3299
+        "id" : "36",
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "38",
-        "x" : 2527,
-        "y" : 3899
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "40",
-        "x" : 4052,
-        "y" : 2699
+        "id" : "39",
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "41",
-        "x" : 4052,
-        "y" : 3299
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "43",
-        "x" : 3290,
-        "y" : 3299
+        "id" : "42",
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "44",
-        "x" : 3290,
-        "y" : 3899
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "45",
+        "x" : 0,
+        "y" : 0
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "insuranceSystem_All",
@@ -2190,14 +1918,7 @@
       }, {
         "id" : "63"
       }, {
-        "id" : "87",
-        "vertices" : [ {
-          "x" : 4682,
-          "y" : 2503
-        }, {
-          "x" : 3873,
-          "y" : 2595
-        } ]
+        "id" : "64"
       }, {
         "id" : "65"
       }, {
@@ -2205,14 +1926,9 @@
       }, {
         "id" : "67"
       }, {
-        "id" : "93",
-        "vertices" : [ {
-          "x" : 3873,
-          "y" : 2503
-        }, {
-          "x" : 5444,
-          "y" : 2595
-        } ]
+        "id" : "68"
+      }, {
+        "id" : "94"
       } ],
       "softwareSystemId" : "20"
     }, {
@@ -2231,24 +1947,24 @@
         "y" : 0
       }, {
         "id" : "21",
-        "x" : 752,
-        "y" : 219
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "22",
-        "x" : 240,
-        "y" : 819
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "23",
-        "x" : 240,
-        "y" : 1419
+        "id" : "24",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "25",
-        "x" : 1002,
-        "y" : 1419
+        "id" : "26",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "28",
-        "x" : 1765,
-        "y" : 1419
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "Containers_Service1",
@@ -2260,14 +1976,9 @@
       }, {
         "id" : "59"
       }, {
-        "id" : "83",
-        "vertices" : [ {
-          "x" : 707,
-          "y" : 1119
-        }, {
-          "x" : 1632,
-          "y" : 1315
-        } ]
+        "id" : "60"
+      }, {
+        "id" : "61"
       }, {
         "id" : "64"
       }, {
@@ -2285,29 +1996,25 @@
         "vertices" : false
       },
       "elements" : [ {
-        "id" : "8",
-        "x" : 2526,
-        "y" : 1439
-      }, {
         "id" : "22",
-        "x" : 239,
-        "y" : 239
-      }, {
-        "id" : "25",
-        "x" : 239,
-        "y" : 839
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "26",
-        "x" : 239,
-        "y" : 1439
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "31",
-        "x" : 1001,
-        "y" : 1439
+        "id" : "27",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "34",
-        "x" : 1764,
-        "y" : 1439
+        "id" : "32",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "35",
+        "x" : 0,
+        "y" : 0
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "Containers_Service2",
@@ -2319,22 +2026,12 @@
       }, {
         "id" : "62"
       }, {
-        "id" : "85",
-        "vertices" : [ {
-          "x" : 1631,
-          "y" : 1335
-        } ]
-      }, {
-        "id" : "93",
-        "vertices" : [ {
-          "x" : 2393,
-          "y" : 1335
-        } ]
+        "id" : "63"
       } ],
       "softwareSystemId" : "20"
     }, {
       "automaticLayout" : {
-        "applied" : true,
+        "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -2342,34 +2039,30 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
-      "dimensions" : {
-        "height" : 2774,
-        "width" : 2455
-      },
       "elements" : [ {
         "id" : "21",
-        "x" : 501,
-        "y" : 220
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "22",
-        "x" : 239,
-        "y" : 820
-      }, {
-        "id" : "28",
-        "x" : 239,
-        "y" : 1420
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "29",
-        "x" : 239,
-        "y" : 2020
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "31",
-        "x" : 1001,
-        "y" : 2020
+        "id" : "30",
+        "x" : 0,
+        "y" : 0
       }, {
-        "id" : "40",
-        "x" : 1764,
-        "y" : 2020
+        "id" : "32",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "41",
+        "x" : 0,
+        "y" : 0
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "Containers_Service3",
@@ -2381,22 +2074,11 @@
       }, {
         "id" : "61"
       }, {
-        "id" : "86",
-        "vertices" : [ {
-          "x" : 868,
-          "y" : 716
-        }, {
-          "x" : 868,
-          "y" : 1224
-        } ]
+        "id" : "64"
       }, {
         "id" : "65"
       }, {
-        "id" : "88",
-        "vertices" : [ {
-          "x" : 1631,
-          "y" : 1916
-        } ]
+        "id" : "66"
       } ],
       "softwareSystemId" : "20"
     } ],
@@ -2619,88 +2301,10 @@
         "id" : "152"
       } ],
       "softwareSystemId" : "8"
-    }, {
-      "animations" : [ {
-        "elements" : [ "163", "164", "165" ],
-        "order" : 1
-      }, {
-        "elements" : [ "166" ],
-        "order" : 2,
-        "relationships" : [ "174" ]
-      }, {
-        "elements" : [ "167", "168", "169" ],
-        "order" : 3,
-        "relationships" : [ "175" ]
-      }, {
-        "elements" : [ "170", "171", "172" ],
-        "order" : 4,
-        "relationships" : [ "173" ]
-      } ],
-      "automaticLayout" : {
-        "applied" : false,
-        "edgeSeparation" : 0,
-        "implementation" : "Graphviz",
-        "nodeSeparation" : 300,
-        "rankDirection" : "LeftRight",
-        "rankSeparation" : 300,
-        "vertices" : false
-      },
-      "elements" : [ {
-        "id" : "163",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "164",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "165",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "166",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "167",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "168",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "169",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "170",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "171",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "172",
-        "x" : 0,
-        "y" : 0
-      } ],
-      "environment" : "Live2",
-      "key" : "TEST_X_AmazonWebServicesDeployment",
-      "order" : 12,
-      "relationships" : [ {
-        "id" : "173"
-      }, {
-        "id" : "174"
-      }, {
-        "id" : "175"
-      } ],
-      "softwareSystemId" : "153"
     } ],
     "dynamicViews" : [ {
       "automaticLayout" : {
-        "applied" : true,
+        "applied" : false,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -2708,28 +2312,24 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
-      "description" : "Summarises how the sign in feature works in the single-page application.",
-      "dimensions" : {
-        "height" : 1920,
-        "width" : 1620
-      },
+      "description" : "Summarises how the sign in feature works in the single-page application  (dynamic).",
       "elementId" : "12",
       "elements" : [ {
         "id" : "9",
-        "x" : 969,
-        "y" : 819
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "13",
-        "x" : 219,
-        "y" : 219
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "16",
-        "x" : 219,
-        "y" : 819
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "19",
-        "x" : 219,
-        "y" : 1419
+        "x" : 0,
+        "y" : 0
       } ],
       "externalBoundariesVisible" : false,
       "key" : "SignIn",
@@ -2738,56 +2338,32 @@
         "description" : "Submits credentials to",
         "id" : "73",
         "order" : "1",
-        "response" : false,
-        "vertices" : [ {
-          "x" : 912,
-          "y" : 551
-        } ]
+        "response" : false
       }, {
         "description" : "Validates credentials using",
         "id" : "81",
         "order" : "2",
-        "response" : false,
-        "vertices" : [ {
-          "x" : 294,
-          "y" : 669
-        } ]
+        "response" : false
       }, {
         "description" : "select * from users where username = ?",
         "id" : "85",
         "order" : "3",
-        "response" : false,
-        "vertices" : [ {
-          "x" : 294,
-          "y" : 1269
-        } ]
+        "response" : false
       }, {
         "description" : "Returns user data to",
         "id" : "85",
         "order" : "4",
-        "response" : true,
-        "vertices" : [ {
-          "x" : 594,
-          "y" : 1269
-        } ]
+        "response" : true
       }, {
         "description" : "Returns true if the hashed password matches",
         "id" : "81",
         "order" : "5",
-        "response" : true,
-        "vertices" : [ {
-          "x" : 594,
-          "y" : 669
-        } ]
+        "response" : true
       }, {
         "description" : "Sends back an authentication token to",
         "id" : "73",
         "order" : "6",
-        "response" : true,
-        "vertices" : [ {
-          "x" : 725,
-          "y" : 786
-        } ]
+        "response" : true
       } ]
     } ],
     "imageViews" : [ {
@@ -2800,7 +2376,7 @@
     } ],
     "systemLandscapeViews" : [ {
       "automaticLayout" : {
-        "applied" : false,
+        "applied" : true,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -2808,40 +2384,25 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
-      "description" : "TEST3_SystemLandscape",
+      "description" : "SystemLandscape",
       "dimensions" : {
-        "height" : 1974,
-        "width" : 1207
+        "height" : 1300,
+        "width" : 850
       },
       "elements" : [ {
-        "id" : "8",
-        "x" : 220,
-        "y" : 1400
-      }, {
         "id" : "20",
-        "x" : 216,
-        "y" : 200
+        "x" : 199,
+        "y" : 199
       }, {
-        "id" : "141",
-        "x" : 557,
-        "y" : 800
+        "id" : "153",
+        "x" : 199,
+        "y" : 799
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "springPetClinic",
       "order" : 12,
       "relationships" : [ {
-        "id" : "108"
-      }, {
-        "id" : "160"
-      }, {
-        "id" : "96",
-        "vertices" : [ {
-          "x" : 407,
-          "y" : 800
-        }, {
-          "x" : 407,
-          "y" : 1100
-        } ]
+        "id" : "159"
       } ]
     } ]
   }
