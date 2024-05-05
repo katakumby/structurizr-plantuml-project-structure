@@ -1,0 +1,40 @@
+services:
+  project1:
+    image: structurizr/lite
+    container_name: project1
+    restart: always
+    ports:
+      - "8081:8080"
+    environment:
+      - STRUCTURIZR_WORKSPACE_PATH=project1
+    volumes:
+      - "./src/:/usr/local/structurizr"
+    networks:
+      - mynetwork
+  project2:
+    image: structurizr/lite
+    container_name: project2
+    restart: always
+    ports:
+      - "8082:8080"
+    environment:
+      - STRUCTURIZR_WORKSPACE_PATH=project2
+    volumes:
+      - "./src/:/usr/local/structurizr"
+    networks:
+      - mynetwork
+  project3:
+    image: structurizr/lite
+    container_name: project3
+    restart: always
+    ports:
+      - "8083:8080"
+    environment:
+      - STRUCTURIZR_WORKSPACE_PATH=project2/sub-variant
+    volumes:
+      - "./src/:/usr/local/structurizr"
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge

@@ -6,7 +6,7 @@
  * - "Big Bank plc - System Landscape" (https://structurizr.com/share/28201/)
  * - "Big Bank plc - Internet Banking System" (https://structurizr.com/share/36141/)
 */
-workspace extends /model.dsl {
+workspace extends ../model.dsl {
     name "Big Bank plc - System Landscape"
     description "The system landscape for Big Bank plc."
 
@@ -17,7 +17,7 @@ workspace extends /model.dsl {
     }
 
     views {
-        systemlandscape "TEST2_SystemLandscape" {
+        systemlandscape "TEST1_SystemLandscape" {
             include *
             autoLayout
         }

@@ -17,7 +17,7 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
 
     views {
         !include ../inc/views 
-        styles{
+        styles {
             !include ../inc/styles
         }
     }
