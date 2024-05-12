@@ -1,0 +1,7 @@
+service1:
+    repo: "https://github.com/katakumby/test1-docs"
+    name: "test1-docs"
+
+sample2:
+    repo: "https://github.com/katakumby/test2-docs"
+    name: "test2-docs"
