@@ -20,3 +20,13 @@
 
 ```docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material```
 
+--- 
+
+### todo: sub-repos
+
+
+git clone -n --depth=1 --filter=tree:0 https://github.com/katakumby/test1-docs
+cd test1-docs
+git sparse-checkout set --no-cone docs
+git checkout
+
